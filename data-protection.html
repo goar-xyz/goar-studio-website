@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Protection &amp; Local Privacy — Goar Studio</title>
+  <meta name="description" content="Technical Data Protection and Local Privacy Overview for Goar Studio on Android." />
+  <link rel="icon" type="image/png" href="assets/ic_goar_mark.png" />
+  <link rel="stylesheet" href="css/goar-design-system.css" />
+  <link rel="stylesheet" href="css/website.css" />
+</head>
+<body>
+  <header class="site-nav">
+    <div class="site-container site-nav-inner">
+      <a href="index.html" class="site-brand">
+        <img src="assets/ic_goar_mark.png" alt="Goar Studio" class="goar-mark-img goar-mark-dark-only" />
+        <img src="assets/ic_goar_mark_black.png" alt="Goar Studio" class="goar-mark-img goar-mark-light-only" />
+        <span>Goar Studio</span>
+      </a>
+      <nav class="site-nav-links">
+        <a href="index.html" class="site-nav-link">Home</a>
+        <a href="privacy.html" class="site-nav-link">Privacy Policy</a>
+        <a href="terms.html" class="site-nav-link">Terms of Service</a>
+        <a href="data-protection.html" class="site-nav-link active">Data Protection</a>
+        <a href="licenses.html" class="site-nav-link">Licenses</a>
+      </nav>
+      <div class="site-nav-actions">
+        <button class="site-icon-circle" data-action="toggle-site-theme" aria-label="Toggle theme"><span data-theme-toggle-icon></span></button>
+        <a href="simulator.html" class="btn-secondary">Interactive App</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-page-main">
+    <div class="legal-page-header">
+      <div class="section-kicker">Technical Architecture · Data Sovereignty</div>
+      <h1>Data Protection &amp; Local Privacy</h1>
+      <p style="margin:0;color:var(--on-surface-variant);font-size:14.5px">
+        How Goar Studio stores, encrypts, routes, backs up, and deletes your data on Android.
+      </p>
+    </div>
+
+    <article class="legal-article">
+      <div class="legal-verbatim-box" style="margin-top:0;margin-bottom:28px">Goar Studio — Data Protection & Local Privacy Overview
+
+1. Local-First Storage Architecture
+Goar Studio stores your conversations, system prompts, agent memories, tasks, notes, calendar events, and browser data locally on your device using Android Room (SQLite) and Jetpack DataStore.
+
+2. Credential Protection
+Provider API keys, gateway credentials, and SSH secrets are encrypted on device using Android Keystore-backed EncryptedSharedPreferences.
+
+3. Network Connections
+Outbound requests are sent directly from your device only to the AI model providers, MCP servers, web search engines, SSH hosts, or API endpoints that you configure and enable. Goar Studio does not bundle third-party advertising SDKs or hidden analytics trackers in this build.
+
+4. Your Data Controls
+From Settings → Data Control, you can export encrypted-optional backups (ZIP), import conversation archives, configure automatic local backups, or delete stored histories and keys at any time.</div>
+
+      <h2>Summary of Technical Safeguards</h2>
+      <div class="goar-split-stack" style="margin-top:16px">
+        <div class="goar-split-card" style="padding:18px 20px">
+          <strong style="color:var(--on-surface)">Database Layer</strong>
+          <p style="margin:6px 0 0">App-private Android Room SQLite database with local WAL persistence for chats, branches, tool outputs, tasks, and semantic RAG embeddings.</p>
+        </div>
+        <div class="goar-split-card" style="padding:18px 20px">
+          <strong style="color:var(--on-surface)">Secrets &amp; SSH Pinning</strong>
+          <p style="margin:6px 0 0">API keys, payment card profiles, and SSH keys reside in Android Keystore-encrypted preferences. Remote SSH servers require explicit host-key fingerprint verification and per-command approval unless explicitly trusted.</p>
+        </div>
+        <div class="goar-split-card" style="padding:18px 20px">
+          <strong style="color:var(--on-surface)">Browser Shielding</strong>
+          <p style="margin:6px 0 0">The integrated Browser ships with bundled domain blocklists (<code>hosts.txt</code> and <code>malware.txt</code>), full cookie clearing/export, live network inspection, and Cloak stealth controls.</p>
+        </div>
+        <div class="goar-split-card" style="padding:18px 20px">
+          <strong style="color:var(--on-surface)">Portability &amp; Right to Erasure</strong>
+          <p style="margin:6px 0 0">Import existing Claude or ChatGPT archives, export full ZIP backups to your chosen storage folder, configure auto-delete retention windows, or clear the entire local database in one step.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-container footer-bottom" style="border-top:none;padding-top:0">
+      <span>© 2026 Goar Studio (goarxyz.com)</span>
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <a href="privacy.html" style="color:var(--on-surface-variant)">Privacy Policy</a>
+        <a href="terms.html" style="color:var(--on-surface-variant)">Terms of Service</a>
+        <a href="data-protection.html" style="color:var(--primary)">Data Protection</a>
+        <a href="licenses.html" style="color:var(--on-surface-variant)">Licenses</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/goar-icons.js"></script>
+  <script src="js/site.js"></script>
+  <script>window.goarInitTheme();</script>
+</body>
+</html>

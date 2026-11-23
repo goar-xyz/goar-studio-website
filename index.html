@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goar Studio — Own Your Intelligence. Keep Your Data.</title>
+  <meta name="description" content="Goar Studio is the local-first Android AI studio uniting 20+ frontier & offline models, 6 autonomous SOUL.md agents, live zero-build web apps, Veo/FLUX media, and a real Linux PRoot terminal." />
+  <link rel="icon" type="image/png" href="assets/ic_goar_mark.png" />
+  <link rel="stylesheet" href="css/goar-design-system.css" />
+  <link rel="stylesheet" href="css/simulator.css" />
+  <link rel="stylesheet" href="css/website.css" />
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. STICKY TRANSLUCENT FRAMER NAVBAR
+       ====================================================================== -->
+  <header class="site-nav">
+    <div class="site-container site-nav-inner">
+      <a href="index.html" class="site-brand">
+        <img src="assets/ic_goar_mark.png" alt="Goar Studio" class="goar-mark-img goar-mark-dark-only" />
+        <img src="assets/ic_goar_mark_black.png" alt="Goar Studio" class="goar-mark-img goar-mark-light-only" />
+        <span>Goar Studio</span>
+        <span class="site-version-chip">v2.0</span>
+      </a>
+
+      <nav class="site-nav-links" aria-label="Primary Navigation">
+        <a href="#scenario-ask" class="site-nav-link">Features</a>
+        <a href="#trusted-companies" class="site-nav-link">Partners</a>
+        <a href="#why-goar" class="site-nav-link">Why Goar</a>
+        <a href="#about-studio" class="site-nav-link">About</a>
+        <a href="#interactive-demo" class="site-nav-link">Sandbox</a>
+        <a href="#legal" class="site-nav-link">Legal</a>
+      </nav>
+
+      <div class="site-nav-actions">
+        <button class="site-icon-circle" data-action="toggle-site-theme" title="Switch Ink Dark / Paper Light" aria-label="Toggle site and app theme">
+          <span data-theme-toggle-icon></span>
+        </button>
+        <a href="simulator.html" class="btn-secondary">Try Full App</a>
+        <a href="#why-goar" class="btn-primary">Get Goar Studio</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ======================================================================
+         2. MONUMENTAL FRAMER EDITORIAL HERO (Slogan · Motto · Who We Are · What We Do)
+         ====================================================================== -->
+    <section class="hero-editorial">
+      <div class="site-container">
+        <div class="hero-inner">
+          <div class="hero-motto-pill reveal">
+            <span class="hero-motto-dot"></span>
+            <span>Our Motto — <strong>Own Your Intelligence. Keep Your Data.</strong></span>
+          </div>
+
+          <h1 class="hero-slogan reveal reveal-delay-1">
+            The private AI studio<br />
+            <span class="hero-slogan-accent">built for real work.</span>
+          </h1>
+
+          <p class="hero-who-we-are reveal reveal-delay-2">
+            <strong>Goar Studio</strong> is an independent local-first Android studio bringing <strong>20+ frontier &amp; offline models</strong>, <strong>6 autonomous agents</strong>, a zero-build web app builder, Veo/FLUX media generation, and a real <strong>Ubuntu Linux PRoot terminal</strong> into one fast native app — with your keys and data encrypted strictly on your device.
+          </p>
+
+          <div class="hero-cta-row reveal reveal-delay-2">
+            <a href="#scenario-ask" class="btn-primary btn-lg">Watch Live App Demos</a>
+            <a href="simulator.html" class="btn-secondary btn-lg">Try Interactive Phone</a>
+          </div>
+
+          <div class="hero-value-strip reveal reveal-delay-3">
+            <span class="hero-value-item"><span class="hero-value-dot" style="background:var(--m-top-ask)"></span><strong>20+</strong> Cloud &amp; Offline Models</span>
+            <span class="hero-value-item"><span class="hero-value-dot" style="background:var(--m-top-build)"></span><strong>100%</strong> Local Keystore Encryption</span>
+            <span class="hero-value-item"><span class="hero-value-dot" style="background:var(--m-top-imagine)"></span><strong>6</strong> Autonomous SOUL.md Agents</span>
+            <span class="hero-value-item"><span class="hero-value-dot" style="background:var(--m-drw-terminal)"></span><strong>15</strong> Rootless Linux PRoot Distros</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. SCENARIO 1 — PHONE LEFT (Live Interaction Video) | EDITORIAL COPY RIGHT
+         ====================================================================== -->
+    <section id="scenario-ask" class="scenario-section">
+      <div class="site-container">
+        <div class="scenario-grid">
+          <div class="scenario-phone-col reveal-left">
+            <div class="phone-aura" style="--aura-color: var(--m-top-ask)"></div>
+            <div class="goar-device-bezel phone-mount-shell">
+              <div id="phone-clip-ask" data-scenario-clip="clip_ask" style="width:100%;height:100%"></div>
+            </div>
+            <div class="clip-hud-bar" data-clip-hud>
+              <span class="clip-hud-status">
+                <span class="clip-status-dot"></span>
+                <span data-clip-status-text>Playing live demo · Tap phone to take over</span>
+              </span>
+              <button class="clip-hud-btn" data-clip-toggle type="button">Pause</button>
+            </div>
+          </div>
+
+          <div class="scenario-copy-col reveal-right">
+            <div class="scenario-eyebrow" style="--eyebrow-color: var(--m-top-ask)">
+              <span class="scenario-eyebrow-line"></span>
+              <span>01 / Ask &amp; Multi-Model Engine</span>
+            </div>
+            <h2 class="scenario-title">Ask anything. Switch models mid-thought.</h2>
+            <p class="scenario-desc">
+              Watch Goar Studio’s <strong>Agora Composer</strong> in action: type <code>/</code> for 9 Matte Bold Pop Vibe commands, swap between Claude Sonnet 4.5, GPT-4.1, Gemini 2.5, DeepSeek R1, and local GGUF in one tap, and inspect live thinking traces &amp; tool calls without leaving your thread.
+            </p>
+
+            <div class="scenario-points">
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:var(--m-top-ask)"></span>
+                <span><strong>Zero Vendor Lock-In:</strong> Route direct to 20+ AI providers with your own keys — or run completely offline with llama.cpp.</span>
+              </div>
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:var(--m-top-ask)"></span>
+                <span><strong>Transparent Reasoning &amp; Tools:</strong> Expand collapsible thinking traces, inspect executed local tools, and copy syntax-highlighted code.</span>
+              </div>
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:var(--m-top-ask)"></span>
+                <span><strong>Real-Time Context Ring:</strong> Monitor exact token budget and compact long threads in a single tap.</span>
+              </div>
+            </div>
+
+            <div class="vid-chapter-label">Interactive Demo Chapters · Click to Jump</div>
+            <div class="vid-chapters" style="--step-accent: var(--m-top-ask)">
+              <button class="clip-step-btn active is-playing" type="button" data-clip-step="0">
+                <span class="clip-step-idx">01</span>
+                <span class="clip-step-name">Slash /</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="1">
+                <span class="clip-step-idx">02</span>
+                <span class="clip-step-name">Models</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="2">
+                <span class="clip-step-idx">03</span>
+                <span class="clip-step-name">Thinking</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="3">
+                <span class="clip-step-idx">04</span>
+                <span class="clip-step-name">Tools</span>
+                <span class="clip-step-progress"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. WELL-KNOWN COMPANIES, BRANDING & 5-STAR SHOWCASE BAND
+         ====================================================================== -->
+    <section id="trusted-companies" class="companies-section">
+      <div class="site-container">
+        <div class="companies-header reveal">
+          <div class="star-rating-pill">
+            <span class="stars-gold" aria-hidden="true">★★★★★</span>
+            <span>5.0 / 5.0 · Native Integration With the World’s Leading Platforms</span>
+          </div>
+          <h2 class="companies-title">Connected directly to the platforms engineers trust.</h2>
+          <p class="companies-sub">
+            Native API and Model Context Protocol (MCP) support across frontier labs, cloud infrastructure, developer repos, and commerce — rated five stars for speed, privacy, and zero proxy markup.
+          </p>
+        </div>
+
+        <div id="brand-logos-grid" class="brand-logos-grid reveal reveal-delay-1"></div>
+        <div id="five-star-cards" class="five-star-cards reveal reveal-delay-2"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. SCENARIO 2 — EDITORIAL COPY LEFT | PHONE RIGHT (Build Live Video)
+         ====================================================================== -->
+    <section id="scenario-build" class="scenario-section">
+      <div class="site-container">
+        <div class="scenario-grid phone-right">
+          <div class="scenario-phone-col reveal-right">
+            <div class="phone-aura" style="--aura-color: var(--m-top-build)"></div>
+            <div class="goar-device-bezel phone-mount-shell">
+              <div id="phone-clip-build" data-scenario-clip="clip_build" style="width:100%;height:100%"></div>
+            </div>
+            <div class="clip-hud-bar" data-clip-hud>
+              <span class="clip-hud-status">
+                <span class="clip-status-dot"></span>
+                <span data-clip-status-text>Playing live demo · Tap phone to take over</span>
+              </span>
+              <button class="clip-hud-btn" data-clip-toggle type="button">Pause</button>
+            </div>
+          </div>
+
+          <div class="scenario-copy-col reveal-left">
+            <div class="scenario-eyebrow" style="--eyebrow-color: var(--m-top-build)">
+              <span class="scenario-eyebrow-line"></span>
+              <span>02 / Zero-Build Web App Studio</span>
+            </div>
+            <h2 class="scenario-title">Describe an app. Run it live in three seconds.</h2>
+            <p class="scenario-desc">
+              Watch the <strong>Build</strong> studio morph live Fourier epicycles, inspect &amp; hot-reload source code, tap planets into an N-body gravity simulation, and launch a 3D solar system — running straight on Android with zero build step.
+            </p>
+
+            <div class="scenario-points">
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:var(--m-top-build)"></span>
+                <span><strong>Instant Preview | Code Toggle:</strong> Flip from a 60fps interactive canvas to raw editable HTML/CSS/JS and tap Run anytime.</span>
+              </div>
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:var(--m-top-build)"></span>
+                <span><strong>CORS-Free GoarSDK Bridge:</strong> Built apps call local AI models and APIs safely straight from your Android viewport.</span>
+              </div>
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:var(--m-top-build)"></span>
+                <span><strong>Prompt to Working App:</strong> Tap the phone and type “Pomodoro timer” or any custom idea to compile a working app live.</span>
+              </div>
+            </div>
+
+            <div class="vid-chapter-label">Interactive Demo Chapters · Click to Jump</div>
+            <div class="vid-chapters" style="--step-accent: var(--m-top-build)">
+              <button class="clip-step-btn active is-playing" type="button" data-clip-step="0">
+                <span class="clip-step-idx">01</span>
+                <span class="clip-step-name">Fourier</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="1">
+                <span class="clip-step-idx">02</span>
+                <span class="clip-step-name">Code &amp; Run</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="2">
+                <span class="clip-step-idx">03</span>
+                <span class="clip-step-name">Gravity</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="3">
+                <span class="clip-step-idx">04</span>
+                <span class="clip-step-name">3D Solar</span>
+                <span class="clip-step-progress"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. SCENARIO 3 — PHONE LEFT (Imagine Live Video) | EDITORIAL COPY RIGHT
+         ====================================================================== -->
+    <section id="scenario-imagine" class="scenario-section">
+      <div class="site-container">
+        <div class="scenario-grid">
+          <div class="scenario-phone-col reveal-left">
+            <div class="phone-aura" style="--aura-color: var(--m-top-imagine)"></div>
+            <div class="goar-device-bezel phone-mount-shell">
+              <div id="phone-clip-imagine" data-scenario-clip="clip_imagine" style="width:100%;height:100%"></div>
+            </div>
+            <div class="clip-hud-bar" data-clip-hud>
+              <span class="clip-hud-status">
+                <span class="clip-status-dot"></span>
+                <span data-clip-status-text>Playing live demo · Tap phone to take over</span>
+              </span>
+              <button class="clip-hud-btn" data-clip-toggle type="button">Pause</button>
+            </div>
+          </div>
+
+          <div class="scenario-copy-col reveal-right">
+            <div class="scenario-eyebrow" style="--eyebrow-color: var(--m-top-imagine)">
+              <span class="scenario-eyebrow-line"></span>
+              <span>03 / Imagine Multimodal Studio</span>
+            </div>
+            <h2 class="scenario-title">Video, imagery, and neural voice in one studio.</h2>
+            <p class="scenario-desc">
+              Switch effortlessly across <strong>Video</strong>, <strong>Image</strong>, and <strong>Audio</strong> without opening a single browser tab. Attach reference frames, tune aspect ratios and duration, and render across Veo 3.1, Kling, FLUX.1, Imagen 3, and Eleven v3.
+            </p>
+
+            <div class="scenario-points">
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:var(--m-top-imagine)"></span>
+                <span><strong>Reference-Conditioned Video:</strong> Attach start/end frames and render 1080p synchronized clips directly into your local reel.</span>
+              </div>
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:var(--m-top-imagine)"></span>
+                <span><strong>Compare Top Media Models:</strong> Switch between Veo 3.1, Kling, Luma Ray 2, Sora 2, FLUX.1, and Imagen 3 in one dropdown.</span>
+              </div>
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:var(--m-top-imagine)"></span>
+                <span><strong>Studio Neural Speech &amp; SFX:</strong> Synthesize expressive Eleven v3 narration and ambient soundscapes on the spot.</span>
+              </div>
+            </div>
+
+            <div class="vid-chapter-label">Interactive Demo Chapters · Click to Jump</div>
+            <div class="vid-chapters" style="--step-accent: var(--m-top-imagine)">
+              <button class="clip-step-btn active is-playing" type="button" data-clip-step="0">
+                <span class="clip-step-idx">01</span>
+                <span class="clip-step-name">FLUX Image</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="1">
+                <span class="clip-step-idx">02</span>
+                <span class="clip-step-name">Veo Video</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="2">
+                <span class="clip-step-idx">03</span>
+                <span class="clip-step-name">Providers</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="3">
+                <span class="clip-step-idx">04</span>
+                <span class="clip-step-name">Eleven Audio</span>
+                <span class="clip-step-progress"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. SCENARIO 4 — EDITORIAL COPY LEFT | PHONE RIGHT (Agents & Live Voice)
+         ====================================================================== -->
+    <section id="scenario-agents" class="scenario-section">
+      <div class="site-container">
+        <div class="scenario-grid phone-right">
+          <div class="scenario-phone-col reveal-right">
+            <div class="phone-aura" style="--aura-color: #B197FC"></div>
+            <div class="goar-device-bezel phone-mount-shell">
+              <div id="phone-clip-agents" data-scenario-clip="clip_agents_voice" style="width:100%;height:100%"></div>
+            </div>
+            <div class="clip-hud-bar" data-clip-hud>
+              <span class="clip-hud-status">
+                <span class="clip-status-dot"></span>
+                <span data-clip-status-text>Playing live demo · Tap phone to take over</span>
+              </span>
+              <button class="clip-hud-btn" data-clip-toggle type="button">Pause</button>
+            </div>
+          </div>
+
+          <div class="scenario-copy-col reveal-left">
+            <div class="scenario-eyebrow" style="--eyebrow-color: #B197FC">
+              <span class="scenario-eyebrow-line"></span>
+              <span>04 / Autonomous Agents &amp; Live Voice</span>
+            </div>
+            <h2 class="scenario-title">Six specialist agents. One fluid voice.</h2>
+            <p class="scenario-desc">
+              Slide open the drawer to deploy <strong>@goar</strong>, <strong>@architect</strong>, <strong>@aegis</strong>, <strong>@quant</strong>, <strong>@atlas</strong>, and <strong>@muse</strong> — or press and hold the 6-bar waveform button to enter full-duplex Live Voice backed by on-device <code>whisper.cpp</code>.
+            </p>
+
+            <div class="scenario-points">
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:#B197FC"></span>
+                <span><strong>Persistent SOUL.md Identities:</strong> Each specialist owns dedicated memory, reasoning doctrine, and 12 bundled playbook skills.</span>
+              </div>
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:#B197FC"></span>
+                <span><strong>Organic 96-Segment Fluid Voice Orb:</strong> Still pearl in silence — blooming into emerald Listening, plum Thinking, and azure Speaking waves.</span>
+              </div>
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:#B197FC"></span>
+                <span><strong>Instant Tap-to-Interrupt:</strong> Switch neural voice personas (Nova, Alloy, Onyx, Sage) and speed cleanly mid-conversation.</span>
+              </div>
+            </div>
+
+            <div class="vid-chapter-label">Interactive Demo Chapters · Click to Jump</div>
+            <div class="vid-chapters" style="--step-accent: #B197FC">
+              <button class="clip-step-btn active is-playing" type="button" data-clip-step="0">
+                <span class="clip-step-idx">01</span>
+                <span class="clip-step-name">6 Agents</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="1">
+                <span class="clip-step-idx">02</span>
+                <span class="clip-step-name">Hold Voice</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="2">
+                <span class="clip-step-idx">03</span>
+                <span class="clip-step-name">Thinking</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="3">
+                <span class="clip-step-idx">04</span>
+                <span class="clip-step-name">Speaking</span>
+                <span class="clip-step-progress"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         8. SCENARIO 5 — PHONE LEFT (Workspaces Video) | EDITORIAL COPY RIGHT
+         ====================================================================== -->
+    <section id="scenario-workspaces" class="scenario-section">
+      <div class="site-container">
+        <div class="scenario-grid">
+          <div class="scenario-phone-col reveal-left">
+            <div class="phone-aura" style="--aura-color: var(--m-drw-terminal)"></div>
+            <div class="goar-device-bezel phone-mount-shell">
+              <div id="phone-clip-workspaces" data-scenario-clip="clip_workspaces" style="width:100%;height:100%"></div>
+            </div>
+            <div class="clip-hud-bar" data-clip-hud>
+              <span class="clip-hud-status">
+                <span class="clip-status-dot"></span>
+                <span data-clip-status-text>Playing live demo · Tap phone to take over</span>
+              </span>
+              <button class="clip-hud-btn" data-clip-toggle type="button">Pause</button>
+            </div>
+          </div>
+
+          <div class="scenario-copy-col reveal-right">
+            <div class="scenario-eyebrow" style="--eyebrow-color: var(--m-drw-terminal)">
+              <span class="scenario-eyebrow-line"></span>
+              <span>05 / Full Mobile Workstations</span>
+            </div>
+            <h2 class="scenario-title">Linux terminal, redline docs, AI browser &amp; 26 controls.</h2>
+            <p class="scenario-desc">
+              Other AI apps stop at chat bubbles. Watch Goar Studio execute real commands inside <strong>Ubuntu 24.04 PRoot</strong>, commit Word-style tracked revisions in <strong>Revise</strong>, inspect network headers in the <strong>AI Browser</strong>, and tune 26 Matte Bold Pop studio modules.
+            </p>
+
+            <div class="scenario-points">
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:var(--m-drw-terminal)"></span>
+                <span><strong>Pure #000000 VT100 PRoot Linux:</strong> Run Ubuntu, Arch, Kali, Debian, Alpine, NixOS &amp; SSH with touch extra keys — zero root required.</span>
+              </div>
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:var(--m-drw-terminal)"></span>
+                <span><strong>Word-Style Tracked Changes:</strong> Accept or reject green insertions &amp; red strikethroughs inline and export clean <code>.docx</code>.</span>
+              </div>
+              <div class="scenario-point">
+                <span class="scenario-point-dot" style="background:var(--m-drw-terminal)"></span>
+                <span><strong>Shared AI Browser + Cloak DevTools:</strong> Live Network &amp; Console inspector, desktop UA spoofing, and tracker blocking.</span>
+              </div>
+            </div>
+
+            <div class="vid-chapter-label">Interactive Demo Chapters · Click to Jump</div>
+            <div class="vid-chapters" style="--step-accent: var(--m-drw-terminal)">
+              <button class="clip-step-btn active is-playing" type="button" data-clip-step="0">
+                <span class="clip-step-idx">01</span>
+                <span class="clip-step-name">PRoot Shell</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="1">
+                <span class="clip-step-idx">02</span>
+                <span class="clip-step-name">Revise Docs</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="2">
+                <span class="clip-step-idx">03</span>
+                <span class="clip-step-name">AI Browser</span>
+                <span class="clip-step-progress"></span>
+              </button>
+              <button class="clip-step-btn" type="button" data-clip-step="3">
+                <span class="clip-step-idx">04</span>
+                <span class="clip-step-name">26 Settings</span>
+                <span class="clip-step-progress"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         9. WHY INSTALL GOAR STUDIO VS. OTHER AI APPS
+         ====================================================================== -->
+    <section id="why-goar" class="site-section">
+      <div class="site-container">
+        <div class="section-head centered reveal">
+          <div class="section-kicker">Why Install Goar Studio</div>
+          <h2 class="section-title">Why replace 5 AI apps with Goar Studio?</h2>
+          <p class="section-subtitle">
+            Single-vendor apps lock you into one model and own your conversations. Basic wrappers only draw chat bubbles. Goar Studio puts a complete local-first AI operating studio in your pocket.
+          </p>
+        </div>
+
+        <div class="compare-wrap reveal reveal-delay-1">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th style="width:34%">What You Get</th>
+                <th class="col-goar" style="width:24%">Goar Studio v2.0</th>
+                <th style="width:21%">Single-Vendor Apps<br /><span style="font-weight:400;font-size:11.5px;opacity:.72">(ChatGPT / Claude / Gemini)</span></th>
+                <th style="width:21%">Basic API Wrappers</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="compare-cap">20+ Cloud Providers + Offline GGUF<span>Switch models mid-chat or run 100% offline via llama.cpp</span></td>
+                <td class="col-goar"><span class="cmp-yes">✓ All 20+ &amp; Offline</span></td>
+                <td><span class="cmp-no">✕ Locked to 1 vendor</span></td>
+                <td><span class="cmp-partial">◐ Cloud APIs only</span></td>
+              </tr>
+              <tr>
+                <td class="compare-cap">100% On-Device Privacy &amp; Keystore<span>Room SQLite + Android Keystore EncryptedSharedPreferences</span></td>
+                <td class="col-goar"><span class="cmp-yes">✓ Zero Proxy Servers</span></td>
+                <td><span class="cmp-no">✕ Cloud-synced history</span></td>
+                <td><span class="cmp-partial">◐ Often uses relay</span></td>
+              </tr>
+              <tr>
+                <td class="compare-cap">Zero-Build Live Web App Studio<span>Preview | Code live HTML5/JS apps right on your phone</span></td>
+                <td class="col-goar"><span class="cmp-yes">✓ Native Preview + Code</span></td>
+                <td><span class="cmp-partial">◐ Limited read-only view</span></td>
+                <td><span class="cmp-no">✕ Not available</span></td>
+              </tr>
+              <tr>
+                <td class="compare-cap">Real Linux PRoot Terminal (15 Distros)<span>Ubuntu, Arch, Kali, Debian, Alpine, NixOS + SSH client</span></td>
+                <td class="col-goar"><span class="cmp-yes">✓ Full VT100 PRoot</span></td>
+                <td><span class="cmp-no">✕ Ephemeral cloud box</span></td>
+                <td><span class="cmp-no">✕ Not available</span></td>
+              </tr>
+              <tr>
+                <td class="compare-cap">6 Autonomous SOUL.md Agents &amp; MCP<span>Persistent personas + 16 native MCP connectors (GitHub, Slack, Stripe)</span></td>
+                <td class="col-goar"><span class="cmp-yes">✓ 6 Agents + 16 MCP</span></td>
+                <td><span class="cmp-partial">◐ Vendor-walled plugins</span></td>
+                <td><span class="cmp-no">✕ Chat prompts only</span></td>
+              </tr>
+              <tr>
+                <td class="compare-cap">Video, Image &amp; Audio Studio (Imagine)<span>Veo 3.1, Kling, Luma, FLUX.1, Imagen 3 &amp; Eleven v3 in one tab</span></td>
+                <td class="col-goar"><span class="cmp-yes">✓ Full Media Holster</span></td>
+                <td><span class="cmp-partial">◐ Single model only</span></td>
+                <td><span class="cmp-no">✕ Rarely included</span></td>
+              </tr>
+              <tr>
+                <td class="compare-cap">Shared AI Browser + DevTools + .docx Redline<span>Network inspector, Cloak spoofing &amp; Word tracked changes</span></td>
+                <td class="col-goar"><span class="cmp-yes">✓ Built-In Workspaces</span></td>
+                <td><span class="cmp-no">✕ Not available</span></td>
+                <td><span class="cmp-no">✕ Not available</span></td>
+              </tr>
+              <tr>
+                <td class="compare-cap">No Recurring AI Subscription Markup<span>Pay direct provider API rates — or $0 completely offline</span></td>
+                <td class="col-goar"><span class="cmp-yes">✓ Direct Cost / $0 Local</span></td>
+                <td><span class="cmp-no">✕ $20–$200/mo each</span></td>
+                <td><span class="cmp-partial">◐ Often subscription</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         10. WHO WE ARE · OUR MOTTO · OPEN ECOSYSTEM
+         ====================================================================== -->
+    <section id="about-studio" class="site-section">
+      <div class="site-container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Who We Are &amp; What We Stand For</div>
+          <h2 class="section-title">Built by engineers who refused to rent their tools.</h2>
+          <p class="section-subtitle">
+            Goar Studio builds obsidian-sharp, local-first Android software that treats your phone as a sovereign engineering workstation — never a cloud funnel.
+          </p>
+        </div>
+
+        <div class="manifesto-grid reveal reveal-delay-1">
+          <article class="manifesto-card">
+            <span class="manifesto-icon" style="background:color-mix(in srgb, var(--m-top-ask) 16%, transparent);color:var(--m-top-ask)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.2-4 4.4-6 8-6s6.8 2 8 6"/></svg>
+            </span>
+            <h3>Who We Are</h3>
+            <p>
+              An independent mobile AI &amp; systems studio behind <strong>goarxyz.com</strong>. We obsess over Jetpack Compose precision, high-contrast Ink &amp; Bone readability, and native JNI speed (<code>llama.cpp</code>, <code>whisper.cpp</code>, PRoot).
+            </p>
+          </article>
+
+          <article class="manifesto-card">
+            <span class="manifesto-icon" style="background:color-mix(in srgb, var(--m-top-build) 16%, transparent);color:var(--m-top-build)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3.2v5.3c0 4.8-3.2 8.8-7.5 10-4.3-1.2-7.5-5.2-7.5-10V6.2L12 3z"/><path d="M9 12.2l2.1 2.1 4.2-4.4"/></svg>
+            </span>
+            <h3>Our Motto</h3>
+            <p>
+              <strong>“Own your intelligence. Keep your data.”</strong> Your prompts, source code, documents, and API secrets live strictly inside your Android hardware Keystore and SQLite storage — zero ads, zero telemetry farms.
+            </p>
+          </article>
+
+          <article class="manifesto-card">
+            <span class="manifesto-icon" style="background:color-mix(in srgb, var(--m-top-imagine) 16%, transparent);color:var(--m-top-imagine)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
+            </span>
+            <h3>What We Give You</h3>
+            <p>
+              One cohesive Android app (<strong>v2.0.0 Build 30</strong>) replacing separate AI chat apps, web code sandboxes, Linux terminals, AI browsers, media generators, and cron task schedulers — with encrypted ZIP backups.
+            </p>
+          </article>
+        </div>
+
+        <div class="eco-panel reveal reveal-delay-2">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-bottom:16px">
+            <div>
+              <div style="font-size:16px;font-weight:700;color:var(--on-bg)">Complete Open Ecosystem</div>
+              <div style="font-size:13px;color:var(--on-surface-variant)">Explore every AI provider, Linux PRoot distribution, and MCP connector shipped inside Goar Studio.</div>
+            </div>
+            <div class="eco-tabs">
+              <button class="eco-tab-btn active" type="button" data-eco-tab="providers">20+ AI Providers</button>
+              <button class="eco-tab-btn" type="button" data-eco-tab="distros">15 Linux Distros</button>
+              <button class="eco-tab-btn" type="button" data-eco-tab="mcp">16 MCP Connectors</button>
+            </div>
+          </div>
+          <div id="eco-pills-wrap" class="eco-pills-wrap"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         11. FULL HANDS-ON 14-SCREEN INTERACTIVE SANDBOX (Phone Left | Deck Right)
+         ====================================================================== -->
+    <section id="interactive-demo" class="site-section">
+      <div class="site-container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Full 1-to-1 Hands-On Sandbox</div>
+          <h2 class="section-title">Explore all 14 screens yourself.</h2>
+          <p class="section-subtitle">
+            Jump straight into any Goar Studio screen without auto-play: chat with mock models, invoke <code>/</code> slash commands, edit live Build code, run <code>neofetch</code> in the Linux terminal, or switch themes in Settings.
+          </p>
+        </div>
+
+        <div class="sandbox-grid">
+          <div class="scenario-phone-col reveal-left">
+            <div class="phone-aura" style="--aura-color: var(--primary)"></div>
+            <div class="goar-device-bezel phone-mount-shell">
+              <div id="goar-sim-mount" style="width:100%;height:100%"></div>
+            </div>
+          </div>
+
+          <div class="sandbox-deck reveal-right">
+            <div class="sandbox-deck-head">
+              <div>
+                <div style="font-size:17px;font-weight:700;color:var(--on-bg)">14-Screen Control Deck</div>
+                <div style="font-size:13px;color:var(--on-surface-variant)">100% client-side mocked runtime · Pixel-exact 1-to-1 Compose UI</div>
+              </div>
+              <a href="simulator.html" class="btn-secondary" style="height:36px;padding:0 14px;font-size:12.5px">Open Full Screen ↗</a>
+            </div>
+
+            <div id="tour-chips" class="tour-chips"></div>
+            <div id="tour-caption" class="tour-caption-box"></div>
+
+            <div class="sandbox-tips">
+              <div class="sandbox-tip">
+                <strong>Hold the Round Voice Button</strong>
+                Press &amp; hold the 6-bar waveform button for 1.4s in Ask to summon the Live Voice Fluid Orb.
+              </div>
+              <div class="sandbox-tip">
+                <strong>Type / or @ in Composer</strong>
+                Trigger 9 Matte Bold Pop Vibe commands or mention <code>@architect</code> &amp; <code>@aegis</code>.
+              </div>
+              <div class="sandbox-tip">
+                <strong>Run Commands in VT100</strong>
+                Jump to Terminal and run <code>neofetch</code>, <code>ls</code>, <code>ps</code>, <code>uname -a</code>, or <code>git status</code>.
+              </div>
+              <div class="sandbox-tip">
+                <strong>Ink Dark ↔ Paper Light</strong>
+                Switch theme in the navbar or inside <strong>Settings → Appearance</strong> to sync every phone live.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         12. LEGAL & COMPLIANCE HUB (Privacy, ToS, Data Protection, Licenses)
+         ====================================================================== -->
+    <section id="legal" class="site-section">
+      <div class="site-container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Official Legal Center</div>
+          <h2 class="section-title">Privacy Policy, Terms &amp; Licenses.</h2>
+          <p class="section-subtitle">
+            Verbatim legal notices shipped inside Goar Studio (<code>app/src/main/res/raw/</code>), also published as dedicated standalone compliance pages.
+          </p>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <div class="legal-hub-tabs">
+            <button class="legal-tab-btn active" type="button" data-legal-tab="privacy_policy">Privacy Policy</button>
+            <button class="legal-tab-btn" type="button" data-legal-tab="terms_of_service">Terms of Service</button>
+            <button class="legal-tab-btn" type="button" data-legal-tab="privacy_act">Data Protection</button>
+            <button class="legal-tab-btn" type="button" data-legal-tab="license">Software Licenses</button>
+          </div>
+
+          <div class="legal-viewer">
+            <div class="legal-viewer-head">
+              <strong id="legal-hub-title" style="font-size:20px;letter-spacing:-0.02em">Privacy Policy</strong>
+              <a id="legal-hub-permalink" href="privacy.html" class="btn-secondary" style="height:36px;padding:0 15px;font-size:13px">Open Standalone Page ↗</a>
+            </div>
+            <div id="legal-hub-content" class="legal-viewer-body"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         13. FINAL CLOSING CTA BAND
+         ====================================================================== -->
+    <section class="closing-cta">
+      <div class="site-container">
+        <div class="closing-cta-inner reveal">
+          <div class="section-kicker">Goar Studio v2.0.0 · Build 30</div>
+          <h2 class="section-title" style="margin-bottom:16px">Your private AI studio belongs in your pocket.</h2>
+          <p class="section-subtitle" style="margin-bottom:32px">
+            Zero cloud lock-in. 20+ frontier &amp; offline models. Real Linux PRoot. Live web apps. Six autonomous agents. Experience the complete phone app in full screen now.
+          </p>
+          <div class="hero-cta-row" style="margin-bottom:0">
+            <a href="simulator.html" class="btn-primary btn-lg">Launch Full Interactive Phone</a>
+            <a href="privacy.html" class="btn-secondary btn-lg">Read Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       14. MULTI-COLUMN FOOTER
+       ====================================================================== -->
+  <footer class="site-footer">
+    <div class="site-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="site-brand" style="margin-bottom:12px">
+            <img src="assets/ic_goar_mark.png" alt="Goar Studio" class="goar-mark-img goar-mark-dark-only" />
+            <img src="assets/ic_goar_mark_black.png" alt="Goar Studio" class="goar-mark-img goar-mark-light-only" />
+            <span>Goar Studio</span>
+          </a>
+          <p style="font-size:13.5px;line-height:1.65;color:var(--on-surface-variant);margin:0 0 12px;max-width:300px">
+            Own your intelligence. Keep your data. The local-first Android AI workbench for frontier models, autonomous agents, live web apps, and PRoot Linux.
+          </p>
+          <div style="font-family:var(--font-mono);font-size:11.5px;color:var(--on-surface-variant)">
+            com.aistudio.goarstudio.kxrqvn · v2.0.0 (30)
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#scenario-ask">Ask · Multi-Model Chat</a></li>
+            <li><a href="#scenario-build">Build · Live Web Apps</a></li>
+            <li><a href="#scenario-imagine">Imagine · Media Studio</a></li>
+            <li><a href="#scenario-agents">SOUL.md Agents &amp; Voice</a></li>
+            <li><a href="#scenario-workspaces">Linux PRoot &amp; Workspaces</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about-studio">Who We Are &amp; Motto</a></li>
+            <li><a href="#why-goar">Why Goar vs. Other Apps</a></li>
+            <li><a href="#trusted-companies">Partner Stack &amp; 5★ Reviews</a></li>
+            <li><a href="simulator.html">Full-Screen App Simulator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Legal &amp; Support</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="data-protection.html">Data Protection</a></li>
+            <li><a href="licenses.html">Software Licenses</a></li>
+            <li><a href="mailto:admin@goarxyz.com">admin@goarxyz.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Goar Studio · Official Companion Site (<a href="https://goarxyz.com" style="color:var(--on-bg);text-decoration:none">goarxyz.com</a>)</span>
+        <span>Ink &amp; Bone Design System · 100% Local-First Android Architecture</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts loaded synchronously at bottom of body for instant first-paint rendering -->
+  <script src="js/goar-icons.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/app-simulator.js"></script>
+  <script src="js/site.js"></script>
+  <script>window.goarInitLanding();</script>
+</body>
+</html>

@@ -1,0 +1,434 @@
+/* ============================================================================
+ * GOAR STUDIO DESIGN SYSTEM — 1:1 Web Translation of app.goar.ui.theme
+ * Source of truth: Color.kt, Theme.kt, Type.kt, Shape.kt, Glass.kt,
+ *                  GoarMatteIconColors.kt, ChatMetrics.kt
+ * ============================================================================ */
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('../assets/fonts/outfit.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../assets/fonts/jetbrains_mono.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* ── Monochrome Ink & Bone Palette (Color.kt) ── */
+  --goar-black: #000000;
+  --goar-bone: #E8E2D6;
+  --goar-bone-soft: #D4CDBF;
+
+  --goar-ink: #000000;
+  --goar-ink-lift: #0A0A0A;
+  --goar-ink-panel: #141414;
+  --goar-ink-high: #1C1C1C;
+  --goar-ink-line: #2A2A2A;
+
+  /* ── Material 3 DarkScheme Semantic Mapping ── */
+  --bg: #000000;
+  --on-bg: #E8E2D6;
+  --surface: #000000;
+  --on-surface: #E8E2D6;
+  --surface-variant: #0A0A0A;
+  --on-surface-variant: rgba(232, 226, 214, 0.62);
+  --surface-lowest: #000000;
+  --surface-low: #0A0A0A;
+  --surface-container: #141414;
+  --surface-high: #1C1C1C;
+  --surface-highest: #2A2A2A;
+  --surface-elev-1: #0D0D0C;
+  --surface-elev-2: #121211;
+  --surface-elev-6: #1B1B19;
+
+  --primary: #E8E2D6;
+  --on-primary: #000000;
+  --primary-container: #E8E2D6;
+  --on-primary-container: #000000;
+
+  --secondary: #E8E2D6;
+  --on-secondary: #000000;
+  --secondary-container: #141414;
+  --on-secondary-container: #E8E2D6;
+
+  --tertiary: #D49B55;
+  --on-tertiary: #000000;
+  --tertiary-container: #322312;
+  --on-tertiary-container: #F3DCB7;
+
+  --error: #C76D6D;
+  --on-error: #220B0B;
+  --error-container: #3E1A1A;
+  --on-error-container: #F3BCBC;
+
+  --outline: rgba(232, 226, 214, 0.22);
+  --outline-variant: #2A2A2A;
+  --scrim: rgba(0, 0, 0, 0.65);
+
+  /* ── Subtle Muted Accents ── */
+  --accent-amber: #D49B55;
+  --accent-cyan: #5BA4B5;
+  --accent-emerald: #5E9C76;
+  --accent-coral: #C76D6D;
+  --accent-slate: #708CA6;
+
+  /* ── Glass & Chrome (Glass.kt) ── */
+  --glass-fill: rgba(232, 226, 214, 0.13);
+  --glass-strong: rgba(232, 226, 214, 0.20);
+  --chrome-edge-start: rgba(255, 255, 255, 0.35);
+  --chrome-edge-mid: rgba(255, 255, 255, 0.10);
+  --chrome-edge-end: rgba(255, 255, 255, 0.22);
+
+  /* ── Exact Screen Component Surface Overrides (MainTopHeaderBar, Playground, Builder, Voice) ── */
+  --topbar-btn-bg: #18181A;
+  --topbar-btn-border: #27272A;
+  --topbar-active-text: #FFFFFF;
+  --topbar-inactive-text: #8E8E93;
+  --composer-card-bg: #121211;
+  --composer-pill-bg: #1D1D1B;
+  --composer-ring: #2A2A2A;
+  --round-idle-bg: #FFFFFF;
+  --round-idle-fg: #0A0B0E;
+  --aura-color: rgba(63, 63, 70, 0.28);
+  --card-dark-bg: #141416;
+  --card-dark-border: #26262B;
+  --viewport-bg: #0B0C0F;
+  --pill-sub-bg: #202127;
+  --pill-sub-border: #373843;
+  --doc-bar-bg: #141416;
+  --doc-divider: #27272A;
+  --doc-text: #F9FAFB;
+  --doc-muted: #9CA3AF;
+  --voice-bg: #0A0B0E;
+  --voice-pill-bg: #16181F;
+  --voice-pill-border: #262934;
+  --matte-badge-alpha: 0.17;
+  --icon-tint-alpha: 0.16;
+
+  /* ── Curated Matte Bold Pop Pigments — Dark Mode (GoarMatteIconColors.kt) ── */
+  --m-top-drawer: #FF7A45;
+  --m-top-ask: #5B9BFF;
+  --m-top-imagine: #FF5E9C;
+  --m-top-build: #4ADE80;
+  --m-top-action: #FFB830;
+  --m-top-back: #38D0E8;
+
+  --m-drw-newchat: #7395FF;
+  --m-drw-tasks: #FF854D;
+  --m-drw-browser: #3BC9DB;
+  --m-drw-files: #9775FA;
+  --m-drw-terminal: #51CF66;
+  --m-drw-docs: #F06595;
+  --m-drw-settings: #FFD43B;
+
+  --m-cmp-plus: #4DABF7;
+  --m-cmp-model: #20C997;
+  --m-cmp-chevron: #DA77F2;
+  --m-cmp-context: #FFA94D;
+  --m-cmp-danger: #FF6B6B;
+  --m-cmp-kebab: #F783AC;
+  --m-cmp-sparkle: #B197FC;
+  --m-cmp-expand: #66D9E8;
+  --m-cmp-mic: #FF7A66;
+  --m-cmp-send: #2FD48F;
+  --m-cmp-stop: #E84A5F;
+
+  /* ── 28 Unique Settings Matte Pigments — Dark Mode ── */
+  --m-set-provider: #2EC4D6;
+  --m-set-models: #FF7B3D;
+  --m-set-prompts: #4CD964;
+  --m-set-generation: #9E7BFF;
+  --m-set-context: #FF5C8A;
+  --m-set-titlegen: #5AA8FF;
+  --m-set-transcription: #FF9248;
+  --m-set-imagegen: #32D9A4;
+  --m-set-mcp: #748FFC;
+  --m-set-apihub: #FFCC33;
+  --m-set-email: #FF6B5B;
+  --m-set-payments: #94D82D;
+  --m-set-plugins: #D97BF0;
+  --m-set-websearch: #4DD4E8;
+  --m-set-search: #E09F5A;
+  --m-set-shell: #69DB7C;
+  --m-set-security: #F25C84;
+  --m-set-automation: #63B3FF;
+  --m-set-audit: #38D9A9;
+  --m-set-proxy: #FF9457;
+  --m-set-webui: #B197FC;
+  --m-set-memory: #CC5DE8;
+  --m-set-skills: #C0EB3B;
+  --m-set-datacontrol: #4CE0B3;
+  --m-set-appearance: #FF7AA8;
+  --m-set-language: #74C0FC;
+  --m-set-about: #FFB74D;
+  --m-set-developer: #91A7FF;
+
+  /* ── 10 Unique Build Idea Chips — Dark Mode ── */
+  --m-chip-0: #FF7A45;
+  --m-chip-1: #38D0E8;
+  --m-chip-2: #DA77F2;
+  --m-chip-3: #51CF66;
+  --m-chip-4: #FF6B9D;
+  --m-chip-5: #66B2FF;
+  --m-chip-6: #A9E34B;
+  --m-chip-7: #FFD43B;
+  --m-chip-8: #A388FF;
+  --m-chip-9: #38D9A9;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* ── Warm Paper & Ink Palette (Color.kt LightScheme) ── */
+  --bg: #EFE9DF;
+  --on-bg: #000000;
+  --surface: #F4EFE6;
+  --on-surface: #000000;
+  --surface-variant: #E4DDD2;
+  --on-surface-variant: rgba(0, 0, 0, 0.62);
+  --surface-lowest: #EFE9DF;
+  --surface-low: #EFE9DF;
+  --surface-container: #E4DDD2;
+  --surface-high: #D8D0C4;
+  --surface-highest: #C9C0B3;
+  --surface-elev-1: #F2ECE3;
+  --surface-elev-2: #EAE3D8;
+  --surface-elev-6: #DDD5C9;
+
+  --primary: #000000;
+  --on-primary: #EFE9DF;
+  --primary-container: #000000;
+  --on-primary-container: #EFE9DF;
+
+  --secondary: #000000;
+  --on-secondary: #EFE9DF;
+  --secondary-container: #E4DDD2;
+  --on-secondary-container: #000000;
+
+  --tertiary: #8A5A1B;
+  --on-tertiary: #EFE9DF;
+  --tertiary-container: #FBE5C5;
+  --on-tertiary-container: #381F03;
+
+  --error: #A63939;
+  --on-error: #EFE9DF;
+  --error-container: #FAD7D7;
+  --on-error-container: #4C0E0E;
+
+  --outline: rgba(0, 0, 0, 0.18);
+  --outline-variant: #C9C0B3;
+  --scrim: rgba(0, 0, 0, 0.32);
+
+  --glass-fill: rgba(0, 0, 0, 0.05);
+  --glass-strong: rgba(0, 0, 0, 0.08);
+  --chrome-edge-start: rgba(0, 0, 0, 0.24);
+  --chrome-edge-mid: rgba(0, 0, 0, 0.08);
+  --chrome-edge-end: rgba(0, 0, 0, 0.15);
+
+  --topbar-btn-bg: rgba(216, 208, 196, 0.85);
+  --topbar-btn-border: rgba(201, 192, 179, 0.55);
+  --topbar-active-text: #000000;
+  --topbar-inactive-text: #71717A;
+  --composer-card-bg: #F4EFE6;
+  --composer-pill-bg: #E4DDD2;
+  --composer-ring: #C9C0B3;
+  --round-idle-bg: #111318;
+  --round-idle-fg: #FFFFFF;
+  --aura-color: rgba(201, 192, 179, 0.55);
+  --card-dark-bg: #E4DDD2;
+  --card-dark-border: rgba(201, 192, 179, 0.65);
+  --viewport-bg: #EFE9DF;
+  --pill-sub-bg: #D8D0C4;
+  --pill-sub-border: rgba(0, 0, 0, 0.12);
+  --doc-bar-bg: #FFFFFF;
+  --doc-divider: #E5E7EB;
+  --doc-text: #111827;
+  --doc-muted: #6B7280;
+  --voice-bg: #F7F8FA;
+  --voice-pill-bg: #E4DDD2;
+  --voice-pill-border: rgba(0, 0, 0, 0.12);
+  --matte-badge-alpha: 0.12;
+  --icon-tint-alpha: 0.12;
+
+  /* ── Curated Matte Bold Pop Pigments — Light Mode (GoarMatteIconColors.kt) ── */
+  --m-top-drawer: #C2410C;
+  --m-top-ask: #1D4ED8;
+  --m-top-imagine: #9D174D;
+  --m-top-build: #15803D;
+  --m-top-action: #B45309;
+  --m-top-back: #0E7490;
+
+  --m-drw-newchat: #2E5BFF;
+  --m-drw-tasks: #D9480F;
+  --m-drw-browser: #0B7285;
+  --m-drw-files: #5F3DC4;
+  --m-drw-terminal: #2B8A3E;
+  --m-drw-docs: #A61E4D;
+  --m-drw-settings: #C99700;
+
+  --m-cmp-plus: #1971C2;
+  --m-cmp-model: #087F5B;
+  --m-cmp-chevron: #862E9C;
+  --m-cmp-context: #E67700;
+  --m-cmp-danger: #C92A2A;
+  --m-cmp-kebab: #D6336C;
+  --m-cmp-sparkle: #6741D9;
+  --m-cmp-expand: #0C8599;
+  --m-cmp-mic: #E03131;
+  --m-cmp-send: #1E9E6B;
+  --m-cmp-stop: #B02A37;
+
+  /* ── 28 Unique Settings Matte Pigments — Light Mode ── */
+  --m-set-provider: #0B7285;
+  --m-set-models: #D9480F;
+  --m-set-prompts: #2B8A3E;
+  --m-set-generation: #6741D9;
+  --m-set-context: #C2255C;
+  --m-set-titlegen: #1864AB;
+  --m-set-transcription: #E8590C;
+  --m-set-imagegen: #099268;
+  --m-set-mcp: #3B5BDB;
+  --m-set-apihub: #C99700;
+  --m-set-email: #B83227;
+  --m-set-payments: #5C940D;
+  --m-set-plugins: #9C36B5;
+  --m-set-websearch: #1098AD;
+  --m-set-search: #A66321;
+  --m-set-shell: #2F9E44;
+  --m-set-security: #A61E4D;
+  --m-set-automation: #1C7ED6;
+  --m-set-audit: #087F5B;
+  --m-set-proxy: #C85A17;
+  --m-set-webui: #7950F2;
+  --m-set-memory: #862E9C;
+  --m-set-skills: #829E00;
+  --m-set-datacontrol: #0CA678;
+  --m-set-appearance: #D6336C;
+  --m-set-language: #228BE6;
+  --m-set-about: #D9820B;
+  --m-set-developer: #4C6EF5;
+
+  /* ── 10 Unique Build Idea Chips — Light Mode ── */
+  --m-chip-0: #D9480F;
+  --m-chip-1: #0B7285;
+  --m-chip-2: #9C36B5;
+  --m-chip-3: #2B8A3E;
+  --m-chip-4: #C2255C;
+  --m-chip-5: #1864AB;
+  --m-chip-6: #5C940D;
+  --m-chip-7: #C99700;
+  --m-chip-8: #5F3DC4;
+  --m-chip-9: #087F5B;
+}
+
+/* ── Shared Typography & Shape Tokens (Shape.kt + ChatMetrics.kt) ── */
+:root {
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --shape-xs: 4px;
+  --shape-sm: 8px;
+  --shape-md: 12px;
+  --shape-lg: 16px;
+  --shape-xl: 28px;
+  --shape-split-outer: 24px;
+  --shape-split-inner: 5px;
+  --shape-composer: 28px;
+  --shape-bubble: 18px 18px 6px 18px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--on-bg);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+}
+
+button, input, textarea, select {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* ── Goar Brand Mark Auto-Switch (Dark = White Mark, Light = Black Mark) ── */
+.goar-mark-img {
+  display: block;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+[data-theme="dark"] .goar-mark-light-only,
+:root:not([data-theme="light"]) .goar-mark-light-only {
+  display: none !important;
+}
+[data-theme="light"] .goar-mark-dark-only {
+  display: none !important;
+}
+
+/* ── Chromium Glass Surface (Glass.kt) ── */
+.chromium-glass {
+  background: var(--glass-fill);
+  border: 1px solid var(--outline);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* ── Settings Split-Shape Group Stack (SettingsScreen.kt lines 85-100) ── */
+.goar-split-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.goar-split-card {
+  background: var(--surface-container);
+  border-radius: var(--shape-split-inner);
+  transition: background-color 160ms ease, transform 140ms ease;
+}
+.goar-split-card:first-child {
+  border-top-left-radius: var(--shape-split-outer);
+  border-top-right-radius: var(--shape-split-outer);
+}
+.goar-split-card:last-child {
+  border-bottom-left-radius: var(--shape-split-outer);
+  border-bottom-right-radius: var(--shape-split-outer);
+}
+.goar-split-card:only-child {
+  border-radius: var(--shape-split-outer);
+}
+
+/* ── Custom Subtle Scrollbars ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--outline);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--on-surface-variant);
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Goar Studio</title>
+  <meta name="description" content="Official Privacy Policy for Goar Studio (Android). Local-first Room storage, Android Keystore EncryptedSharedPreferences, direct provider routing, and zero ad SDKs." />
+  <link rel="icon" type="image/png" href="assets/ic_goar_mark.png" />
+  <link rel="stylesheet" href="css/goar-design-system.css" />
+  <link rel="stylesheet" href="css/website.css" />
+</head>
+<body>
+  <header class="site-nav">
+    <div class="site-container site-nav-inner">
+      <a href="index.html" class="site-brand">
+        <img src="assets/ic_goar_mark.png" alt="Goar Studio" class="goar-mark-img goar-mark-dark-only" />
+        <img src="assets/ic_goar_mark_black.png" alt="Goar Studio" class="goar-mark-img goar-mark-light-only" />
+        <span>Goar Studio</span>
+      </a>
+      <nav class="site-nav-links">
+        <a href="index.html" class="site-nav-link">Home</a>
+        <a href="privacy.html" class="site-nav-link active">Privacy Policy</a>
+        <a href="terms.html" class="site-nav-link">Terms of Service</a>
+        <a href="data-protection.html" class="site-nav-link">Data Protection</a>
+        <a href="licenses.html" class="site-nav-link">Licenses</a>
+      </nav>
+      <div class="site-nav-actions">
+        <button class="site-icon-circle" data-action="toggle-site-theme" aria-label="Toggle theme"><span data-theme-toggle-icon></span></button>
+        <a href="simulator.html" class="btn-secondary">Interactive App</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-page-main">
+    <div class="legal-page-header">
+      <div class="section-kicker">Official Legal Notice · Goar Studio v2.0.0</div>
+      <h1>Privacy Policy</h1>
+      <p style="margin:0;color:var(--on-surface-variant);font-size:14.5px">
+        Effective Date: November 2026 · Applies to Goar Studio for Android (<code>com.aistudio.goarstudio.kxrqvn</code>) &amp; <a href="https://goarxyz.com" style="color:var(--primary)">goarxyz.com</a>
+      </p>
+    </div>
+
+    <article class="legal-article">
+      <div class="legal-verbatim-box" style="margin-top:0;margin-bottom:28px">Goar Studio Privacy Policy
+
+Goar Studio stores conversations, workspace files, task schedules, and provider API keys locally on your device using Android Room and EncryptedSharedPreferences.
+
+Network Requests:
+Network traffic is sent only to the model providers, search backends, MCP servers, or endpoints that you explicitly configure and invoke.
+
+Telemetry:
+Diagnostic logging remains local unless you explicitly export a diagnostic bundle.</div>
+
+      <h2>1. Local-First Data Storage</h2>
+      <p>
+        Goar Studio is architected as a local-first Android workspace. Your conversations, system prompts, agent <code>SOUL.md</code> profiles, saved memories, workspace files, built web apps, scheduled tasks, notes, calendar events, and browser history are stored locally on your device using Android Room (SQLite) and Jetpack DataStore. Goar Studio does not operate a centralized user-data cloud database that scrapes or stores your private prompts.
+      </p>
+
+      <h2>2. Hardware-Backed Credential Security</h2>
+      <p>
+        API keys for AI model providers, search APIs, MCP bearer tokens, IMAP/SMTP mail credentials, SSH private keys, and vaulted card profiles are stored locally inside Android Keystore-backed <code>EncryptedSharedPreferences</code>. You can further restrict app access using App Lock PIN and biometric authentication in <strong>Settings → Security &amp; App Lock</strong>.
+      </p>
+
+      <h2>3. Outbound Network Requests &amp; Third-Party Endpoints</h2>
+      <p>
+        Network connections are initiated directly from your device exclusively to third-party services that you explicitly configure, enable, or navigate to — including AI model providers (such as Anthropic, OpenAI, Google Gemini, DeepSeek, Mistral, Groq, OpenRouter, xAI, Pollinations, or custom/local Ollama servers), web search engines, MCP servers, SSH servers, or URLs opened inside the built-in Browser. Your interactions with those third-party endpoints are governed by the respective provider's privacy policy.
+      </p>
+
+      <h2>4. Local On-Device Models &amp; Offline Execution</h2>
+      <p>
+        When using local GGUF language models via embedded <code>llama.cpp</code>, local speech recognition via <code>whisper.cpp</code>, local PRoot Linux containers, or local workspace editing, inference and file processing run strictly on-device without transmitting prompt contents over the network.
+      </p>
+
+      <h2>5. Telemetry, Diagnostics &amp; Zero Ad Trackers</h2>
+      <p>
+        Goar Studio does not bundle third-party advertising SDKs or hidden cross-app ad trackers. Diagnostic HTTP traces and logs remain local on your device unless you explicitly choose to export a diagnostic bundle or submit a support inquiry via the Contact Admin Desk. Optional Firebase analytics/integrity controls can be reviewed in <strong>Settings → About &amp; Legal</strong>.
+      </p>
+
+      <h2>6. Your Rights: Export, Backup &amp; Deletion</h2>
+      <ul>
+        <li><strong>Export &amp; Backup:</strong> Export your conversations and settings as local ZIP archives or schedule automatic local backups from <strong>Settings → Data &amp; Backups</strong>. Note that exported plaintext backups containing API keys should be stored securely.</li>
+        <li><strong>Auto-Delete &amp; Erasure:</strong> Configure automatic chat retention periods (1 week, 1 month, or 1 year) or permanently wipe conversations, browser cookies, workspace files, and API keys at any time directly on your device.</li>
+        <li><strong>Live Auditability:</strong> Inspect live HTTP requests, WebView network traffic, and TLS sessions directly inside <strong>Settings → Network Audit</strong>.</li>
+      </ul>
+
+      <h2>7. Contact</h2>
+      <p>
+        For privacy inquiries, security disclosures, or data protection questions, contact developer support at <a href="mailto:admin@goarxyz.com" style="color:var(--primary)">admin@goarxyz.com</a>.
+      </p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-container footer-bottom" style="border-top:none;padding-top:0">
+      <span>© 2026 Goar Studio (goarxyz.com)</span>
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <a href="privacy.html" style="color:var(--primary)">Privacy Policy</a>
+        <a href="terms.html" style="color:var(--on-surface-variant)">Terms of Service</a>
+        <a href="data-protection.html" style="color:var(--on-surface-variant)">Data Protection</a>
+        <a href="licenses.html" style="color:var(--on-surface-variant)">Licenses</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/goar-icons.js"></script>
+  <script src="js/site.js"></script>
+  <script>window.goarInitTheme();</script>
+</body>
+</html>

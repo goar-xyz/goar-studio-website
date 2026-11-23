@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Software License &amp; Open Source — Goar Studio</title>
+  <meta name="description" content="Open source software attributions and license summary for Goar Studio v2.0.0." />
+  <link rel="icon" type="image/png" href="assets/ic_goar_mark.png" />
+  <link rel="stylesheet" href="css/goar-design-system.css" />
+  <link rel="stylesheet" href="css/website.css" />
+</head>
+<body>
+  <header class="site-nav">
+    <div class="site-container site-nav-inner">
+      <a href="index.html" class="site-brand">
+        <img src="assets/ic_goar_mark.png" alt="Goar Studio" class="goar-mark-img goar-mark-dark-only" />
+        <img src="assets/ic_goar_mark_black.png" alt="Goar Studio" class="goar-mark-img goar-mark-light-only" />
+        <span>Goar Studio</span>
+      </a>
+      <nav class="site-nav-links">
+        <a href="index.html" class="site-nav-link">Home</a>
+        <a href="privacy.html" class="site-nav-link">Privacy Policy</a>
+        <a href="terms.html" class="site-nav-link">Terms of Service</a>
+        <a href="data-protection.html" class="site-nav-link">Data Protection</a>
+        <a href="licenses.html" class="site-nav-link active">Licenses</a>
+      </nav>
+      <div class="site-nav-actions">
+        <button class="site-icon-circle" data-action="toggle-site-theme" aria-label="Toggle theme"><span data-theme-toggle-icon></span></button>
+        <a href="simulator.html" class="btn-secondary">Interactive App</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal-page-main">
+    <div class="legal-page-header">
+      <div class="section-kicker">Open Source Notices · Goar Studio v2.0.0</div>
+      <h1>Software License &amp; Attributions</h1>
+      <p style="margin:0;color:var(--on-surface-variant);font-size:14.5px">
+        Open-source components powering Goar Studio across UI, storage, cryptography, media, code editing, and on-device inference.
+      </p>
+    </div>
+
+    <article class="legal-article">
+      <div class="legal-verbatim-box" style="margin-top:0;margin-bottom:28px">Goar Studio License
+
+MIT / Apache 2.0 compatible open-source components are used across Jetpack Compose, OkHttp, Room, Media3, Coil, Sora Editor, and Apache Commons Compress.</div>
+
+      <h2>Bundled Libraries &amp; Native Engines</h2>
+      <div class="goar-split-stack" style="margin-top:14px">
+        <div class="goar-split-card" style="padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <div><strong style="color:var(--on-surface)">AndroidX Jetpack Compose, Material 3, Room, DataStore, WorkManager, CameraX &amp; Security Crypto</strong></div>
+          <span class="feature-tag">Apache 2.0</span>
+        </div>
+        <div class="goar-split-card" style="padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <div><strong style="color:var(--on-surface)">OkHttp, Coil Compose, Media3 ExoPlayer &amp; Apache Commons Compress</strong></div>
+          <span class="feature-tag">Apache 2.0</span>
+        </div>
+        <div class="goar-split-card" style="padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <div><strong style="color:var(--on-surface)">llama.cpp &amp; whisper.cpp (On-Device JNI Inference &amp; STT)</strong></div>
+          <span class="feature-tag">MIT</span>
+        </div>
+        <div class="goar-split-card" style="padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <div><strong style="color:var(--on-surface)">Sora Editor, JSch (SSH), Tukaani XZ &amp; JLaTeXMath</strong></div>
+          <span class="feature-tag">BSD / LGPL / Public Domain</span>
+        </div>
+        <div class="goar-split-card" style="padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <div><strong style="color:var(--on-surface)">Outfit &amp; JetBrains Mono Typefaces</strong></div>
+          <span class="feature-tag">SIL OFL 1.1</span>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-container footer-bottom" style="border-top:none;padding-top:0">
+      <span>© 2026 Goar Studio (goarxyz.com)</span>
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <a href="privacy.html" style="color:var(--on-surface-variant)">Privacy Policy</a>
+        <a href="terms.html" style="color:var(--on-surface-variant)">Terms of Service</a>
+        <a href="data-protection.html" style="color:var(--on-surface-variant)">Data Protection</a>
+        <a href="licenses.html" style="color:var(--primary)">Licenses</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/goar-icons.js"></script>
+  <script src="js/site.js"></script>
+  <script>window.goarInitTheme();</script>
+</body>
+</html>
