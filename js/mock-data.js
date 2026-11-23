@@ -166,7 +166,7 @@ MIT / Apache 2.0 compatible open-source components are used across Jetpack Compo
     { file: 'fullstack-web-app-builder.md', cat: 'Web & Game Studio', desc: 'Zero-build self-healing web apps & Google Drive sync' },
     { file: 'webgl-3d-game-engine-architect.md', cat: 'Web & Game Studio', desc: 'Three.js 3D WebGL, Phaser 3 2D & Playgama Bridge SDK' },
     { file: 'devops-linux-workbench.md', cat: 'Systems & Security', desc: 'PRoot Linux sandbox, atomic JNI transfers & SSH fleets' },
-    { file: 'security-owasp-pentest.md', cat: 'Systems & Security', desc: 'Unified network recon, LAN scan, TLS & Shadow Trap' },
+    { file: 'security-owasp-pentest.md', cat: 'Systems & Security', desc: 'Unified 3-tab network recon, LAN scan, TLS & live HTTP traffic' },
     { file: 'api-and-mcp-integration.md', cat: 'Systems & Security', desc: 'OAuth 2.1 PKCE MCP servers, OpenAPI & Postman SDK' },
     { file: 'deep-research-osint.md', cat: 'Intelligence & Browser', desc: 'Multi-source primary web verification & briefings' },
     { file: 'autonomous-browser-operator.md', cat: 'Intelligence & Browser', desc: 'SmartCookie WebView DOM automation & Manus Glass PiP' },
@@ -441,19 +441,19 @@ const ps=Array.from({length:75},(_,i)=>({x:Math.random()*w,y:Math.random()*h,vx:
       messages: [
         {
           role: 'user',
-          text: 'Check the local PRoot Ubuntu workspace and profile why our edge worker p99 jumped to 180ms.',
+          text: 'Check the local Alpine Linux 3.21 PRoot workspace and profile why our edge worker p99 jumped to 180ms.',
           attachments: [{ name: 'worker-trace.json', type: 'file' }]
         },
         {
           role: 'assistant',
           model: 'Claude Sonnet 4.5',
           thoughtTime: '2.4s',
-          thought: 'Inspecting workspace/worker-trace.json and running latency breakdown via shell_exec in the Ubuntu 24.04 PRoot sandbox. Two cold-start TLS handshakes account for 74% of p99 tail.',
+          thought: 'Inspecting workspace/worker-trace.json and running latency breakdown via shell_exec in the Alpine Linux 3.21 PRoot sandbox. Two cold-start TLS handshakes account for 74% of p99 tail.',
           tools: [
             { name: 'workspace_read', detail: 'worker-trace.json (4.2 KB)' },
             { name: 'shell_exec', detail: 'python3 scripts/p99_profile.py' }
           ],
-          markdown: `I profiled \`worker-trace.json\` inside your **Ubuntu 24.04 PRoot** sandbox. The p99 spike comes from unpooled upstream TLS handshakes on cache misses:
+          markdown: `I profiled \`worker-trace.json\` inside your **Alpine Linux 3.21 PRoot** sandbox. The p99 spike comes from unpooled upstream TLS handshakes on cache misses:
 
 - **DNS + TLS handshake**: \`132 ms\` (73.4% of p99)
 - **Upstream JSON decode**: \`31 ms\`
@@ -552,10 +552,10 @@ Goar Studio binds **llama.cpp** and **whisper.cpp** natively via JNI (\`arm64-v8
     }
   ];
 
-  /* ── Tiered Settings Catalog (SettingsScreen.kt v2.1.0: Tier 1 Everyday + Tier 2 Collapsible Advanced) ── */
+  /* ── Tiered Settings Catalog (SettingsScreen.kt @ 8b8e678 verbatim strings.xml) ── */
   const SETTINGS_GROUPS = [
     {
-      title: 'Everyday AI',
+      title: 'Models & Voice',
       items: [
         { key: 'provider', title: 'Providers & API Keys', desc: 'Cloud endpoints, API keys, and local hosts', icon: 'ic_set_cloud', colorVar: '--m-set-provider' },
         { key: 'models', title: 'Models', desc: 'Sync catalogs, set defaults, and add custom IDs', icon: 'ic_set_boxes', colorVar: '--m-set-models' },
@@ -564,19 +564,19 @@ Goar Studio binds **llama.cpp** and **whisper.cpp** natively via JNI (\`arm64-v8
       ]
     },
     {
-      title: 'Personalization',
+      title: 'Assistant',
       items: [
         { key: 'appearance', title: 'Appearance', desc: 'Theme, 4 Color & Accent Styles, and fonts', icon: 'ic_set_palette', colorVar: '--m-set-appearance' },
-        { key: 'skills', title: 'Skills & Tools', desc: '16 playbooks (NVIDIA NIM/CUDA/NeMo + /skill-creator)', icon: 'ic_set_skills', colorVar: '--m-set-skills' },
+        { key: 'skills', title: 'Skills & Tools', desc: '16 bundled playbooks + GitHub SKILL.md import', icon: 'ic_set_skills', colorVar: '--m-set-skills' },
         { key: 'prompts', title: 'System Prompts', desc: 'Reusable personas and custom templates', icon: 'ic_set_file', colorVar: '--m-set-prompts' },
         { key: 'memory', title: 'Memory', desc: 'Saved facts, active context, and agent recall', icon: 'ic_set_database', colorVar: '--m-set-memory' },
         { key: 'websearch', title: 'Web Search', desc: 'Tavily, Brave, Serper, Kagi, or SearXNG', icon: 'ic_nav_browser', colorVar: '--m-set-websearch' }
       ]
     },
     {
-      title: 'Privacy & General',
+      title: 'General & Privacy',
       items: [
-        { key: 'api_hub', title: 'API Hub & OAuth 2.1', desc: '1-tap Google, Notion, Linear, Vercel, Cloudflare & Stripe sign-in', icon: 'gsgs_actions_publish_data', colorVar: '--m-set-apihub' },
+        { key: 'api_hub', title: 'API Hub & OAuth 2.1', desc: '48 native connectors · 1-tap OAuth 2.1 PKCE sign-in', icon: 'gsgs_actions_publish_data', colorVar: '--m-set-apihub' },
         { key: 'security', title: 'Security & App Lock', desc: 'App Integrity Shield, PIN, biometrics & Keystore', icon: 'ic_set_lock', colorVar: '--m-set-security' },
         { key: 'datacontrol', title: 'Data & Backups', desc: 'Encrypted ZIP export, ChatGPT/Claude import & wipe', icon: 'ic_set_archive', colorVar: '--m-set-datacontrol' },
         { key: 'language', title: 'Language', desc: 'Select app display language', icon: 'ic_set_languages', colorVar: '--m-set-language' },
@@ -586,9 +586,9 @@ Goar Studio binds **llama.cpp** and **whisper.cpp** natively via JNI (\`arm64-v8
   ];
 
   const SETTINGS_ADVANCED_ITEMS = [
-    { key: 'sandbox', title: 'Linux Sandbox (PRoot)', desc: '15 rootless distros, storage metrics & package manager', icon: 'ic_distro_ubuntu', colorVar: '--m-set-sandbox' },
+    { key: 'sandbox', title: 'Sandbox Manager', desc: 'Bundled offline Alpine Linux 3.21 (SHA-256 verified, 3.7 MB)', icon: 'ic_alpine_linux', colorVar: '--m-set-sandbox' },
     { key: 'shell', title: 'Shell & SSH', desc: 'Remote SSH hosts, atomic JNI transfers & VT100 shell', icon: 'ic_nav_terminal', colorVar: '--m-set-shell' },
-    { key: 'mcp', title: 'MCP Servers (OAuth 2.1)', desc: '20+ Streamable HTTP & SSE servers with PKCE sign-in', icon: 'gsgs_actions_connector', colorVar: '--m-set-mcp' },
+    { key: 'mcp', title: 'MCP Servers (OAuth 2.1)', desc: '48 native OpenAPI, Google Drive & MCP tool servers', icon: 'gsgs_actions_connector', colorVar: '--m-set-mcp' },
     { key: 'generation', title: 'Model Parameters', desc: 'Temperature, top-p, max tokens, and reasoning defaults', icon: 'ic_set_sliders', colorVar: '--m-set-generation' },
     { key: 'context', title: 'Context & Compaction', desc: 'Context window budget, compaction & token telemetry', icon: 'ic_set_book', colorVar: '--m-set-context' },
     { key: 'titlegen', title: 'Title Generation', desc: 'Automatic chat titling model and prompt rules', icon: 'ic_set_sparkles', colorVar: '--m-set-titlegen' },
@@ -596,13 +596,14 @@ Goar Studio binds **llama.cpp** and **whisper.cpp** natively via JNI (\`arm64-v8
     { key: 'automation', title: 'Automation & Digests', desc: 'Schedules, exact alarms, and Watchtower alerts', icon: 'ic_set_timer', colorVar: '--m-set-automation' },
     { key: 'email', title: 'Email & Campaigns', desc: 'IMAP inbox, SMTP sender, and mailing lists', icon: 'ic_set_email', colorVar: '--m-set-email' },
     { key: 'payments', title: 'Payments & Cards', desc: 'Encrypted card vault and Stripe/PayPal ops', icon: 'gsgs_actions_card', colorVar: '--m-set-payments' },
-    { key: 'audit', title: 'Network Tools', desc: 'Target Lookup recon, LAN Scan, Live Traffic & Shadow Trap', icon: 'gsgs_actions_shield_check', colorVar: '--m-set-audit' },
+    { key: 'audit', title: 'Network', desc: 'Inspect live HTTP requests, WebView traffic, and DNS/TLS audits', icon: 'gsgs_actions_shield_check', colorVar: '--m-set-audit' },
     { key: 'proxy', title: 'Proxy', desc: 'HTTP/SOCKS proxy routing and bypass rules', icon: 'ic_set_server', colorVar: '--m-set-proxy' },
     { key: 'webui', title: 'WebUI & Phone SDK', desc: 'Companion browser server and Android phone tools', icon: 'devices', colorVar: '--m-set-webui' }
   ];
 
   const NETWORK_RECON = {
     target: 'goarxyz.com',
+    grade: 'A+',
     stages: ['DNS', 'TLS', 'HTTP', 'Passive', 'ASN/RDAP', 'Ports/CVE'],
     summary: [
       { k: 'A / AAAA', v: '104.21.48.92 · Cloudflare Edge (AS13335)' },
@@ -612,17 +613,23 @@ Goar Studio binds **llama.cpp** and **whisper.cpp** natively via JNI (\`arm64-v8
       { k: 'Shodan CVEs', v: '0 critical CVEs detected' }
     ],
     lanHosts: [
-      { ip: '192.168.1.1', host: 'gateway.lan', vendor: 'Ubiquiti UniFi', ports: '53, 80, 443' },
-      { ip: '192.168.1.14', host: 'ollama-rig.local', vendor: 'NVIDIA RTX Node', ports: '22, 11434' },
-      { ip: '192.168.1.42', host: 'goar-pixel9', vendor: 'Local Android Host', ports: '8080 (WebUI)' }
-    ],
-    traps: [
-      { port: 2222, service: 'Fake OpenSSH 9.6 Honeyport', hits: 0, status: 'Armed' },
-      { port: 8443, service: 'Decoy Admin Login Banner', hits: 0, status: 'Armed' }
+      { ip: '192.168.1.1', host: 'gateway.lan', vendor: 'Ubiquiti UniFi', ports: '53, 80, 443', ms: 2 },
+      { ip: '192.168.1.14', host: 'ollama-rig.local', vendor: 'NVIDIA RTX Node', ports: '22, 11434', ms: 4 },
+      { ip: '192.168.1.42', host: 'goar-pixel9', vendor: 'Local Android Host', ports: '8080 (WebUI)', ms: 1 }
     ]
   };
 
-  /* ── Ecosystem Showcase Lists for Website (v2.1.0) ── */
+  /* ── App Screen / App Hub Squircle Catalog (AppHubScreen.kt @ 8b8e678) ── */
+  const APP_HUB_APPS = [
+    { slug: 'fourier-drawing', title: 'Fourier Epicycles', glyph: 'FE', bg: 'linear-gradient(135deg,#2563EB,#06B6D4)', fg: '#FFFFFF', category: 'Math Studio' },
+    { slug: 'gravity-sim', title: 'Orbital Gravity', glyph: 'OG', bg: 'linear-gradient(135deg,#10B981,#0891B2)', fg: '#FFFFFF', category: '2D Physics' },
+    { slug: 'solar-system-3d', title: '3D Solar System', glyph: '3D', bg: 'linear-gradient(135deg,#F59E0B,#EF4444)', fg: '#FFFFFF', category: 'Three.js' },
+    { slug: 'sound-synth', title: 'Audio Synth', glyph: 'AS', bg: 'linear-gradient(135deg,#7C3AED,#EC4899)', fg: '#FFFFFF', category: 'Web Audio' },
+    { slug: 'particle-forge', title: 'Particle Forge', glyph: 'PF', bg: 'linear-gradient(135deg,#0EA5E9,#6366F1)', fg: '#FFFFFF', category: 'WebGL' },
+    { slug: 'markdown-desk', title: 'Markdown Desk', glyph: 'MD', bg: 'linear-gradient(135deg,#3F3F46,#18181B)', fg: '#F4F4F6', category: 'Utility' }
+  ];
+
+  /* ── Ecosystem Showcase Lists for Website (v2.1.0 @ 8b8e678) ── */
   const PROVIDERS_SHOWCASE = [
     { name: 'Anthropic Claude', icon: 'provider_anthropic' },
     { name: 'OpenAI', icon: 'provider_openai' },
@@ -641,47 +648,43 @@ Goar Studio binds **llama.cpp** and **whisper.cpp** natively via JNI (\`arm64-v8
     { name: 'Perplexity', icon: 'provider_perplexity' },
     { name: 'Cohere', icon: 'provider_cohere' },
     { name: 'Venice AI', icon: 'provider_venice' },
-    { name: 'Pollinations', icon: 'provider_pollinations' },
     { name: 'Local GGUF (llama.cpp)', icon: 'ic_goar_mark_mono' }
   ];
 
-  const DISTROS_SHOWCASE = [
-    { name: 'Ubuntu', icon: 'ic_distro_ubuntu' },
-    { name: 'Debian', icon: 'ic_debian' },
-    { name: 'Alpine Linux', icon: 'ic_alpine_linux' },
-    { name: 'Arch Linux', icon: 'ic_distro_arch' },
-    { name: 'Kali Linux', icon: 'ic_distro_kali' },
-    { name: 'Fedora', icon: 'ic_distro_fedora' },
-    { name: 'NixOS', icon: 'ic_distro_nixos' },
-    { name: 'openSUSE', icon: 'ic_distro_opensuse' },
-    { name: 'Manjaro', icon: 'ic_distro_manjaro' },
-    { name: 'Gentoo', icon: 'ic_distro_gentoo' },
-    { name: 'Void Linux', icon: 'ic_distro_void' },
-    { name: 'Rocky Linux', icon: 'ic_distro_rocky' },
-    { name: 'AlmaLinux', icon: 'ic_distro_alma' },
-    { name: 'CentOS', icon: 'ic_distro_centos' },
-    { name: 'Parrot OS', icon: 'ic_distro_parrot' }
+  const RUNTIME_STACK_SHOWCASE = [
+    { name: 'Alpine Linux 3.21 (3.7 MB Offline)', icon: 'ic_alpine_linux' },
+    { name: 'llama.cpp JNI (GGUF Offline)', icon: 'ic_set_cpu' },
+    { name: 'whisper.cpp JNI (Offline Voice)', icon: 'ic_set_mic' },
+    { name: 'Three.js + Phaser 3 Game IDE', icon: 'ic_goar_build' },
+    { name: 'App Screen & .ICO Icon Studio', icon: 'apps' },
+    { name: 'SmartCookieWeb Privacy Browser', icon: 'ic_nav_browser' },
+    { name: 'Android Keystore AES-256-GCM', icon: 'ic_set_lock' },
+    { name: 'Manus Glass Live Agent PiP', icon: 'devices' },
+    { name: 'Google Drive Website Sync', icon: 'ic_mcp_gdrive' },
+    { name: 'SSH / SFTP & Atomic JNI Transfer', icon: 'ic_nav_terminal' },
+    { name: 'Revise .docx Tracked Redlines', icon: 'article' },
+    { name: '3-Tab Network Recon & Traffic', icon: 'gsgs_actions_shield_check' }
   ];
 
   const MCP_SHOWCASE = [
-    { name: 'GitHub MCP · OAuth 2.1', icon: 'ic_mcp_github' },
-    { name: 'Notion MCP · OAuth 2.1', icon: 'ic_mcp_notion' },
-    { name: 'Linear MCP · OAuth 2.1', icon: 'ic_mcp_linear' },
-    { name: 'Vercel MCP · OAuth 2.1', icon: 'ic_brand_vercel' },
-    { name: 'Supabase MCP · OAuth 2.1', icon: 'ic_brand_supabase' },
-    { name: 'Cloudflare MCP · OAuth 2.1', icon: 'ic_brand_cloudflare' },
-    { name: 'Stripe MCP · OAuth 2.1', icon: 'provider_stripe' },
-    { name: 'Figma Dev MCP · OAuth 2.1', icon: 'ic_brand_figma' },
-    { name: 'Sentry MCP · OAuth 2.1', icon: 'ic_mcp_sentry' },
+    { name: 'GitHub (22 Native Tools · OAuth)', icon: 'ic_mcp_github' },
+    { name: 'Google Drive (OAuth 2.0)', icon: 'ic_mcp_gdrive' },
+    { name: 'Google Calendar & Gmail', icon: 'ic_mcp_gcalendar' },
+    { name: 'Cloudflare Workers & DNS', icon: 'ic_brand_cloudflare' },
+    { name: 'Vercel Deployments', icon: 'ic_brand_vercel' },
+    { name: 'Supabase Postgres & Edge', icon: 'ic_brand_supabase' },
+    { name: 'Stripe Payments & /drop', icon: 'provider_stripe' },
+    { name: 'Notion Workspaces', icon: 'ic_mcp_notion' },
+    { name: 'Linear Issues & Triage', icon: 'ic_mcp_linear' },
+    { name: 'Figma Dev Mode', icon: 'ic_brand_figma' },
+    { name: 'Sentry Telemetry', icon: 'ic_mcp_sentry' },
     { name: 'Postman Official MCP', icon: 'ic_brand_postman' },
-    { name: 'HubSpot CRM MCP', icon: 'ic_brand_hubspot' },
-    { name: 'Google Drive & Gmail', icon: 'ic_mcp_gdrive' },
-    { name: 'Google Calendar', icon: 'ic_mcp_gcalendar' },
-    { name: 'Shopify Storefront MCP', icon: 'ic_mcp_shopify' },
+    { name: 'HubSpot CRM & Shopify', icon: 'ic_brand_hubspot' },
+    { name: 'Discord, Slack & Telegram', icon: 'ic_brand_discord' },
     { name: 'PayPal Official MCP', icon: 'provider_paypal' },
-    { name: 'Slack', icon: 'ic_mcp_slack' },
     { name: 'PostgreSQL / SQLite', icon: 'ic_mcp_postgres' },
-    { name: 'Docker', icon: 'ic_mcp_docker' }
+    { name: 'Docker Hub', icon: 'ic_mcp_docker' },
+    { name: '48 Total Native Connectors', icon: 'gsgs_actions_connector' }
   ];
 
   const WORKSPACE_FILES = [
@@ -704,7 +707,7 @@ Goar Studio binds **llama.cpp** and **whisper.cpp** natively via JNI (\`arm64-v8
       folder: 'workspace/scripts/',
       size: '1.9 KB',
       icon: 'gsgs_files_txt',
-      content: `import statistics\n\ncohorts = [104.2, 106.8, 108.4, 109.1]\nprint(f"Net Dollar Retention: {statistics.mean(cohorts):.1f}%")\nprint("Status: Verified in local Ubuntu 24.04 PRoot")`
+      content: `import statistics\n\ncohorts = [104.2, 106.8, 108.4, 109.1]\nprint(f"Net Dollar Retention: {statistics.mean(cohorts):.1f}%")\nprint("Status: Verified in APK-bundled Alpine Linux 3.21 PRoot")`
     },
     {
       name: 'skills_catalog.json',
@@ -742,8 +745,10 @@ Goar Studio binds **llama.cpp** and **whisper.cpp** natively via JNI (\`arm64-v8
     SETTINGS_GROUPS,
     SETTINGS_ADVANCED_ITEMS,
     NETWORK_RECON,
+    APP_HUB_APPS,
     PROVIDERS_SHOWCASE,
-    DISTROS_SHOWCASE,
+    RUNTIME_STACK_SHOWCASE,
+    DISTROS_SHOWCASE: RUNTIME_STACK_SHOWCASE,
     MCP_SHOWCASE,
     WORKSPACE_FILES,
     TASKS,

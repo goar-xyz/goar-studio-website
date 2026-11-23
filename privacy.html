@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Goar Studio</title>
-  <meta name="description" content="Official Privacy Policy for Goar Studio (Android). Local-first Room storage, Android Keystore EncryptedSharedPreferences, direct provider routing, and zero ad SDKs." />
+  <title>Privacy Policy &amp; Google Play Data Safety — Goar Studio</title>
+  <meta name="description" content="Official Privacy Policy, Google Play Data Safety disclosure, and Google API Services Limited Use policy for Goar Studio v2.1.0 on Android." />
   <link rel="icon" type="image/png" href="assets/ic_goar_mark.png" />
   <link rel="stylesheet" href="css/goar-design-system.css" />
   <link rel="stylesheet" href="css/website.css" />
@@ -17,31 +17,62 @@
         <img src="assets/ic_goar_mark_black.png" alt="Goar Studio" class="goar-mark-img goar-mark-light-only" />
         <span>Goar Studio</span>
       </a>
-      <nav class="site-nav-links">
-        <a href="index.html" class="site-nav-link">Home</a>
-        <a href="privacy.html" class="site-nav-link active">Privacy Policy</a>
-        <a href="terms.html" class="site-nav-link">Terms of Service</a>
-        <a href="data-protection.html" class="site-nav-link">Data Protection</a>
-        <a href="licenses.html" class="site-nav-link">Licenses</a>
+      <nav class="site-nav-links" aria-label="Primary">
+        <a href="index.html" class="site-nav-link">Platform</a>
+        <a href="skills.html" class="site-nav-link">Skills Hub</a>
+        <a href="simulator.html" class="site-nav-link">Live App</a>
+        <a href="privacy.html" class="site-nav-link active">Privacy</a>
+        <a href="terms.html" class="site-nav-link">Legal</a>
       </nav>
       <div class="site-nav-actions">
-        <button class="site-icon-circle" data-action="toggle-site-theme" aria-label="Toggle theme"><span data-theme-toggle-icon></span></button>
-        <a href="simulator.html" class="btn-secondary">Interactive App</a>
+        <button class="site-icon-circle" data-action="toggle-site-theme" aria-label="Toggle Obsidian Dark or Alabaster Light">
+          <span data-theme-toggle-icon></span>
+        </button>
+        <a href="simulator.html" class="btn-primary">Try Live App</a>
       </div>
     </div>
   </header>
 
   <main class="legal-page-main">
     <div class="legal-page-header">
-      <div class="section-kicker">Official Legal Notice · Goar Studio v2.1.0 (Build 31)</div>
-      <h1>Privacy Policy</h1>
-      <p style="margin:0;color:var(--on-surface-variant);font-size:14.5px">
-        Effective Date: November 2026 · Applies to Goar Studio v2.1.0 for Android (<code>com.aistudio.goarstudio.kxrqvn</code>) &amp; <a href="https://goarxyz.com" style="color:var(--primary)">goarxyz.com</a>
+      <div class="section-kicker">Google Play Developer Program &amp; OAuth Limited Use Compliant</div>
+      <h1>Privacy Policy &amp; Data Safety Disclosure</h1>
+      <p style="margin:0;color:var(--on-surface-variant);font-size:15px">
+        How Goar Studio handles local storage, Android Keystore encryption, Google Drive OAuth Limited Use, Android permissions, and user data rights.
       </p>
+      <div class="legal-meta-pills">
+        <span class="legal-meta-pill">Effective: November 22, 2026</span>
+        <span class="legal-meta-pill">Version 2.1.0 (Build 31)</span>
+        <span class="legal-meta-pill">Package: com.aistudio.goarstudio.kxrqvn</span>
+        <span class="legal-meta-pill">Zero Ad-ID · Local-First</span>
+      </div>
     </div>
 
-    <article class="legal-article">
-      <div class="legal-verbatim-box" style="margin-top:0;margin-bottom:28px">Goar Studio Privacy Policy
+    <div class="legal-layout">
+      <aside class="legal-toc" aria-label="Document Navigation">
+        <div class="legal-toc-title">On This Page</div>
+        <a href="#verbatim">In-App Notice</a>
+        <a href="#storage">1. Local Storage &amp; Vault</a>
+        <a href="#play-safety">2. Google Play Data Safety</a>
+        <a href="#limited-use">3. Google API Limited Use</a>
+        <a href="#permissions">4. Permissions &amp; Scoped Storage</a>
+        <a href="#offline">5. Offline Execution &amp; BYOK</a>
+        <a href="#rights">6. GDPR, CCPA &amp; Erasure</a>
+        <a href="#children">7. Children's Privacy</a>
+        <a href="#contact">8. Privacy Contact</a>
+        <div style="height:1px;background:var(--outline-variant);margin:12px 0"></div>
+        <div class="legal-toc-title">Related Legal Docs</div>
+        <a href="terms.html">Terms of Service →</a>
+        <a href="data-protection.html">Security &amp; Data Deletion →</a>
+        <a href="licenses.html">Open Source Licenses →</a>
+      </aside>
+
+      <article class="legal-article">
+        <div class="legal-callout">
+          <strong>Core Privacy Guarantee:</strong> Goar Studio is architected as a <strong>local-first, Bring-Your-Own-Key (BYOK)</strong> workstation. Your conversations, workspaces, SmartCookieWeb browsing history, custom <code>SKILL.md</code> playbooks, API keys, Google OAuth tokens, and MCP credentials remain stored locally on your Android device and are never sold, rented, or monetized for advertising.
+        </div>
+
+        <div id="verbatim" class="legal-verbatim-box" style="margin-top:0;margin-bottom:26px">Goar Studio Privacy Policy
 
 Goar Studio stores conversations, workspace files, task schedules, and provider API keys locally on your device using Android Room and EncryptedSharedPreferences.
 
@@ -51,52 +82,113 @@ Network traffic is sent only to the model providers, search backends, MCP server
 Telemetry:
 Diagnostic logging remains local unless you explicitly export a diagnostic bundle.</div>
 
-      <h2>1. Local-First Data Storage</h2>
-      <p>
-        Goar Studio is architected as a local-first Android workspace. Your conversations, system prompts, agent <code>SOUL.md</code> profiles, saved memories, workspace files, built web apps, scheduled tasks, notes, calendar events, and browser history are stored locally on your device using Android Room (SQLite) and Jetpack DataStore. Goar Studio does not operate a centralized user-data cloud database that scrapes or stores your private prompts.
-      </p>
+        <h2 id="storage">1. Summary of Data Collection &amp; Local Storage</h2>
+        <p>Goar Studio does not require a Goar cloud account. All primary records live strictly inside Android's sandboxed app-private storage (<code>context.filesDir</code>, Android Room SQLite, and Jetpack DataStore) with <code>android:allowBackup="false"</code>:</p>
+        <ul>
+          <li><strong>API Keys, OAuth 2.1 PKCE Tokens &amp; MCP Credentials:</strong> Encrypted at rest using 256-bit AES-GCM keys backed by hardware <strong>Android Keystore</strong> (TEE / StrongBox when available). Requests connect directly over TLS 1.2/1.3 from your device to endpoints you explicitly configure (Anthropic, OpenAI, Google Gemini, NVIDIA NIM, xAI, DeepSeek, Cloudflare, GitHub, Vercel, Supabase, Stripe, Google Drive, or local Ollama/LM Studio).</li>
+          <li><strong>Conversations, Skills, Web Apps &amp; 3D Games:</strong> Stored locally on your device. You may export or erase them at any time.</li>
+          <li><strong>SmartCookieWeb Browser Data:</strong> Tabs, bookmarks, cookies, and offline <code>.mht</code> archives live exclusively on-device. Incognito tabs never write to history and purge session cookies upon tab closure.</li>
+          <li><strong>Zero Advertising Identifier (<code>AD_ID</code>):</strong> Goar Studio explicitly strips <code>com.google.android.gms.permission.AD_ID</code> and Android AdServices permissions in <code>AndroidManifest.xml</code>.</li>
+        </ul>
 
-      <h2>2. Hardware-Backed Credential &amp; OAuth 2.1 PKCE Security</h2>
-      <p>
-        API keys for AI model providers, OAuth 2.1 PKCE access and refresh tokens (completed locally via <code>goar://oauth/callback</code>, loopback redirect, or Google Identity Services), search APIs, MCP bearer tokens, IMAP/SMTP mail credentials, SSH private keys, and vaulted card profiles are stored locally inside Android Keystore-backed <code>EncryptedSharedPreferences</code>. You can further restrict app access using App Lock PIN and biometric authentication in <strong>Settings → Security &amp; App Lock</strong>.
-      </p>
+        <h2 id="play-safety">2. Google Play Data Safety Table</h2>
+        <div class="legal-table-wrap">
+          <table class="legal-table">
+            <thead>
+              <tr>
+                <th>Data Category</th>
+                <th>Collected by Goar Servers?</th>
+                <th>Shared with Third Parties?</th>
+                <th>Purpose &amp; User Control</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Prompts, Chat Messages &amp; Attached Files</strong></td>
+                <td>No (Stored locally on device)</td>
+                <td>Only sent directly to AI/API endpoints explicitly configured &amp; invoked by you</td>
+                <td>Core AI/Agent functionality; user chooses provider &amp; model per request</td>
+              </tr>
+              <tr>
+                <td><strong>API Keys, OAuth &amp; Connector Secrets</strong></td>
+                <td>No (Never leaves device except in Authorization headers to target API)</td>
+                <td>Never shared with Goar or analytics</td>
+                <td>Encrypted locally via Android Keystore AES-256-GCM</td>
+              </tr>
+              <tr>
+                <td><strong>Google Drive Files (Optional OAuth)</strong></td>
+                <td>No (Direct device ↔ Google Drive API v3)</td>
+                <td>No</td>
+                <td>Strictly user-initiated website/workspace file import &amp; sync; revocable anytime</td>
+              </tr>
+              <tr>
+                <td><strong>Photos, Videos &amp; Documents</strong></td>
+                <td>No</td>
+                <td>No (Selected per-file via Android zero-permission Photo Picker / SAF)</td>
+                <td>Used only when you attach a reference in Ask, Imagine, Build, or Support</td>
+              </tr>
+              <tr>
+                <td><strong>Camera &amp; Microphone Audio</strong></td>
+                <td>No</td>
+                <td>Processed locally (Whisper JNI / Android Speech) or sent to your chosen voice model while active</td>
+                <td>Runtime permission requested only when you tap Camera or Voice mode</td>
+              </tr>
+              <tr>
+                <td><strong>Support Messages (Optional)</strong></td>
+                <td>Only when you press "Send to Admin" on the Support screen</td>
+                <td>No</td>
+                <td>Used solely to reply to your support inquiry</td>
+              </tr>
+              <tr>
+                <td><strong>Crash Logs &amp; Diagnostics</strong></td>
+                <td><strong>Disabled by default</strong> (Strictly Opt-In)</td>
+                <td>No</td>
+                <td>Toggleable anytime in Settings → General &amp; Privacy</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-      <h2>3. Outbound Network Requests &amp; Third-Party Endpoints</h2>
-      <p>
-        Network connections are initiated directly from your device exclusively to third-party services that you explicitly configure, authorize via OAuth 2.1, or navigate to — including AI model providers (such as Anthropic, OpenAI, Google Gemini, NVIDIA NIM, DeepSeek, Mistral, Groq, OpenRouter, xAI, Pollinations, or custom/local Ollama servers), web search engines, MCP servers (such as GitHub, Vercel, Supabase, Cloudflare, Notion, Linear, Stripe, Figma, or Google Drive/Gmail/Calendar), SSH servers, or URLs opened inside the built-in Browser. Your interactions with those third-party endpoints are governed by the respective provider's privacy policy.
-      </p>
+        <h2 id="limited-use">3. Google API Services User Data Policy (Limited Use Disclosure)</h2>
+        <div class="legal-callout cobalt">
+          <strong>Google Workspace &amp; Google Drive Limited Use Commitment:</strong> Goar Studio's use and transfer to any other app of information received from Google APIs (including the optional <code>https://www.googleapis.com/auth/drive</code> scope) adheres strictly to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" style="color:var(--on-bg);text-decoration:underline">Google API Services User Data Policy</a>, including the Limited Use requirements.
+        </div>
+        <ul>
+          <li>Google Drive access is requested <strong>only</strong> when you explicitly tap <em>Connect Google Drive</em> in Build or API Hub.</li>
+          <li>OAuth access tokens stay locally on your device, are never transmitted to Goar servers, are never used for serving advertisements, and are never used to train generalized AI/ML models.</li>
+          <li>Revoke Goar Studio's Google Drive access at any time via <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style="color:var(--on-bg);text-decoration:underline">Google Account Permissions</a>.</li>
+        </ul>
 
-      <h2>4. Local On-Device Models &amp; Offline Execution</h2>
-      <p>
-        When using local GGUF language models via embedded <code>llama.cpp</code>, local speech recognition via <code>whisper.cpp</code>, the On-Device Creative Engine, local PRoot Linux containers, or local workspace editing, inference and file processing run strictly on-device without transmitting prompt contents over the network.
-      </p>
+        <h2 id="permissions">4. Android Permissions &amp; Scoped Storage Minimization</h2>
+        <ul>
+          <li><strong>No Broad Storage Permissions:</strong> Goar Studio does <strong>not</strong> request <code>MANAGE_EXTERNAL_STORAGE</code>, <code>READ_MEDIA_IMAGES</code>, or <code>READ_MEDIA_VIDEO</code>. Media attachments use the zero-permission Android Photo Picker (<code>PickVisualMedia</code>) and Storage Access Framework (<code>OpenDocument</code>).</li>
+          <li><strong>System Files Integration:</strong> Workspace and offline Alpine Linux 3.21 sandbox files are exposed safely via Android's standard <code>DocumentsProvider</code>.</li>
+          <li><strong>Camera &amp; Microphone:</strong> Optional runtime permissions requested strictly when initiating visual capture or live voice input.</li>
+          <li><strong>Notifications &amp; Foreground Data Sync:</strong> Used to keep user-scheduled autonomous tasks and local builds alive reliably with a visible status notification.</li>
+        </ul>
 
-      <h2>5. Telemetry, Integrity &amp; Zero Ad Trackers</h2>
-      <p>
-        Goar Studio does not bundle third-party advertising SDKs or hidden cross-app ad trackers. Diagnostic HTTP traces and logs remain local on your device unless you explicitly choose to export a diagnostic bundle or submit a support inquiry via the Contact Admin Desk. Local App Integrity Shield verification and optional Firebase analytics controls can be reviewed in <strong>Settings → About &amp; Legal</strong>.
-      </p>
+        <h2 id="offline">5. Local On-Device Execution &amp; Third-Party BYOK Endpoints</h2>
+        <p>When using local GGUF models via <code>libgoar_llama.so</code>, local voice recognition via <code>libgoar_whisper.so</code>, the On-Device Creative Engine, or the APK-bundled SHA-256 verified <strong>Alpine Linux 3.21</strong> PRoot environment, processing runs strictly on-device with zero outbound network transmission. When you configure external providers or OAuth connectors, outbound calls are governed by each third-party provider's privacy policy.</p>
 
-      <h2>6. Your Rights: Export, Backup &amp; Deletion</h2>
-      <ul>
-        <li><strong>Export &amp; Backup:</strong> Export your conversations and settings as local ZIP archives or schedule automatic local backups from <strong>Settings → Data &amp; Backups</strong>. Note that exported plaintext backups containing API keys should be stored securely.</li>
-        <li><strong>Auto-Delete &amp; Erasure:</strong> Configure automatic chat retention periods (1 week, 1 month, or 1 year) or permanently wipe conversations, OAuth tokens, browser cookies, workspace files, and API keys at any time directly on your device.</li>
-        <li><strong>Live Auditability:</strong> Inspect live HTTP requests, WebView network traffic, LAN telemetry, and TLS sessions directly inside <strong>Network Tools</strong> (accessible from the main drawer and Settings).</li>
-      </ul>
+        <h2 id="rights">6. Your Rights (GDPR, UK GDPR, CCPA/CPRA) &amp; Instant Deletion</h2>
+        <p>Because your data lives locally on your device, you have immediate unilateral control to inspect, export encrypted-optional ZIP archives, revoke OAuth grants, or permanently wipe all records without waiting on a third party. See our full 4-option <a href="data-protection.html#deletion" style="color:var(--on-bg);text-decoration:underline"><strong>Security &amp; Data Deletion Guide</strong></a>.</p>
 
-      <h2>7. Contact</h2>
-      <p>
-        For privacy inquiries, security disclosures, or data protection questions, contact developer support at <a href="mailto:admin@goarxyz.com" style="color:var(--primary)">admin@goarxyz.com</a>.
-      </p>
-    </article>
+        <h2 id="children">7. Children's Privacy</h2>
+        <p>Goar Studio is a professional software development, creative, and productivity workstation not directed to children under the age of 13 (or the applicable digital consent age in your jurisdiction).</p>
+
+        <h2 id="contact">8. Contact &amp; Data Protection Inquiries</h2>
+        <p>For privacy inquiries, Google Play Data Safety verification, or GDPR/CCPA requests, use the in-app <strong>Contact Admin &amp; Support</strong> screen or email <a href="mailto:goarcontact@m.kuku.lu?subject=Privacy%20Inquiry" style="color:var(--on-bg);text-decoration:underline"><code>goarcontact@m.kuku.lu</code></a> / <a href="mailto:admin@goarxyz.com" style="color:var(--on-bg);text-decoration:underline"><code>admin@goarxyz.com</code></a>.</p>
+      </article>
+    </div>
   </main>
 
   <footer class="site-footer">
     <div class="site-container footer-bottom" style="border-top:none;padding-top:0">
-      <span>© 2026 Goar Studio (goarxyz.com)</span>
+      <span>© 2026 Goar Studio (goarxyz.com) · Local-First Privacy Architecture</span>
       <div style="display:flex;gap:18px;flex-wrap:wrap">
-        <a href="privacy.html" style="color:var(--primary)">Privacy Policy</a>
+        <a href="privacy.html" style="color:var(--on-bg);font-weight:600">Privacy &amp; Data Safety</a>
         <a href="terms.html" style="color:var(--on-surface-variant)">Terms of Service</a>
-        <a href="data-protection.html" style="color:var(--on-surface-variant)">Data Protection</a>
+        <a href="data-protection.html" style="color:var(--on-surface-variant)">Security &amp; Data Deletion</a>
         <a href="licenses.html" style="color:var(--on-surface-variant)">Licenses</a>
       </div>
     </div>

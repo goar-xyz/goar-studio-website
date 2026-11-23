@@ -4,108 +4,112 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Interactive 1:1 App Simulator — Goar Studio</title>
-  <meta name="description" content="Experience Goar Studio v2.1.0 directly in your browser. Entirely mocked, 1-to-1 interactive recreation of Ask, Imagine, Build, Agents, Network Tools, OAuth 2.1 Hub, Terminal, Browser, Revise Docs, Tasks, Voice Orb, and Tiered Settings." />
+  <meta name="description" content="Experience Goar Studio v2.1.0 (Build 31) directly in your browser. Entirely mocked, 1-to-1 interactive recreation of Ask, Imagine, Build, App Screen, Agents, 3-Tab Network Tools, OAuth 2.1 Hub, Offline Alpine 3.21 Terminal, SmartCookieWeb Browser, Revise Docs, Tasks, Voice Orb, and Tiered Settings." />
   <link rel="icon" type="image/png" href="assets/ic_goar_mark.png" />
   <link rel="stylesheet" href="css/goar-design-system.css" />
   <link rel="stylesheet" href="css/simulator.css" />
   <link rel="stylesheet" href="css/website.css" />
   <style>
     .sim-studio-layout {
-      min-height: calc(100vh - 69px);
+      min-height: calc(100vh - 65px);
       display: grid;
-      grid-template-columns: 420px minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) 400px;
       gap: 44px;
       align-items: center;
-      padding: 28px 28px 40px;
-      max-width: 1220px;
+      padding: 32px 32px 48px;
+      max-width: 1200px;
       margin: 0 auto;
     }
-    .sim-phone-col {
-      position: relative;
+    .sim-side-panel {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      gap: 18px;
     }
     @media (max-width: 960px) {
       .sim-studio-layout {
         grid-template-columns: 1fr;
         justify-items: center;
-        padding: 22px 18px 42px;
-        gap: 32px;
+        padding: 20px 20px 44px;
       }
     }
   </style>
 </head>
 <body>
+  <!-- ══ ARCHITECTURAL MONOCHROME TOP BAR (Identical Across All Pages) ══ -->
   <header class="site-nav">
     <div class="site-container site-nav-inner">
       <a href="index.html" class="site-brand">
         <img src="assets/ic_goar_mark.png" alt="Goar Studio" class="goar-mark-img goar-mark-dark-only" />
         <img src="assets/ic_goar_mark_black.png" alt="Goar Studio" class="goar-mark-img goar-mark-light-only" />
         <span>Goar Studio</span>
-        <span class="site-version-chip">1:1 Phone Simulator</span>
       </a>
-
-      <nav class="site-nav-links" aria-label="Legal & Website">
-        <a href="index.html" class="site-nav-link">Home</a>
+      <nav class="site-nav-links" aria-label="Primary">
+        <a href="index.html" class="site-nav-link">Platform</a>
+        <a href="skills.html" class="site-nav-link">Skills Hub</a>
+        <a href="simulator.html" class="site-nav-link active">Live App</a>
         <a href="privacy.html" class="site-nav-link">Privacy</a>
-        <a href="terms.html" class="site-nav-link">Terms</a>
-        <a href="data-protection.html" class="site-nav-link">Data Protection</a>
+        <a href="terms.html" class="site-nav-link">Legal</a>
       </nav>
-
       <div class="site-nav-actions">
-        <button class="site-icon-circle" data-action="toggle-site-theme" title="Toggle Ink Dark / Paper Light" aria-label="Toggle theme">
+        <button class="site-icon-circle" data-action="toggle-site-theme" aria-label="Toggle Obsidian Dark or Alabaster Light">
           <span data-theme-toggle-icon></span>
         </button>
-        <a href="index.html" class="btn-primary" style="height:38px;padding:0 18px;font-size:13px">← Back to Website</a>
+        <a href="skills.html" class="btn-secondary">98 GitHub Skills</a>
       </div>
     </div>
   </header>
 
   <main class="sim-studio-layout">
-    <section class="sim-phone-col goar-sim-fullscreen">
-      <div class="phone-aura" style="--aura-color: var(--m-top-ask)"></div>
-      <div class="goar-device-bezel phone-mount-shell">
-        <div id="goar-sim-mount" style="width:100%;height:100%"></div>
+    <aside class="sim-side-panel">
+      <div>
+        <div class="section-kicker">100% Mocked · 1-to-1 App Recreation (v2.1.0 Build 31)</div>
+        <h1 style="margin:0 0 10px;font-size:clamp(30px,3.6vw,44px);font-weight:700;letter-spacing:-0.038em;line-height:1.06">
+          Explore every screen of Goar Studio v2.1.0.
+        </h1>
+        <p style="margin:0;color:var(--on-surface-variant);font-size:15.5px;line-height:1.62">
+          Built directly from the Jetpack Compose source (<code>8b8e678</code>): architectural monochrome obsidian &amp; alabaster palette, boxless chrome, <code>[ Ask | Imagine | Build ]</code> segmented pill, App Screen squircle hub, inline Agents sheet, 3-tab Network Tools, OAuth 2.1 Hub, offline Alpine 3.21 terminal, and 4 live accent palettes.
+        </p>
       </div>
-    </section>
 
-    <aside class="sandbox-deck">
-      <div class="sandbox-deck-head">
-        <div>
-          <div class="section-kicker" style="margin-bottom:6px">Goar Studio v2.1.0 · Build 31</div>
-          <h1 style="font-size:clamp(24px,2.8vw,34px);font-weight:700;letter-spacing:-0.03em;margin:0 0 6px;color:var(--on-bg)">
-            Interactive 1-to-1 Phone Walkthrough
-          </h1>
-          <p style="margin:0;font-size:14px;color:var(--on-surface-variant);line-height:1.55">
-            Every tab, segmented pill, drawer, Network Tools suite, OAuth 2.1 Hub, live canvas app, and 4-palette setting mirrors Goar Studio v2.1.0 for Android — running 100% client-side.
-          </p>
+      <div class="sandbox-deck" style="padding:22px;gap:14px">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+          <span style="font-size:12px;font-family:var(--font-mono);font-weight:600;color:var(--on-surface-variant);text-transform:uppercase;letter-spacing:0.06em">Jump to Any of 17 Screens</span>
+          <div class="palette-pills" role="group" aria-label="GoarPaletteStyle switcher">
+            <button class="palette-pill-btn active" type="button" data-site-palette="MONOCHROME"><span class="palette-pill-dot" style="background:var(--on-bg)"></span>Mono</button>
+            <button class="palette-pill-btn" type="button" data-site-palette="CHAMPAGNE"><span class="palette-pill-dot" style="background:#E59A69"></span>Terracotta</button>
+            <button class="palette-pill-btn" type="button" data-site-palette="COBALT"><span class="palette-pill-dot" style="background:#3B82F6"></span>Cobalt</button>
+            <button class="palette-pill-btn" type="button" data-site-palette="TINTED"><span class="palette-pill-dot" style="background:#10B981"></span>Tinted</button>
+          </div>
         </div>
+        <div id="tour-chips" class="tour-chips" style="margin-bottom:4px"></div>
+        <div id="tour-caption" class="tour-caption-box" style="margin-bottom:0"></div>
       </div>
-
-      <div class="tour-chips" id="tour-chips"></div>
-      <div class="tour-caption-box" id="tour-caption"></div>
 
       <div class="sandbox-tips">
         <div class="sandbox-tip">
-          <strong>Slash / &amp; Inline Agents</strong>
-          Type <code>/</code> in the Ask composer for all 10 commands (including <code>/drop</code>), or tap the inline Agents icon for 6 specialist personas.
+          <strong>Slash Commands &amp; Starter Pills</strong>
+          Tap <code>Summarize</code> / <code>Write code</code> on Ask Home, or type <code>/</code> for all 10 commands including <code>/drop</code>.
         </div>
         <div class="sandbox-tip">
-          <strong>4 Architectural Palettes</strong>
-          Open <strong>Settings → Appearance</strong> to switch Pure Monochrome, Warm Terracotta, Precision Cobalt, or Tinted Categories live.
+          <strong>App Screen &amp; .ICO Studio</strong>
+          Open <strong>App Screen</strong> to customize squircle app palettes or tap any app tile to launch its live canvas.
         </div>
         <div class="sandbox-tip">
-          <strong>Network Tools &amp; OAuth 2.1</strong>
-          Test 4-tab Target Lookup, LAN Scan &amp; Shadow Trap, or connect Google, GitHub, Vercel &amp; Cloudflare via OAuth 2.1 PKCE.
+          <strong>Offline Alpine 3.21 Shell</strong>
+          Switch to <strong>Alpine 3.21 Shell</strong> and type <code>neofetch</code>, <code>uname -a</code>, <code>ls</code>, or <code>ps</code>.
         </div>
         <div class="sandbox-tip">
-          <strong>PRoot VT100 Terminal</strong>
-          Open Terminal from the drawer and run <code>neofetch</code>, <code>ls</code>, <code>uname -a</code>, <code>ps</code>, or <code>git status</code>.
+          <strong>3-Tab Network &amp; OAuth 2.1</strong>
+          Audit Target Lookup / LAN Scan / Live Traffic in <strong>Network Tools</strong> and toggle sign-in in <strong>OAuth 2.1 Hub</strong>.
         </div>
       </div>
     </aside>
+
+    <div class="goar-phone-stage goar-sim-fullscreen">
+      <div class="goar-device-bezel">
+        <div id="goar-sim-mount" style="width:100%;height:100%"></div>
+      </div>
+    </div>
   </main>
 
   <script src="js/goar-icons.js"></script>

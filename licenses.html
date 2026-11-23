@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Software License &amp; Open Source — Goar Studio</title>
-  <meta name="description" content="Open source software attributions and license summary for Goar Studio v2.1.0 (Build 31)." />
+  <title>Software Licenses &amp; Open Source Attributions — Goar Studio</title>
+  <meta name="description" content="Complete open-source software attributions, SPDX license matrix, and Skills Hub repository licenses for Goar Studio v2.1.0 (Build 31)." />
   <link rel="icon" type="image/png" href="assets/ic_goar_mark.png" />
   <link rel="stylesheet" href="css/goar-design-system.css" />
   <link rel="stylesheet" href="css/website.css" />
@@ -17,68 +17,142 @@
         <img src="assets/ic_goar_mark_black.png" alt="Goar Studio" class="goar-mark-img goar-mark-light-only" />
         <span>Goar Studio</span>
       </a>
-      <nav class="site-nav-links">
-        <a href="index.html" class="site-nav-link">Home</a>
-        <a href="privacy.html" class="site-nav-link">Privacy Policy</a>
-        <a href="terms.html" class="site-nav-link">Terms of Service</a>
-        <a href="data-protection.html" class="site-nav-link">Data Protection</a>
-        <a href="licenses.html" class="site-nav-link active">Licenses</a>
+      <nav class="site-nav-links" aria-label="Primary">
+        <a href="index.html" class="site-nav-link">Platform</a>
+        <a href="skills.html" class="site-nav-link">Skills Hub</a>
+        <a href="simulator.html" class="site-nav-link">Live App</a>
+        <a href="privacy.html" class="site-nav-link">Privacy</a>
+        <a href="terms.html" class="site-nav-link active">Legal</a>
       </nav>
       <div class="site-nav-actions">
-        <button class="site-icon-circle" data-action="toggle-site-theme" aria-label="Toggle theme"><span data-theme-toggle-icon></span></button>
-        <a href="simulator.html" class="btn-secondary">Interactive App</a>
+        <button class="site-icon-circle" data-action="toggle-site-theme" aria-label="Toggle Obsidian Dark or Alabaster Light">
+          <span data-theme-toggle-icon></span>
+        </button>
+        <a href="simulator.html" class="btn-primary">Try Live App</a>
       </div>
     </div>
   </header>
 
   <main class="legal-page-main">
     <div class="legal-page-header">
-      <div class="section-kicker">Open Source Notices · Goar Studio v2.1.0 (Build 31)</div>
-      <h1>Software License &amp; Attributions</h1>
-      <p style="margin:0;color:var(--on-surface-variant);font-size:14.5px">
-        Open-source components powering Goar Studio v2.1.0 across UI, storage, cryptography, OAuth 2.1, 3D WebGL, media, code editing, and on-device inference.
+      <div class="section-kicker">Open Source Notices &amp; Third-Party Attributions</div>
+      <h1>Software Licenses &amp; Attributions</h1>
+      <p style="margin:0;color:var(--on-surface-variant);font-size:15px">
+        Open-source libraries, native C++ runtimes, offline Alpine rootfs components, typefaces, and GitHub Skills Hub repositories powering Goar Studio v2.1.0 (Build 31).
       </p>
+      <div class="legal-meta-pills">
+        <span class="legal-meta-pill">Version 2.1.0 (Build 31)</span>
+        <span class="legal-meta-pill">SPDX Verified</span>
+        <span class="legal-meta-pill">12 Skills Hub Repos Attributed</span>
+      </div>
     </div>
 
-    <article class="legal-article">
-      <div class="legal-verbatim-box" style="margin-top:0;margin-bottom:28px">Goar Studio License
+    <div class="legal-layout">
+      <aside class="legal-toc" aria-label="Document Navigation">
+        <div class="legal-toc-title">On This Page</div>
+        <a href="#verbatim">In-App Notice</a>
+        <a href="#app-libs">1. Core Android &amp; Native Stack</a>
+        <a href="#skills-lic">2. GitHub Skills Hub Credits</a>
+        <a href="#trademarks">3. Trademarks &amp; Integrations</a>
+        <div style="height:1px;background:var(--outline-variant);margin:12px 0"></div>
+        <div class="legal-toc-title">Related Legal Docs</div>
+        <a href="privacy.html">Privacy &amp; Data Safety →</a>
+        <a href="terms.html">Terms of Service →</a>
+        <a href="data-protection.html">Security &amp; Data Deletion →</a>
+      </aside>
+
+      <article class="legal-article">
+        <div id="verbatim" class="legal-verbatim-box" style="margin-top:0;margin-bottom:26px">Goar Studio License
 
 MIT / Apache 2.0 compatible open-source components are used across Jetpack Compose, OkHttp, Room, Media3, Coil, Sora Editor, and Apache Commons Compress.</div>
 
-      <h2>Bundled Libraries &amp; Native Engines</h2>
-      <div class="goar-split-stack" style="margin-top:14px">
-        <div class="goar-split-card" style="padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px">
-          <div><strong style="color:var(--on-surface)">AndroidX Jetpack Compose, Material 3, Room, DataStore, WorkManager, CameraX &amp; Security Crypto</strong></div>
-          <span class="feature-tag">Apache 2.0</span>
+        <h2 id="app-libs">1. Bundled Libraries, Native Engines &amp; Assets</h2>
+        <div class="legal-table-wrap">
+          <table class="legal-table">
+            <thead>
+              <tr>
+                <th>Component / Subsystem</th>
+                <th>Role in Goar Studio v2.1.0</th>
+                <th>SPDX License</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>AndroidX Jetpack Compose, Material 3, Room, DataStore, WorkManager, CameraX &amp; Security Crypto</strong></td>
+                <td>UI system, local SQLite persistence, background task scheduling, Keystore encryption</td>
+                <td><code>Apache-2.0</code></td>
+              </tr>
+              <tr>
+                <td><strong>OkHttp, Ktor Client, Coil Compose, Media3 ExoPlayer &amp; Apache Commons Compress</strong></td>
+                <td>TLS 1.3 networking, media playback, image decoding, and ZIP archive export/import</td>
+                <td><code>Apache-2.0</code></td>
+              </tr>
+              <tr>
+                <td><strong>llama.cpp &amp; whisper.cpp (JNI Native C++)</strong></td>
+                <td>100% offline on-device GGUF LLM inference &amp; Whisper speech recognition (<code>arm64-v8a</code>, <code>x86_64</code>)</td>
+                <td><code>MIT</code></td>
+              </tr>
+              <tr>
+                <td><strong>Alpine Linux 3.21 Minirootfs &amp; BusyBox / musl libc</strong></td>
+                <td>APK-bundled, SHA-256 verified offline PRoot Linux sandbox environment (3.7 MB)</td>
+                <td><code>MIT / GPL-2.0</code></td>
+              </tr>
+              <tr>
+                <td><strong>Three.js, OrbitControls &amp; Phaser 3</strong></td>
+                <td>Self-healing 3D WebGL &amp; 2D physics game templates inside Build Studio</td>
+                <td><code>MIT</code></td>
+              </tr>
+              <tr>
+                <td><strong>Sora Editor, JSch (SSH), Tukaani XZ &amp; JLaTeXMath</strong></td>
+                <td>Code editing, SSH/SFTP client, compression, and math formula typesetting</td>
+                <td><code>BSD / LGPL / Public Domain</code></td>
+              </tr>
+              <tr>
+                <td><strong>Outfit &amp; JetBrains Mono Typefaces</strong></td>
+                <td>Primary geometric UI &amp; terminal monospace typography</td>
+                <td><code>OFL-1.1</code></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="goar-split-card" style="padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px">
-          <div><strong style="color:var(--on-surface)">OkHttp, Coil Compose, Media3 ExoPlayer &amp; Apache Commons Compress</strong></div>
-          <span class="feature-tag">Apache 2.0</span>
+
+        <h2 id="skills-lic">2. Curated GitHub Skills Hub Attributions (<a href="skills.html" style="color:var(--on-bg);text-decoration:underline">skills.html</a>)</h2>
+        <p>Community <code>SKILL.md</code> playbooks indexed in our Skills Hub remain the intellectual property of their respective authors and are linked directly to their upstream GitHub repositories under their stated open-source licenses:</p>
+        <div class="legal-table-wrap">
+          <table class="legal-table">
+            <thead>
+              <tr>
+                <th>Repository</th>
+                <th>Category</th>
+                <th>License</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>anthropics/skills</code></td><td>Official Reference Skills (Office, Frontend, MCP, Testing)</td><td><code>Apache-2.0 / Source-Available</code></td></tr>
+              <tr><td><code>obra/superpowers</code> &amp; <code>mattpocock/skills</code></td><td>Engineering Discipline, TDD, Debugging &amp; Domain Modeling</td><td><code>MIT</code></td></tr>
+              <tr><td><code>vercel-labs/agent-skills</code> &amp; <code>shadcn-ui/ui</code></td><td>React, Next.js, Composition Patterns &amp; shadcn/ui</td><td><code>MIT / Open Source</code></td></tr>
+              <tr><td><code>cloudflare/skills</code> &amp; <code>supabase/agent-skills</code></td><td>Cloudflare Workers/Agents SDK &amp; Postgres Best Practices</td><td><code>Apache-2.0 / MIT</code></td></tr>
+              <tr><td><code>huggingface/skills</code></td><td>HF CLI, HF MCP, Datasets, Training &amp; Serving</td><td><code>Apache-2.0</code></td></tr>
+              <tr><td><code>trailofbits/skills</code></td><td>Security Auditing, Static Analysis &amp; Differential Review</td><td><code>CC-BY-SA-4.0</code></td></tr>
+              <tr><td><code>expo/skills</code> &amp; <code>stripe/ai</code></td><td>Expo Mobile Workflows &amp; Stripe Payment Integrations</td><td><code>MIT</code></td></tr>
+            </tbody>
+          </table>
         </div>
-        <div class="goar-split-card" style="padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px">
-          <div><strong style="color:var(--on-surface)">llama.cpp, whisper.cpp &amp; Three.js + OrbitControls (On-Device JNI &amp; 3D Studio)</strong></div>
-          <span class="feature-tag">MIT</span>
-        </div>
-        <div class="goar-split-card" style="padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px">
-          <div><strong style="color:var(--on-surface)">Sora Editor, JSch (SSH), Tukaani XZ &amp; JLaTeXMath</strong></div>
-          <span class="feature-tag">BSD / LGPL / Public Domain</span>
-        </div>
-        <div class="goar-split-card" style="padding:14px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px">
-          <div><strong style="color:var(--on-surface)">Outfit &amp; JetBrains Mono Typefaces</strong></div>
-          <span class="feature-tag">SIL OFL 1.1</span>
-        </div>
-      </div>
-    </article>
+
+        <h2 id="trademarks">3. Trademarks &amp; Third-Party Marks</h2>
+        <p>All third-party product names, provider logos, and brand marks (including Anthropic, OpenAI, Google, NVIDIA, GitHub, Cloudflare, Vercel, Supabase, Stripe, Figma, Linear, Notion, and Alpine Linux) are the property of their respective owners and are referenced solely to indicate direct API, OAuth 2.1, or MCP interoperability.</p>
+      </article>
+    </div>
   </main>
 
   <footer class="site-footer">
     <div class="site-container footer-bottom" style="border-top:none;padding-top:0">
-      <span>© 2026 Goar Studio (goarxyz.com)</span>
+      <span>© 2026 Goar Studio (goarxyz.com) · Open Source Transparency</span>
       <div style="display:flex;gap:18px;flex-wrap:wrap">
-        <a href="privacy.html" style="color:var(--on-surface-variant)">Privacy Policy</a>
+        <a href="privacy.html" style="color:var(--on-surface-variant)">Privacy &amp; Data Safety</a>
         <a href="terms.html" style="color:var(--on-surface-variant)">Terms of Service</a>
-        <a href="data-protection.html" style="color:var(--on-surface-variant)">Data Protection</a>
-        <a href="licenses.html" style="color:var(--primary)">Licenses</a>
+        <a href="data-protection.html" style="color:var(--on-surface-variant)">Security &amp; Data Deletion</a>
+        <a href="licenses.html" style="color:var(--on-bg);font-weight:600">Licenses</a>
       </div>
     </div>
   </footer>

@@ -1,8 +1,8 @@
 /* ============================================================================
  * GOAR STUDIO v2.1.0 DESIGN SYSTEM — 1:1 Web Translation of app.goar.ui.theme
- * Source of truth (goar-xyz/Goar-Studio@3bbbdd9):
+ * Source of truth (goar-xyz/Goar-Studio@8b8e678):
  *   Color.kt (Obsidian Dark & Crisp Alabaster Light + 4 GoarPaletteStyle modes)
- *   Theme.kt · Type.kt · Shape.kt · GlassSurface.kt · GoarMatteIconColors.kt
+ *   Theme.kt · Type.kt · Shape.kt · Glass.kt · GlassSurface.kt · GoarMatteIconColors.kt
  * ============================================================================ */
 
 @font-face {
@@ -99,11 +99,12 @@
   --topbar-pill-active-bg: #1E1E25;
   --topbar-active-text: #F4F4F6;
   --topbar-inactive-text: rgba(161, 161, 170, 0.78);
-  --composer-card-bg: #0E0E12;
+  --composer-card-bg: #15151A;
   --composer-pill-bg: #1E1E25;
   --composer-ring: #272730;
-  --round-idle-bg: #F4F4F6;
-  --round-idle-fg: #060608;
+  --round-idle-bg: #FFFFFF;
+  --round-idle-fg: #0A0B0E;
+  --welcome-aura: rgba(63, 63, 70, 0.28);
   --aura-color: rgba(59, 130, 246, 0.22);
   --card-dark-bg: #15151A;
   --card-dark-border: #272730;
@@ -263,10 +264,11 @@
   --topbar-active-text: #0B0B0E;
   --topbar-inactive-text: rgba(101, 101, 111, 0.78);
   --composer-card-bg: #FFFFFF;
-  --composer-pill-bg: #F3F3F6;
+  --composer-pill-bg: #E8E8ED;
   --composer-ring: #E2E2E8;
-  --round-idle-bg: #0B0B0E;
+  --round-idle-bg: #111318;
   --round-idle-fg: #FFFFFF;
+  --welcome-aura: rgba(228, 228, 231, 0.55);
   --aura-color: rgba(37, 99, 235, 0.14);
   --card-dark-bg: #F3F3F6;
   --card-dark-border: #E2E2E8;

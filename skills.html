@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Skills Hub — 98 Curated SKILL.md Playbooks for Goar Studio</title>
+  <meta name="description" content="Explore and import 98 verified open-source SKILL.md playbooks for Goar Studio v2.1.0 from Anthropic, Superpowers, Matt Pocock, Vercel, shadcn/ui, Trail of Bits, Hugging Face, Cloudflare, Supabase, Expo, and Stripe." />
+  <link rel="icon" type="image/png" href="assets/ic_goar_mark.png" />
+  <link rel="stylesheet" href="css/goar-design-system.css" />
+  <link rel="stylesheet" href="css/website.css" />
+</head>
+<body>
+
+  <!-- ══ ARCHITECTURAL MONOCHROME TOP BAR (Identical Across All Pages) ══ -->
+  <header class="site-nav">
+    <div class="site-container site-nav-inner">
+      <a href="index.html" class="site-brand">
+        <img src="assets/ic_goar_mark.png" alt="Goar Studio" class="goar-mark-img goar-mark-dark-only" />
+        <img src="assets/ic_goar_mark_black.png" alt="Goar Studio" class="goar-mark-img goar-mark-light-only" />
+        <span>Goar Studio</span>
+      </a>
+      <nav class="site-nav-links" aria-label="Primary">
+        <a href="index.html" class="site-nav-link">Platform</a>
+        <a href="skills.html" class="site-nav-link active">Skills Hub</a>
+        <a href="simulator.html" class="site-nav-link">Live App</a>
+        <a href="privacy.html" class="site-nav-link">Privacy</a>
+        <a href="terms.html" class="site-nav-link">Legal</a>
+      </nav>
+      <div class="site-nav-actions">
+        <button class="site-icon-circle" data-action="toggle-site-theme" aria-label="Toggle Obsidian Dark or Alabaster Light" title="Toggle Obsidian Dark / Alabaster Light">
+          <span data-theme-toggle-icon></span>
+        </button>
+        <a href="simulator.html" class="btn-primary">Try Live App</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ══ SKILLS HUB HERO ══ -->
+    <section class="skills-hero">
+      <div class="site-container">
+        <div class="section-kicker">Portable Agent Skills · Open SKILL.md Directory</div>
+        <h1 class="section-title" style="max-width:820px">The best open-source GitHub skills, organized for Goar Studio.</h1>
+        <p class="section-subtitle" style="max-width:740px">
+          Every skill below is imported directly from verified open-source GitHub repositories and Goar Studio v2.1.0's built-in catalog. Inspect the full <code>SKILL.md</code> instructions, copy in one click, or download <code>.md</code> straight into <strong>Settings → Skills &amp; Tools</strong>.
+        </p>
+
+        <div class="skills-kpi-row">
+          <div class="skills-kpi-card">
+            <div class="skills-kpi-val" id="kpi-total-skills">98</div>
+            <div class="skills-kpi-lbl">Verified SKILL.md playbooks ready to import</div>
+          </div>
+          <div class="skills-kpi-card">
+            <div class="skills-kpi-val" id="kpi-total-repos">12</div>
+            <div class="skills-kpi-lbl">Top GitHub repos (Anthropic, Superpowers, Vercel, Trail of Bits…)</div>
+          </div>
+          <div class="skills-kpi-card">
+            <div class="skills-kpi-val">16 Built-In</div>
+            <div class="skills-kpi-lbl">Pre-installed in Goar v2.1.0 incl. NVIDIA NIM, CUDA &amp; NeMo</div>
+          </div>
+          <div class="skills-kpi-card">
+            <div class="skills-kpi-val">100% Portable</div>
+            <div class="skills-kpi-lbl">Standard YAML frontmatter · Works in Goar, Claude Code &amp; Codex</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ STICKY SEARCH, REPOSITORY & CATEGORY FILTER BAR ══ -->
+    <section class="skills-toolbar" aria-label="Filter Skills">
+      <div class="site-container">
+        <div class="skills-toolbar-top">
+          <label class="skills-search-box" aria-label="Search skills">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5" stroke-linecap="round"/></svg>
+            <input id="skills-search" type="search" placeholder="Search 98 skills by name, workflow, framework, or GitHub repo (e.g. tdd, react, nvidia, stripe, audit)…" autocomplete="off" />
+          </label>
+
+          <select id="skills-repo-filter" class="skills-select" aria-label="Filter by GitHub repository">
+            <option value="all">All Repositories</option>
+          </select>
+
+          <select id="skills-sort" class="skills-select" aria-label="Sort skills">
+            <option value="featured">Sort: Category &amp; Featured</option>
+            <option value="stars">Sort: Most GitHub Stars</option>
+            <option value="bundled">Sort: Goar Built-In First</option>
+            <option value="name">Sort: A → Z</option>
+          </select>
+        </div>
+
+        <div id="skills-cat-bar" class="skills-cat-bar" role="tablist" aria-label="Skill categories"></div>
+      </div>
+    </section>
+
+    <!-- ══ CURATED 3-COLUMN SKILLS DIRECTORY GRID ══ -->
+    <section class="skills-directory-body">
+      <div class="site-container">
+        <div class="skills-cat-banner">
+          <p id="skills-cat-desc" style="margin:0;font-size:14.5px;color:var(--on-surface-variant);max-width:740px">
+            Complete curated directory of bundled Goar Studio v2.1.0 skills and verified open-source GitHub SKILL.md playbooks.
+          </p>
+          <span id="skills-result-count" style="font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--on-surface-variant)">
+            Showing 98 of 98 skills
+          </span>
+        </div>
+
+        <div id="skills-grid" class="skills-grid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══ FULL SKILL.MD INSPECTOR & IMPORT MODAL ══ -->
+  <div id="skill-modal-backdrop" class="skill-modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="skill-modal-title">
+    <div class="skill-modal">
+      <div class="skill-modal-head">
+        <div>
+          <h2 id="skill-modal-title" style="margin:0;font-size:20px;font-weight:700;letter-spacing:-0.02em;color:var(--on-bg)">Skill Name</h2>
+          <div id="skill-modal-meta" style="margin-top:4px;font-family:var(--font-mono);font-size:12px;color:var(--on-surface-variant)">repo · license</div>
+        </div>
+        <button id="skill-modal-close" class="site-icon-circle" type="button" aria-label="Close skill preview">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <pre id="skill-modal-code" class="skill-modal-code"></pre>
+      <div class="skill-modal-foot">
+        <span style="font-size:12.5px;color:var(--on-surface-variant)">Import into Goar Studio via <strong>Settings → Skills &amp; Tools → Import .md</strong> or invoke with <code>/skill</code>.</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <a id="skill-modal-gh" href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="height:36px;padding:0 14px;font-size:12.5px">View on GitHub ↗</a>
+          <button id="skill-modal-copy" type="button" class="btn-secondary" style="height:36px;padding:0 14px;font-size:12.5px">Copy SKILL.md</button>
+          <button id="skill-modal-dl" type="button" class="btn-primary" style="height:36px;padding:0 16px;font-size:12.5px">Download .md</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="site-footer">
+    <div class="site-container footer-bottom" style="border-top:none;padding-top:0">
+      <span>© 2026 Goar Studio (goarxyz.com) · 98 Verified Open-Source SKILL.md Playbooks</span>
+      <div style="display:flex;gap:18px;flex-wrap:wrap">
+        <a href="index.html" style="color:var(--on-surface-variant)">Platform</a>
+        <a href="simulator.html" style="color:var(--on-surface-variant)">Live App</a>
+        <a href="privacy.html" style="color:var(--on-surface-variant)">Privacy</a>
+        <a href="terms.html" style="color:var(--on-surface-variant)">Terms</a>
+        <a href="licenses.html" style="color:var(--on-surface-variant)">Licenses</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/goar-icons.js"></script>
+  <script src="js/skills-catalog.js"></script>
+  <script src="js/site.js"></script>
+  <script>window.goarInitSkillsHub();</script>
+</body>
+</html>

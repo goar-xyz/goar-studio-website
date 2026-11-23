@@ -1,12 +1,14 @@
 /* ============================================================================
- * GOAR STUDIO v2.1.0 WEBSITE CONTROLLER
+ * GOAR STUDIO v2.1.0 (Build 31) WEBSITE CONTROLLER
  * Orchestrates:
  *   - Obsidian Dark / Crisp Alabaster Light theme sync across ALL phone instances
- *   - Framer-style scroll reveals (IntersectionObserver + immediate fold check)
- *   - 5 viewport-aware Interactive Video Reels + synchronized Chapter Scrubbers
- *   - Well-Known Companies Brand Strip (OAuth 2.1 / Frontier Labs) & 5-Star Cards
- *   - Tabbed Open Ecosystem + 16-Screen Hands-On Interactive Sandbox
- *   - Verbatim Legal & Compliance Hub
+ *   - Live 4-Palette GoarPaletteStyle sync (MONOCHROME / CHAMPAGNE / COBALT / TINTED)
+ *   - Smooth scroll reveals (IntersectionObserver + immediate fold check)
+ *   - 4 balanced alternating Right -> Left -> Right -> Left live interactive phone reels
+ *   - Well-Known Companies Brand Strip (12) & 5-Star Highlights (4)
+ *   - Tabbed Open Ecosystem + 17-Screen Hands-On Interactive Sandbox
+ *   - Curated 98-Skill GitHub SKILL.md Hub (skills.html)
+ *   - Verbatim & Enterprise Legal Hub
  * ============================================================================ */
 
 (function () {
@@ -15,7 +17,7 @@
       id: 'welcome',
       label: 'Ask · Home',
       dot: 'var(--m-top-ask)',
-      caption: '<strong>Architectural Monochrome v2.1.0:</strong> Boxless top drawer &amp; edit icons, sleek <code>[ Ask | Imagine | Build ]</code> segmented capsule pill, inline <strong>Agents</strong> toggle, Model Picker, Context Ring, and 6-bar voice button.'
+      caption: '<strong>Architectural Monochrome v2.1.0:</strong> Boxless top drawer &amp; edit icons, centered <code>[ Ask | Imagine | Build ]</code> segmented capsule pill, radial zinc watermark aura, and 3 starter pills (<code>Summarize</code>, <code>Write code</code>, <code>Brainstorm</code>).'
     },
     {
       id: 'chat-thinking',
@@ -27,55 +29,61 @@
       id: 'slash',
       label: '10 Slash Commands',
       dot: 'var(--m-cmp-sparkle)',
-      caption: '<strong>Vibe Command Palette (v2.1.0):</strong> Type <code>/</code> for 10 commands including <code>/drop</code> (Autonomous Commerce Drop), <code>/skill</code>, <code>/subagent</code>, <code>/plan</code>, <code>/build</code>, and <code>/compact</code>.'
+      caption: '<strong>Vibe Command Palette (v2.1.0):</strong> Type <code>/</code> for 10 commands including <code>/drop</code> (Autonomous Product Drop), <code>/skill</code>, <code>/subagent</code>, <code>/plan</code>, <code>/build</code>, and <code>/compact</code>.'
     },
     {
       id: 'voice',
       label: 'Live Voice Orb',
       dot: 'var(--m-cmp-mic)',
-      caption: '<strong>Static-Until-Talking Fluid Blob:</strong> Hold the round 6-bar voice button for 1.4s (or tap the orb now) to cycle silent pearl → emerald Listening → plum Thinking → azure Speaking.'
+      caption: '<strong>Static-Until-Talking Fluid Blob:</strong> Hold the round 6-bar voice button (or tap the orb now) to cycle silent pearl → emerald Listening → plum Thinking → azure Speaking backed by <code>whisper.cpp</code>.'
     },
     {
       id: 'imagine',
       label: 'Imagine Studio',
       dot: 'var(--m-top-imagine)',
-      caption: '<strong>On-Device &amp; BYOK Media Studio:</strong> Switch Video / Image / Audio across Goar On-Device Creative Engine, Veo 3.1, Kling, FLUX.1, NVIDIA NIM, Imagen 3, and Eleven v3.'
+      caption: '<strong>On-Device &amp; Cloud Media Studio:</strong> Switch Coral Video / Amber Image / Cyan Audio across Goar On-Device Creative Engine, Veo 3.1, Kling, FLUX.1, NVIDIA NIM, Imagen 3, and Eleven v3.'
     },
     {
       id: 'build',
-      label: 'Build & 3D Games',
+      label: 'Build & 3D IDE',
       dot: 'var(--m-top-build)',
-      caption: '<strong>Self-Healing Web &amp; Game Studio:</strong> Toggle <code>Preview | Code</code> on live HTML5/Canvas &amp; Three.js templates, validate automatically, or publish via Google Drive Website Sync.'
+      caption: '<strong>Self-Healing Web &amp; 3D Game Studio:</strong> Toggle <code>Preview | Code</code> on live HTML5/Canvas &amp; Three.js templates, auto-validate runtime DOM/JS errors, or sync via Google Drive.'
+    },
+    {
+      id: 'apphub',
+      label: 'App Screen',
+      dot: 'var(--accent-cobalt)',
+      caption: '<strong>NEW · Full-Screen App Screen Hub:</strong> 3-column squircle app launcher with <code>Build | Import | Terminal</code> chips, built-in Palette Icon Studio, and multi-resolution <code>.ICO</code> export.'
     },
     {
       id: 'agents',
       label: '6 SOUL.md Agents',
       dot: 'var(--m-drw-newchat)',
-      caption: '<strong>Autonomous Specialist Roster:</strong> Tap the inline Agents button or slide open the drawer for <code>@goar</code>, <code>@architect</code>, <code>@aegis</code>, <code>@quant</code>, <code>@atlas</code>, and <code>@muse</code>.'
+      caption: '<strong>Inline Composer Agents Sheet:</strong> Tap the composer Agents icon to deploy <code>@goar</code>, <code>@architect</code>, <code>@aegis</code>, <code>@quant</code>, <code>@atlas</code>, and <code>@muse</code> with dedicated memory &amp; skills.'
     },
     {
       id: 'network',
       label: 'Network Tools',
       dot: 'var(--m-drw-network)',
-      caption: '<strong>NEW v2.1.0 · 4-Tab Recon &amp; Defense Suite:</strong> Unified Target Lookup (DNS/TLS/HTTP/Passive/ASN/Shodan CVEs), /24 LAN Scan, Live HTTP Traffic Inspector, and Shadow Trap honeyport daemon.'
+      caption: '<strong>Streamlined 3-Tab Recon &amp; Traffic Suite:</strong> Unified Target Lookup (DNS/TLS/HTTP/Passive/ASN/Shodan CVEs), /24 LAN Scan with 1-tap inspect, Live HTTP Traffic Inspector, and inline Goar AI analysis.'
     },
     {
       id: 'oauth',
       label: 'OAuth 2.1 Hub',
       dot: 'var(--m-set-apihub)',
-      caption: '<strong>NEW v2.1.0 · One-Tap OAuth 2.1 PKCE Sign-In:</strong> Connect Google Drive/Gmail/Calendar, GitHub, Notion, Linear, Cloudflare, Vercel, Supabase, Stripe &amp; Figma with zero manual API key copy-paste.'
+      caption: '<strong>48 Native Connectors &amp; OAuth 2.1 PKCE:</strong> One-tap device-native sign-in for Google Drive/Gmail/Calendar, GitHub, Cloudflare, Vercel, Supabase, Stripe, Notion, Linear &amp; Figma.'
     },
     {
       id: 'terminal',
-      label: 'VT100 Terminal',
+      label: 'Alpine 3.21 Shell',
       dot: 'var(--m-drw-terminal)',
-      caption: '<strong>Pure #000000 Linux PRoot Terminal:</strong> Full VT100 shell across 15 rootless distros + SSH + atomic JNI file transfer. Try typing <code>neofetch</code>, <code>ls</code>, or <code>uname -a</code>!'
+      caption: '<strong>Offline APK-Bundled Alpine Linux 3.21:</strong> SHA-256 verified 3.7 MB minirootfs (BusyBox + musl libc, zero external binary downloads) + SSH/SFTP. Try typing <code>neofetch</code>, <code>ls</code>, or <code>uname -a</code>!'
     },
     {
       id: 'files',
       label: 'File Browser',
       dot: 'var(--m-drw-files)',
-      caption: '<strong>Multi-Source Workspace Explorer:</strong> Browse, inspect sandbox storage metrics, and edit files across Local Workspace, Ubuntu PRoot, and SSH hosts.'
+      caption: '<strong>Multi-Source Workspace Explorer:</strong> Browse and edit files across Local Workspace, Alpine 3.21 PRoot, and SSH hosts — exposed cleanly to Android Files via <code>DocumentsProvider</code>.'
     },
     {
       id: 'docs',
@@ -85,9 +93,9 @@
     },
     {
       id: 'browser',
-      label: 'AI Browser',
+      label: 'SmartCookieWeb',
       dot: 'var(--m-drw-browser)',
-      caption: '<strong>SmartCookie WebView + DevTools:</strong> Shared user/agent browser with live Network/Console inspector, Cloak fingerprint spoofing, and Manus Glass PiP takeover.'
+      caption: '<strong>Privacy Shield Browser + Manus Glass PiP:</strong> Shared user/agent browser with per-host Ad/Tracker Shield, <code>Sec-GPC: 1</code>, DevTools Network/Console inspector, and 1-tap takeover.'
     },
     {
       id: 'tasks',
@@ -99,28 +107,28 @@
       id: 'settings',
       label: 'Tiered Settings',
       dot: 'var(--m-drw-settings)',
-      caption: '<strong>NEW v2.1.0 · Consumer Quick Controls + 4 Palettes:</strong> One-tap theme &amp; active model card, collapsible Advanced Studio, 16 skills (incl. NVIDIA NIM/CUDA/NeMo), and 4 Color &amp; Accent Styles.'
+      caption: '<strong>Exact v2.1.0 Settings Hierarchy:</strong> Quick <code>Auto | Light | Dark</code> switcher, Model card, boxless monochrome rows (<code>Models &amp; Voice</code>, <code>Assistant</code>, <code>General &amp; Privacy</code>), collapsible <code>Advanced</code>, and 4 Palettes.'
     },
     {
       id: 'about',
       label: 'About & Legal',
       dot: 'var(--m-set-about)',
-      caption: '<strong>Built-In Transparency (v2.1.0 Build 31):</strong> Inspect version details, support contacts, and read verbatim Privacy Policy, Terms of Service, License, and Data Protection notices.'
+      caption: '<strong>Built-In Transparency (v2.1.0 Build 31):</strong> Inspect package verification, support desk routing, and read verbatim Privacy Policy, Terms of Service, License, and Data Protection notices.'
     }
   ];
 
   const WELL_KNOWN_BRANDS = [
-    { name: 'Anthropic', icon: 'provider_anthropic', accent: '#E8A87C', rating: '5.0' },
-    { name: 'OpenAI', icon: 'provider_openai', accent: '#4ADE80', rating: '5.0' },
-    { name: 'Google Gemini', icon: 'provider_gemini', accent: '#60A5FA', rating: '5.0' },
+    { name: 'Anthropic', icon: 'provider_anthropic', accent: '#E59A69', rating: '5.0' },
+    { name: 'OpenAI', icon: 'provider_openai', accent: '#10B981', rating: '5.0' },
+    { name: 'Google Gemini', icon: 'provider_gemini', accent: '#3B82F6', rating: '5.0' },
     { name: 'NVIDIA NIM', icon: 'provider_nvidia', accent: '#76B900', rating: '5.0' },
     { name: 'GitHub', icon: 'ic_mcp_github', accent: '#F4F4F6', rating: '5.0' },
-    { name: 'Cloudflare', icon: 'ic_brand_cloudflare', accent: '#FF7A45', rating: '5.0' },
+    { name: 'Cloudflare', icon: 'ic_brand_cloudflare', accent: '#F59E0B', rating: '5.0' },
     { name: 'Vercel', icon: 'ic_brand_vercel', accent: '#F4F4F6', rating: '5.0' },
-    { name: 'Supabase', icon: 'ic_brand_supabase', accent: '#3ECF8E', rating: '5.0' },
-    { name: 'Stripe', icon: 'provider_stripe', accent: '#8B7CF6', rating: '5.0' },
+    { name: 'Supabase', icon: 'ic_brand_supabase', accent: '#10B981', rating: '5.0' },
+    { name: 'Stripe', icon: 'provider_stripe', accent: '#818CF8', rating: '5.0' },
     { name: 'Figma', icon: 'ic_brand_figma', accent: '#F472B6', rating: '5.0' },
-    { name: 'Linear', icon: 'ic_mcp_linear', accent: '#818CF8', rating: '5.0' },
+    { name: 'Linear', icon: 'ic_mcp_linear', accent: '#60A5FA', rating: '5.0' },
     { name: 'Notion', icon: 'ic_mcp_notion', accent: '#F4F4F6', rating: '5.0' }
   ];
 
@@ -137,10 +145,10 @@
     {
       brand: 'GitHub + Vercel',
       icon: 'ic_mcp_github',
-      color: '#60A5FA',
+      color: '#3B82F6',
       score: '5.0',
-      quote: '“One-tap <strong>OAuth 2.1 PKCE sign-in</strong> connects GitHub, Vercel, and Supabase MCP servers in seconds — no hunting for tokens — right beside a real <strong>Ubuntu 24.04 PRoot</strong> shell.”',
-      tag: 'OAuth 2.1 PKCE · PRoot Linux',
+      quote: '“One-tap <strong>OAuth 2.1 PKCE sign-in</strong> connects GitHub, Vercel, and Supabase MCP servers in seconds — right beside an offline SHA-256 verified <strong>Alpine Linux 3.21</strong> shell.”',
+      tag: 'OAuth 2.1 · Alpine 3.21 PRoot',
       role: 'Principal Platform Engineer'
     },
     {
@@ -148,17 +156,17 @@
       icon: 'provider_openai',
       color: '#10B981',
       score: '5.0',
-      quote: '“One architectural monochrome studio unifying <strong>GPT-4.1</strong>, <strong>Gemini 2.5 Pro</strong>, <strong>Veo 3.1</strong>, on-device Creative Engine, and offline <strong>llama.cpp</strong>. Replaced four separate apps on day one.”',
-      tag: '19+ Cloud & Local Models',
+      quote: '“One architectural monochrome studio unifying <strong>GPT-4.1</strong>, <strong>Gemini 2.5 Pro</strong>, <strong>Veo 3.1</strong>, App Screen squircle hub, and offline <strong>llama.cpp</strong>. Replaced four separate apps on day one.”',
+      tag: '18+ Providers & On-Device C++',
       role: 'Product Design Founder'
     },
     {
       brand: 'Cloudflare + Stripe',
       icon: 'ic_brand_cloudflare',
-      color: '#FF7A45',
+      color: '#F59E0B',
       score: '5.0',
-      quote: '“Between <strong>Cloudflare &amp; Stripe OAuth MCP</strong>, the autonomous <code>/drop</code> orchestrator, and the 4-tab <strong>Network Tools</strong> recon &amp; Shadow Trap suite, nothing else on Android comes close.”',
-      tag: 'Network Recon · Keystore Vault',
+      quote: '“Between <strong>Cloudflare &amp; Stripe OAuth</strong>, the autonomous <code>/drop</code> commerce orchestrator, and 3-tab <strong>Network Tools</strong> recon &amp; traffic auditing, nothing else on Android comes close.”',
+      tag: '3-Tab Recon · AES-256-GCM',
       role: 'CTO · SaaS Operations'
     }
   ];
@@ -234,7 +242,7 @@
       allSims.forEach(instance => instance.render());
     }
 
-    /* ── 1. Mount 5 Choreographed Scenario Interactive Video Phones ── */
+    /* ── 1. Mount Balanced Alternating Scenario Interactive Video Phones ── */
     const clipMounts = document.querySelectorAll('[data-scenario-clip]');
     const visibilityTargets = new Map();
 
@@ -311,7 +319,7 @@
       }
     });
 
-    /* ── 2. Mount Full Hands-On 16-Screen Interactive Sandbox Phone ── */
+    /* ── 2. Mount Full Hands-On 17-Screen Interactive Sandbox Phone ── */
     const sandboxMount = document.getElementById('goar-sim-mount');
     let sandboxSim = null;
 
@@ -338,6 +346,19 @@
 
     window.goarInitTheme(() => {
       allSims.forEach(instance => instance.render());
+    });
+
+    /* ── Live 4-Palette GoarPaletteStyle Switcher (Syncs all Phones!) ── */
+    const palBtns = document.querySelectorAll('[data-site-palette]');
+    palBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const pal = btn.dataset.sitePalette;
+        palBtns.forEach(b => b.classList.toggle('active', b.dataset.sitePalette === pal));
+        allSims.forEach(sim => {
+          sim.state.paletteStyle = pal;
+          sim.render();
+        });
+      });
     });
 
     /* ── 3. Populate Well-Known Companies + 5-Star Showcase ── */
@@ -373,7 +394,7 @@
         <article class="five-star-card">
           <div class="five-star-head">
             <div class="five-star-brand">
-              <span class="five-star-brand-icon" style="background:color-mix(in srgb, ${c.color} 16%, transparent);border:1px solid color-mix(in srgb, ${c.color} 32%, transparent)">
+              <span class="five-star-brand-icon" style="background:color-mix(in srgb, ${c.color} 15%, transparent);border:1px solid color-mix(in srgb, ${c.color} 30%, transparent)">
                 ${I(c.icon, 18, c.color)}
               </span>
               <span>${c.brand}</span>
@@ -389,7 +410,7 @@
       `).join('');
     }
 
-    /* ── 4. Populate Tabbed Ecosystem Strip (Providers / Distros / OAuth MCP) ── */
+    /* ── 4. Populate Tabbed Ecosystem Strip (Providers / On-Device Runtime / 48 OAuth MCP) ── */
     const ecoWrap = document.getElementById('eco-pills-wrap');
     const ecoTabBtns = document.querySelectorAll('[data-eco-tab]');
     function renderEcoTab(kind) {
@@ -399,8 +420,8 @@
         ecoWrap.innerHTML = D.PROVIDERS_SHOWCASE.map(p =>
           `<span class="eco-pill">${I(p.icon, 16, 'var(--on-bg)')} ${p.name}</span>`
         ).join('');
-      } else if (kind === 'distros') {
-        ecoWrap.innerHTML = D.DISTROS_SHOWCASE.map(d =>
+      } else if (kind === 'runtime') {
+        ecoWrap.innerHTML = D.RUNTIME_STACK_SHOWCASE.map(d =>
           `<span class="eco-pill">${I(d.icon, 16, 'var(--accent-emerald)')} ${d.name}</span>`
         ).join('');
       } else {
@@ -414,7 +435,7 @@
     });
     if (ecoWrap) renderEcoTab('providers');
 
-    /* ── 5. Populate Hands-On 16-Screen Sandbox Controls ── */
+    /* ── 5. Populate Hands-On 17-Screen Sandbox Controls ── */
     const tourChipsEl = document.getElementById('tour-chips');
     const tourCaptionEl = document.getElementById('tour-caption');
 
@@ -453,19 +474,19 @@
     const legalMeta = {
       privacy_policy: {
         href: 'privacy.html',
-        summary: `<h4>Zero Cloud Intermediaries</h4><p>Goar Studio runs as a local-first studio on your Android device (v2.1.0 Build 31). Your conversations, system prompts, agent memories, workspace projects, tasks, OAuth tokens, and API keys are stored strictly on-device via Android Room (SQLite), Jetpack DataStore, and Android Keystore-backed <code>EncryptedSharedPreferences</code>.</p><h4>Direct Provider &amp; OAuth 2.1 Routing</h4><p>Outbound requests travel directly from your device only to the model providers, OAuth 2.1 PKCE MCP servers, search backends, or SSH hosts you explicitly configure. Diagnostic logs stay local unless you explicitly export a bundle.</p>`
+        summary: `<h4>Zero Cloud Intermediaries &amp; Google Play Data Safety</h4><p>Goar Studio runs as a local-first studio on your Android device (v2.1.0 Build 31). Conversations, system prompts, agent memories, workspaces, OAuth 2.1 tokens, and API keys stay encrypted on-device via Android Room SQLite and hardware-backed Android Keystore (AES-256-GCM). Zero Advertising ID (<code>AD_ID</code>) and zero broad storage permissions.</p><h4>Google Drive OAuth Limited Use Compliance</h4><p>Optional Google Drive access uses device-native Google Identity Services strictly when you initiate a website sync or workspace import, adhering to the Google API Services User Data Policy (Limited Use).</p>`
       },
       terms_of_service: {
         href: 'terms.html',
-        summary: `<h4>Local-First Software License &amp; Operator Responsibility</h4><p>Goar Studio is provided as-is as a local-first multi-model AI studio, web/game builder, browser, network toolkit, and workspace environment. Because you connect your own API keys, OAuth 2.1 tokens, SSH hosts, MCP servers, and scheduled automations, you retain full ownership and responsibility for all credentials, external calls, and generated outputs.</p>`
+        summary: `<h4>100% Creator Ownership &amp; BYOK Responsibility</h4><p>Goar Studio claims zero ownership or royalties over the web applications, 2D/3D WebGL games, media creatives, documents, or <code>SKILL.md</code> playbooks you build. You retain full control and responsibility for your API keys, OAuth grants, external MCP tools, and automated workflows.</p>`
       },
       privacy_act: {
         href: 'data-protection.html',
-        summary: `<h4>4-Layer Local Privacy Architecture &amp; App Integrity Shield</h4><p>Protected by Android Keystore encryption and App Integrity Shield. From <strong>Settings → Data &amp; Backups</strong>, export encrypted-optional ZIP archives, import ChatGPT or Claude conversation histories, configure local backups, or wipe stored databases and keys immediately.</p>`
+        summary: `<h4>AES-256-GCM Security, SSRF Defense &amp; Instant Data Erasure</h4><p>Protected by Android Keystore AES-256-GCM, SSRF DNS-rebinding guards, zero Dynamic Code Loading (DCL), 16 KB page-aligned stripped NDK libraries, and startup <code>AppIntegrityShield</code> verification. Wipe granular chats, revoke OAuth grants, or clear all device data instantaneously.</p>`
       },
       license: {
         href: 'licenses.html',
-        summary: `<h4>Open-Source Ecosystem Transparency</h4><p>Goar Studio builds on MIT and Apache 2.0 compatible libraries including Jetpack Compose, Material 3, OkHttp, Room, Media3, Coil, Sora Editor, Three.js, JLaTeXMath, JSch, Apache Commons Compress, llama.cpp, and whisper.cpp.</p>`
+        summary: `<h4>Open-Source Ecosystem Transparency</h4><p>Built on MIT and Apache 2.0 compatible components including Jetpack Compose, Material 3, OkHttp, Room, Media3, Coil, Sora Editor, Three.js, Alpine Linux 3.21 minirootfs (SHA-256 verified), JSch, Apache Commons Compress, llama.cpp, and whisper.cpp.</p>`
       }
     };
 
@@ -490,7 +511,210 @@
     });
     if (legalBody) showLegalTab('privacy_policy');
 
-    /* ── 7. Activate Framer Scroll Reveals ── */
+    /* ── 7. Activate Scroll Reveals ── */
     initScrollReveals();
+  };
+
+  /* ============================================================================
+   * GITHUB SKILLS HUB CONTROLLER (skills.html — 98+ Real Imported SKILL.md Files)
+   * ============================================================================ */
+  window.goarInitSkillsHub = function () {
+    window.goarInitTheme();
+    const hub = window.GOAR_SKILLS_HUB;
+    const I = window.goarIcon;
+    if (!hub) return;
+
+    const esc = (s) => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    const fmtStars = (n) => n ? (n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, '') + 'k' : String(n)) : '';
+
+    const catBar = document.getElementById('skills-cat-bar');
+    const gridEl = document.getElementById('skills-grid');
+    const searchEl = document.getElementById('skills-search');
+    const repoFilterEl = document.getElementById('skills-repo-filter');
+    const sortEl = document.getElementById('skills-sort');
+    const countLabel = document.getElementById('skills-result-count');
+    const catDescEl = document.getElementById('skills-cat-desc');
+    const totalEl = document.getElementById('kpi-total-skills');
+    const reposEl = document.getElementById('kpi-total-repos');
+    const modalBackdrop = document.getElementById('skill-modal-backdrop');
+
+    if (totalEl) totalEl.textContent = String(hub.totalCount);
+    if (reposEl) reposEl.textContent = String(hub.repoCount);
+
+    let activeCat = 'all';
+    let query = '';
+    let repoFilter = 'all';
+    let sortBy = 'featured';
+    let modalSkill = null;
+
+    // Populate repo dropdown
+    if (repoFilterEl) {
+      const repos = Array.from(new Set(hub.skills.map(s => s.repo)));
+      repoFilterEl.innerHTML = `<option value="all">All Repositories (${repos.length})</option>` +
+        repos.map(r => `<option value="${esc(r)}">${esc(r)}</option>`).join('');
+    }
+
+    function catCount(catId) {
+      if (catId === 'all') return hub.skills.length;
+      return hub.skills.filter(s => s.category === catId).length;
+    }
+
+    function renderCats() {
+      if (!catBar) return;
+      catBar.innerHTML = hub.categories.map(c => `
+        <button class="skills-cat-btn ${activeCat === c.id ? 'active' : ''}" data-cat="${c.id}" type="button">
+          <span>${esc(c.label)}</span>
+          <span class="skills-cat-count">${catCount(c.id)}</span>
+        </button>
+      `).join('');
+    }
+
+    function getFiltered() {
+      const q = query.trim().toLowerCase();
+      let list = hub.skills.filter(s => {
+        if (activeCat !== 'all' && s.category !== activeCat) return false;
+        if (repoFilter !== 'all' && s.repo !== repoFilter) return false;
+        if (q) {
+          const hay = `${s.title} ${s.slug} ${s.description} ${s.repo} ${s.category}`.toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+      if (sortBy === 'stars') {
+        list = list.slice().sort((a, b) => (b.stars || 999999) - (a.stars || 999999));
+      } else if (sortBy === 'name') {
+        list = list.slice().sort((a, b) => a.title.localeCompare(b.title));
+      } else if (sortBy === 'bundled') {
+        list = list.slice().sort((a, b) => (b.bundled ? 1 : 0) - (a.bundled ? 1 : 0));
+      }
+      return list;
+    }
+
+    function downloadSkill(skill) {
+      const blob = new Blob([skill.markdown], { type: 'text/markdown;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = skill.file || (skill.slug + '.md');
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    function copySkill(skill, btnEl) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(skill.markdown).catch(() => {});
+      }
+      if (btnEl) {
+        const prev = btnEl.innerHTML;
+        btnEl.innerHTML = `${I('check', 13)} Copied`;
+        setTimeout(() => { btnEl.innerHTML = prev; }, 1400);
+      }
+    }
+
+    function openModal(skill) {
+      modalSkill = skill;
+      if (!modalBackdrop) return;
+      document.getElementById('skill-modal-title').textContent = skill.title;
+      document.getElementById('skill-modal-meta').textContent = `${skill.repo} · ${skill.license}${skill.stars ? ' · ★ ' + fmtStars(skill.stars) : ' · Bundled in Goar v2.1.0'}`;
+      document.getElementById('skill-modal-code').textContent = skill.markdown;
+      const ghLink = document.getElementById('skill-modal-gh');
+      if (ghLink) ghLink.setAttribute('href', skill.sourceUrl);
+      modalBackdrop.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      if (!modalBackdrop) return;
+      modalBackdrop.hidden = true;
+      document.body.style.overflow = '';
+    }
+
+    function renderGrid() {
+      const items = getFiltered();
+      const catObj = hub.categories.find(c => c.id === activeCat) || hub.categories[0];
+      if (catDescEl) catDescEl.textContent = catObj.desc;
+      if (countLabel) countLabel.textContent = `Showing ${items.length} of ${hub.totalCount} skills`;
+      if (!gridEl) return;
+
+      if (!items.length) {
+        gridEl.innerHTML = `
+          <div style="grid-column:1/-1;padding:48px 24px;text-align:center;border-radius:20px;background:var(--surface-container);border:1px solid var(--outline-variant)">
+            <strong style="font-size:16px">No matching skills found</strong>
+            <p style="margin:8px 0 0;color:var(--on-surface-variant);font-size:14px">Try clearing your search or choosing another GitHub repository.</p>
+          </div>
+        `;
+        return;
+      }
+
+      gridEl.innerHTML = items.map(s => `
+        <article class="skill-card">
+          <div class="skill-card-head">
+            <span class="skill-repo-badge" title="${esc(s.repo)}">${esc(s.repo)}</span>
+            ${s.bundled
+              ? `<span class="skill-bundled-tag">Built-In v2.1</span>`
+              : `<span class="skill-stars-tag">★ ${fmtStars(s.stars)}</span>`}
+          </div>
+          <h3 class="skill-card-title">${esc(s.title)}</h3>
+          <div class="skill-card-slug">/${esc(s.slug)} · ${esc(s.license)}</div>
+          <p class="skill-card-desc">${esc(s.description)}</p>
+          <div class="skill-card-foot">
+            <a class="skill-mini-btn" href="${esc(s.sourceUrl)}" target="_blank" rel="noopener noreferrer" title="View source on GitHub">
+              ${I('ic_mcp_github', 13)} Source
+            </a>
+            <div class="skill-card-actions">
+              <button class="skill-mini-btn" type="button" data-skill-copy="${esc(s.id)}">${I('copy', 13)} Copy</button>
+              <button class="skill-mini-btn primary" type="button" data-skill-view="${esc(s.id)}">Inspect</button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    if (catBar) {
+      catBar.addEventListener('click', e => {
+        const btn = e.target.closest('[data-cat]');
+        if (!btn) return;
+        activeCat = btn.dataset.cat;
+        renderCats();
+        renderGrid();
+      });
+    }
+    if (searchEl) searchEl.addEventListener('input', () => { query = searchEl.value; renderGrid(); });
+    if (repoFilterEl) repoFilterEl.addEventListener('change', () => { repoFilter = repoFilterEl.value; renderGrid(); });
+    if (sortEl) sortEl.addEventListener('change', () => { sortBy = sortEl.value; renderGrid(); });
+
+    if (gridEl) {
+      gridEl.addEventListener('click', e => {
+        const vBtn = e.target.closest('[data-skill-view]');
+        if (vBtn) {
+          const sk = hub.skills.find(x => x.id === vBtn.dataset.skillView);
+          if (sk) openModal(sk);
+          return;
+        }
+        const cBtn = e.target.closest('[data-skill-copy]');
+        if (cBtn) {
+          const sk = hub.skills.find(x => x.id === cBtn.dataset.skillCopy);
+          if (sk) copySkill(sk, cBtn);
+        }
+      });
+    }
+
+    const closeBtn = document.getElementById('skill-modal-close');
+    const copyModalBtn = document.getElementById('skill-modal-copy');
+    const dlModalBtn = document.getElementById('skill-modal-dl');
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (modalBackdrop) {
+      modalBackdrop.addEventListener('click', e => {
+        if (e.target === modalBackdrop) closeModal();
+      });
+    }
+    if (copyModalBtn) copyModalBtn.addEventListener('click', () => { if (modalSkill) copySkill(modalSkill, copyModalBtn); });
+    if (dlModalBtn) dlModalBtn.addEventListener('click', () => { if (modalSkill) downloadSkill(modalSkill); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    renderCats();
+    renderGrid();
   };
 })();

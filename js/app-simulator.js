@@ -248,18 +248,19 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
           }
         },
         {
-          id: 'solar',
-          label: '3D Solar System',
-          duration: 4600,
+          id: 'apphub',
+          label: 'App Screen Hub',
+          duration: 4800,
           play: async function (sim, v) {
             sim.closePopovers();
-            sim.state.screen = 'build';
-            sim.state.builderPane = 'preview';
+            sim.state.screen = 'apphub';
+            sim.state.appHubSearch = '';
             sim.render();
-            await v.wait(300);
-            await v.scrollEl('.g-template-chips', 260, 550);
-            await v.tap('[data-action="builder-template"][data-slug="solar-system-3d"]');
-            await v.wait(2200);
+            await v.wait(850);
+            await v.tap('[data-action="apphub-cycle-icon"][data-slug="solar-system-3d"]');
+            await v.wait(950);
+            await v.tap('[data-action="apphub-launch"][data-slug="solar-system-3d"]');
+            await v.wait(1800);
           }
         }
       ]
@@ -359,69 +360,84 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
             sim.state.activeConvId = null;
             sim.state.voiceOpen = false;
             sim.state.drawerOpen = false;
+            sim.state.agentsSheetOpen = false;
             sim.render();
             await v.wait(420);
-            await v.tap('[data-action="open-drawer"]');
-            await v.wait(550);
-            await v.tap('[data-action="drawer-tab"][data-dtab="bots"]');
-            await v.wait(1100);
-            await v.scrollEl('.g-drawer-scroll', 150, 850);
-            await v.wait(650);
+            await v.tap('[data-action="composer-agents"]');
+            await v.wait(900);
+            await v.scrollEl('.g-agents-sheet-scroll', 120, 750);
+            await v.wait(600);
             await v.tap('[data-action="open-bot"][data-bot="architect"]');
-            await v.wait(950);
+            await v.wait(1000);
           }
         },
         {
           id: 'hold-voice',
           label: 'Hold -> Voice',
-          duration: 4600,
+          duration: 4800,
           play: async function (sim, v) {
             sim.closePopovers();
             sim.state.drawerOpen = false;
+            sim.state.agentsSheetOpen = false;
             sim.state.voiceOpen = false;
             sim.state.screen = 'ask';
             sim.state.draft = '';
             sim.render();
-            await v.wait(420);
-            // Real glowing circular 1.3s hold animation on the 6-bar voice wave button!
-            await v.holdVoice('[data-action="primary-send"]', 1250);
-            await v.wait(1500);
+            await v.wait(380);
+            await v.holdVoice('[data-action="primary-send"]', 1150);
+            await v.wait(950);
+            await v.tap('[data-action="voice-orb-tap"]');
+            await v.wait(1200);
           }
         },
         {
-          id: 'thinking',
-          label: 'Voice Thinking',
-          duration: 3800,
+          id: 'alpine',
+          label: 'Alpine 3.21 PRoot',
+          duration: 5600,
           play: async function (sim, v) {
             sim.closePopovers();
             sim.state.drawerOpen = false;
-            sim.state.screen = 'ask';
-            sim.state.voiceOpen = true;
-            sim.state.voicePhase = 'listening';
-            sim.state.voiceCaption = '“Hey Goar, inspect our API latency trace and summarize the bottleneck.”';
+            sim.state.agentsSheetOpen = false;
+            sim.state.voiceOpen = false;
+            sim.state.screen = 'terminal';
+            sim.state.termLines = [
+              'Goar Studio VT100 · Alpine Linux 3.21 (Offline SHA-256 PRoot)',
+              ''
+            ];
+            sim.state.termInput = '';
+            sim.render();
+            await v.wait(400);
+            await v.typeTerminal('neofetch', 72);
+            await v.wait(1100);
+            await v.typeTerminal('uname -a', 64);
+            await v.wait(1350);
+          }
+        },
+        {
+          id: 'network-settings',
+          label: 'Network & Palettes',
+          duration: 5800,
+          play: async function (sim, v) {
+            sim.closePopovers();
+            sim.state.drawerOpen = false;
+            sim.state.agentsSheetOpen = false;
+            sim.state.voiceOpen = false;
+            sim.state.screen = 'audit';
+            sim.state.networkTab = 'lookup';
+            sim.render();
+            await v.wait(950);
+            await v.tap('[data-action="net-tab"][data-ntab="lan"]');
+            await v.wait(950);
+            await v.tap('[data-action="net-tab"][data-ntab="traffic"]');
+            await v.wait(900);
+            sim.state.screen = 'settings';
+            sim.state.settingsSubpage = 'appearance';
             sim.render();
             await v.wait(650);
-            await v.tap('[data-action="voice-orb-tap"]');
-            await v.wait(2200);
-          }
-        },
-        {
-          id: 'speaking',
-          label: 'Voice Speaking',
-          duration: 4600,
-          play: async function (sim, v) {
-            sim.closePopovers();
-            sim.state.drawerOpen = false;
-            sim.state.screen = 'ask';
-            sim.state.voiceOpen = true;
-            sim.state.voicePhase = 'thinking';
-            sim.state.voiceCaption = 'Inspecting worker-trace.json via @architect + Ubuntu PRoot sandbox…';
-            sim.render();
-            await v.wait(480);
-            await v.tap('[data-action="voice-orb-tap"]');
-            await v.wait(1400);
-            await v.tap('[data-action="voice-preset"]');
-            await v.wait(1700);
+            await v.tap('[data-action="set-palette"][data-pal="COBALT"]');
+            await v.wait(700);
+            await v.tap('[data-action="set-palette"][data-pal="MONOCHROME"]');
+            await v.wait(500);
           }
         }
       ]
@@ -430,15 +446,15 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
       steps: [
         {
           id: 'terminal',
-          label: 'Linux PRoot',
-          duration: 6200,
+          label: 'Alpine 3.21 PRoot',
+          duration: 6000,
           play: async function (sim, v) {
             sim.closePopovers();
             sim.state.drawerOpen = false;
             sim.state.voiceOpen = false;
             sim.state.screen = 'terminal';
             sim.state.termLines = [
-              'Goar Studio VT100 · PRoot Ubuntu 24.04 LTS (arm64-v8a)',
+              'Goar Studio VT100 · Alpine Linux 3.21 (Offline SHA-256 PRoot)',
               ''
             ];
             sim.state.termInput = '';
@@ -447,7 +463,7 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
             await v.typeTerminal('neofetch', 75);
             await v.wait(1100);
             await v.typeTerminal('uname -a', 68);
-            await v.wait(1500);
+            await v.wait(1400);
           }
         },
         {
@@ -460,15 +476,15 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
             sim.state.screen = 'docs';
             sim.state.docDiffs[0].status = 'pending';
             sim.render();
-            await v.wait(1100);
+            await v.wait(1050);
             await v.tap('[data-action="doc-diff"][data-res="accepted"]');
-            await v.wait(1800);
+            await v.wait(1700);
             sim.state.docDiffs[0].status = 'pending';
           }
         },
         {
           id: 'network',
-          label: 'Network Tools',
+          label: '3-Tab Network',
           duration: 5000,
           play: async function (sim, v) {
             sim.closePopovers();
@@ -476,11 +492,11 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
             sim.state.screen = 'audit';
             sim.state.networkTab = 'lookup';
             sim.render();
-            await v.wait(1100);
+            await v.wait(1050);
             await v.tap('[data-action="net-tab"][data-ntab="lan"]');
-            await v.wait(1150);
-            await v.tap('[data-action="net-tab"][data-ntab="trap"]');
-            await v.wait(1150);
+            await v.wait(1100);
+            await v.tap('[data-action="net-tab"][data-ntab="traffic"]');
+            await v.wait(1100);
           }
         },
         {
@@ -499,9 +515,9 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
             await v.tap('[data-action="settings-open"][data-skey="appearance"]');
             await v.wait(700);
             await v.tap('[data-action="set-palette"][data-pal="COBALT"]');
-            await v.wait(900);
-            await v.tap('[data-action="set-palette"][data-pal="TINTED"]');
-            await v.wait(900);
+            await v.wait(850);
+            await v.tap('[data-action="set-palette"][data-pal="CHAMPAGNE"]');
+            await v.wait(850);
             await v.tap('[data-action="set-palette"][data-pal="MONOCHROME"]');
             await v.wait(650);
           }
@@ -616,10 +632,10 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
         filesList: JSON.parse(JSON.stringify(D.WORKSPACE_FILES)),
         filesActiveName: null,
 
-        // Terminal state
+        // Terminal state (APK-bundled Offline Alpine Linux 3.21 @ 8b8e678)
         termLines: [
-          'Goar Studio VT100 · PRoot Ubuntu 24.04 LTS (arm64-v8a)',
-          'Type "help" for built-in mocked commands (ls, neofetch, uname -a, git status, ps, clear).',
+          'Goar Studio VT100 · Alpine Linux 3.21 (Offline SHA-256 PRoot)',
+          'BusyBox + musl libc · Type "help" (ls, neofetch, uname -a, git status, ps, clear).',
           ''
         ],
         termInput: '',
@@ -645,14 +661,18 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
         tasks: JSON.parse(JSON.stringify(D.TASKS)),
         calMonthOffset: 0,
 
-        // Settings & v2.1.0 Palette / Network / OAuth / PiP state
+        // Settings & v2.1.0 (@ 8b8e678) Palette / Network / OAuth / AppHub / Agents Sheet state
         paletteStyle: 'MONOCHROME', // MONOCHROME | CHAMPAGNE | COBALT | TINTED
         settingsSearch: '',
-        settingsSubpage: null, // null | appearance | provider | skills | api_hub | datacontrol | about
+        settingsSubpage: null, // null | appearance | provider | skills | api_hub | sandbox | datacontrol | about
         settingsAdvancedOpen: false,
+        drawerToolsExpanded: true,
+        agentsSheetOpen: false,
         legalModalKey: null,
-        networkTab: 'lookup', // lookup | lan | traffic | trap
+        networkTab: 'lookup', // lookup | lan | traffic
         oauthConnected: { Google: true, GitHub: true, Cloudflare: true, Notion: false, Linear: false, Vercel: false, Supabase: false, Stripe: false, Figma: false },
+        appHubApps: JSON.parse(JSON.stringify(D.APP_HUB_APPS)),
+        appHubSearch: '',
         pipOpen: false,
         pipTakeover: false,
 
@@ -1099,7 +1119,7 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
           this.state.screen = 'ask';
           this.state.voiceOpen = true;
           this.state.voicePhase = 'listening';
-          this.state.voiceCaption = '“Summarize today’s Watchtower alerts and check my Ubuntu sandbox disk usage.”';
+          this.state.voiceCaption = '“Summarize today’s Watchtower alerts and check my Alpine sandbox disk usage.”';
           break;
         case 'imagine':
           this.state.screen = 'imagine';
@@ -1112,10 +1132,14 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
           this.state.screen = 'build';
           this.state.builderPane = 'preview';
           break;
+        case 'apphub':
+          this.state.screen = 'apphub';
+          this.state.appHubSearch = '';
+          break;
         case 'agents':
           this.state.screen = 'ask';
-          this.state.drawerOpen = true;
-          this.state.drawerTab = 'bots';
+          this.state.drawerOpen = false;
+          this.state.agentsSheetOpen = true;
           break;
         case 'terminal':
           this.state.screen = 'terminal';
@@ -1205,6 +1229,7 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
       if (s.screen === 'ask') bodyHtml = this._renderAskScreen();
       else if (s.screen === 'imagine') bodyHtml = this._renderImagineScreen();
       else if (s.screen === 'build') bodyHtml = this._renderBuildScreen();
+      else if (s.screen === 'apphub') bodyHtml = this._renderAppHubScreen();
       else if (s.screen === 'browser') bodyHtml = this._renderBrowserScreen();
       else if (s.screen === 'files') bodyHtml = this._renderFilesScreen();
       else if (s.screen === 'terminal') bodyHtml = this._renderTerminalScreen();
@@ -1214,6 +1239,7 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
       else if (s.screen === 'settings') bodyHtml = this._renderSettingsScreen();
 
       const drawerHtml = s.drawerOpen ? this._renderDrawer() : '';
+      const agentsHtml = s.agentsSheetOpen ? this._renderAgentsSheet() : '';
       const voiceHtml = s.voiceOpen ? this._renderVoiceOverlay() : '';
       const pipHtml = s.pipOpen ? this._renderManusPip() : '';
       const snackHtml = s.snackbar ? `<div class="g-snackbar">${esc(s.snackbar)}</div>` : '';
@@ -1237,6 +1263,7 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
             ${bodyHtml}
             ${pipHtml}
             ${drawerHtml}
+            ${agentsHtml}
             ${voiceHtml}
             ${snackHtml}
             ${modalHtml}
@@ -1285,10 +1312,14 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
         centerHtml = `
           <div class="g-chat-welcome">
             <div class="g-welcome-aura">
-              <img src="assets/ic_goar_mark.png" alt="Goar Studio" class="goar-mark-img goar-mark-dark-only"/>
-              <img src="assets/ic_goar_mark_black.png" alt="Goar Studio" class="goar-mark-img goar-mark-light-only"/>
+              <img src="assets/ic_goar_mark.png" alt="Goar Studio" width="76" height="76" class="goar-mark-img goar-mark-dark-only"/>
+              <img src="assets/ic_goar_mark_black.png" alt="Goar Studio" width="76" height="76" class="goar-mark-img goar-mark-light-only"/>
             </div>
-            <div class="g-welcome-title">Goar Studio</div>
+            <div class="g-welcome-pills">
+              <button class="g-welcome-pill" data-action="welcome-pill" data-prompt="Summarize this into clear, direct key points: ">Summarize</button>
+              <button class="g-welcome-pill" data-action="welcome-pill" data-prompt="Help me write clean, well-structured code for: ">Write code</button>
+              <button class="g-welcome-pill" data-action="welcome-pill" data-prompt="Give me 5 sharp, practical ideas for: ">Brainstorm</button>
+            </div>
           </div>
         `;
       } else {
@@ -1628,76 +1659,55 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
       return '';
     }
 
-    /* ── Navigation Drawer (ChatDrawerContent.kt + GoarBotsDrawerSection.kt) ── */
+    /* ── Navigation Drawer (ChatDrawerContent.kt @ 8b8e678 — Exact Boxless Monochrome Drawer) ── */
     _renderDrawer() {
       const s = this.state;
       const q = s.drawerSearch.trim().toLowerCase();
+      const filteredConvs = s.conversations.filter(c => !q || c.title.toLowerCase().includes(q));
+      const isTinted = s.paletteStyle === 'TINTED';
+      const dIcon = (ic, varName) => `<span class="g-boxless-icon-slot">${I(ic, 20, isTinted ? `var(${varName})` : 'var(--icon-chrome)')}</span>`;
 
-      let contentHtml = '';
-      if (s.drawerTab === 'bots') {
-        const groups = {};
-        D.BOTS.filter(b => !q || b.name.toLowerCase().includes(q) || b.title.toLowerCase().includes(q) || b.handle.includes(q))
-          .forEach(b => { (groups[b.group] = groups[b.group] || []).push(b); });
-        contentHtml = `
-          <div class="g-bot-toolbar">
-            <button class="g-bot-action-btn primary" data-action="bot-toast" data-msg="SOUL.md Agent Creator opened (Mocked)">${I('add', 15)} New Agent</button>
-            <button class="g-bot-action-btn" data-action="open-conv" data-id="conv_council">${I('group', 15)} Multi-Agent</button>
-          </div>
-          ${Object.keys(groups).map(gName => `
-            <div class="g-drawer-section-lbl">${esc(gName)}</div>
-            ${groups[gName].map(b => `
-              <button class="g-bot-card" data-action="open-bot" data-bot="${b.id}">
-                <span class="g-matte-badge-32" style="background:${hexToRgba(b.colorVar, 0.16)}">${I(b.icon, 18, `var(${b.colorVar})`)}</span>
-                <div style="min-width:0;flex:1">
-                  <div><span class="g-bot-name">${esc(b.name)}</span><span class="g-bot-handle">@${b.handle}</span></div>
-                  <div class="g-bot-role">${esc(b.title)}</div>
-                </div>
-              </button>
-            `).join('')}
-          `).join('')}
-        `;
-      } else {
-        const filteredConvs = s.conversations.filter(c => !q || c.title.toLowerCase().includes(q));
-        const isTinted = s.paletteStyle === 'TINTED';
-        const dIcon = (ic, varName) => isTinted
-          ? `<span class="g-matte-badge-32" style="background:${hexToRgba(varName, 0.16)}">${I(ic, 17, `var(${varName})`)}</span>`
-          : `<span class="g-matte-badge-32" style="background:color-mix(in srgb, var(--on-surface) 7%, transparent)">${I(ic, 17, 'var(--icon-chrome)')}</span>`;
-        contentHtml = `
-          ${!q ? `
-            <div class="g-drawer-section-lbl">Workspace</div>
+      const contentHtml = `
+        ${!q ? `
+          <button class="g-drawer-section-toggle" data-action="drawer-toggle-tools">
+            <span>WORKSPACE</span>
+            ${I(s.drawerToolsExpanded ? 'chevron_up' : 'chevron_down', 16, 'var(--on-surface-variant)')}
+          </button>
+          ${s.drawerToolsExpanded ? `
             <button class="g-drawer-row" data-action="drawer-nav" data-dest="files">
               ${dIcon('ic_nav_files', '--m-drw-files')}
-              <div><div>Files</div><div style="font-size:11px;color:var(--on-surface-variant)">Files, notes, terminal &amp; PDFs</div></div>
+              <div><div style="font-weight:600">Files</div><div style="font-size:11px;color:var(--on-surface-variant)">Files, notes, terminal &amp; PDFs</div></div>
             </button>
             <button class="g-drawer-row" data-action="drawer-nav" data-dest="browser">
               ${dIcon('ic_nav_browser', '--m-drw-browser')}
-              <div><div>Browser</div><div style="font-size:11px;color:var(--on-surface-variant)">Web browsing &amp; live research</div></div>
+              <div><div style="font-weight:600">Browse</div><div style="font-size:11px;color:var(--on-surface-variant)">Web browsing &amp; live research</div></div>
             </button>
             <button class="g-drawer-row" data-action="drawer-nav" data-dest="tasks">
-              ${dIcon('ic_nav_tasks', '--m-drw-tasks')}
-              <div><div>Tasks &amp; Calendar</div><div style="font-size:11px;color:var(--on-surface-variant)">Automations &amp; routines</div></div>
+              ${dIcon('calendar', '--m-drw-calendar')}
+              <div><div style="font-weight:600">Calendar &amp; Tasks</div><div style="font-size:11px;color:var(--on-surface-variant)">Schedule, reminders &amp; automations</div></div>
+            </button>
+            <button class="g-drawer-row" data-action="drawer-nav" data-dest="apphub">
+              ${dIcon('apps', '--m-top-build')}
+              <div><div style="font-weight:600">App Screen</div><div style="font-size:11px;color:var(--on-surface-variant)">Squircle apps, games &amp; .ICO studio</div></div>
             </button>
             <button class="g-drawer-row" data-action="drawer-nav" data-dest="audit">
               ${dIcon('gsgs_actions_shield_check', '--m-drw-network')}
-              <div><div>Network Tools</div><div style="font-size:11px;color:var(--on-surface-variant)">Unified target recon, LAN &amp; defense</div></div>
+              <div><div style="font-weight:600">Network Tools</div><div style="font-size:11px;color:var(--on-surface-variant)">Target recon, LAN scan &amp; live traffic</div></div>
             </button>
             <button class="g-drawer-row" data-action="drawer-nav" data-dest="terminal">
-              ${dIcon('ic_nav_terminal', '--m-drw-terminal')}
-              <div><div>Linux Terminal</div><div style="font-size:11px;color:var(--on-surface-variant)">PRoot Ubuntu &amp; SSH shell</div></div>
+              ${dIcon('ic_alpine_linux', '--m-drw-terminal')}
+              <div><div style="font-weight:600">Linux Terminal</div><div style="font-size:11px;color:var(--on-surface-variant)">Offline Alpine 3.21 PRoot &amp; SSH</div></div>
             </button>
-            <button class="g-drawer-row" data-action="drawer-nav" data-dest="docs">
-              ${dIcon('article', '--m-drw-docs')}
-              <div><div>Revise Docs</div><div style="font-size:11px;color:var(--on-surface-variant)">Word .docx redline editor</div></div>
-            </button>
-            <div class="g-drawer-section-lbl">History</div>
           ` : ''}
-          ${filteredConvs.length ? filteredConvs.map(c => `
-            <button class="g-conv-item ${s.activeConvId === c.id && s.screen === 'ask' ? 'selected' : ''}" data-action="open-conv" data-id="${c.id}">
-              <span class="g-conv-title">${esc(c.title)}</span>
-            </button>
-          `).join('') : `<div style="padding:18px 10px;font-size:13px;color:var(--on-surface-variant)">No results found</div>`}
-        `;
-      }
+          <div style="height:1px;background:var(--outline-variant);opacity:.65;margin:8px 4px"></div>
+          <div class="g-drawer-section-lbl">HISTORY</div>
+        ` : ''}
+        ${filteredConvs.length ? filteredConvs.map(c => `
+          <button class="g-conv-item ${s.activeConvId === c.id && s.screen === 'ask' ? 'selected' : ''}" data-action="open-conv" data-id="${c.id}">
+            <span class="g-conv-title">${esc(c.title)}</span>
+          </button>
+        `).join('') : `<div style="padding:18px 10px;font-size:13px;color:var(--on-surface-variant)">No results found</div>`}
+      `;
 
       return `
         <div class="g-drawer-overlay">
@@ -1706,24 +1716,61 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
               <img src="assets/ic_goar_mark.png" alt="" width="22" height="22" class="goar-mark-img goar-mark-dark-only"/>
               <img src="assets/ic_goar_mark_black.png" alt="" width="22" height="22" class="goar-mark-img goar-mark-light-only"/>
               <span class="g-drawer-header-title">Goar Studio</span>
+              <button class="g-drawer-close-btn" data-action="drawer-nav" data-dest="new-chat" aria-label="New chat" title="New chat">
+                ${I('edit', 18, 'var(--icon-chrome)')}
+              </button>
               <button class="g-drawer-close-btn" data-action="close-drawer" aria-label="Collapse menu">
-                ${I('chevron_left', 21)}
+                ${I('chevron_left', 21, 'var(--icon-chrome)')}
               </button>
             </div>
             <div class="g-drawer-search">
               ${I('search', 16)}
               <input type="text" data-el="g-drawer-search-input" placeholder="Search messages…" value="${esc(s.drawerSearch)}"/>
             </div>
-            <div class="g-drawer-seg">
-              <button class="g-drawer-seg-btn ${s.drawerTab === 'chats' ? 'active' : ''}" data-action="drawer-tab" data-dtab="chats">Chats</button>
-              <button class="g-drawer-seg-btn ${s.drawerTab === 'bots' ? 'active' : ''}" data-action="drawer-tab" data-dtab="bots">Agents (${D.BOTS.length})</button>
-            </div>
             <div class="g-drawer-scroll">${contentHtml}</div>
             <div class="g-drawer-footer">
               <button class="g-drawer-row" data-action="drawer-nav" data-dest="settings">
-                <span class="g-matte-badge-32" style="background:${hexToRgba('--m-drw-settings', 0.16)}">${I('ic_set_gear', 18, 'var(--m-drw-settings)')}</span>
-                <span>Settings</span>
+                ${dIcon('ic_set_gear', '--m-drw-settings')}
+                <div><div style="font-weight:600">Settings</div><div style="font-size:11px;color:var(--on-surface-variant)">Providers, models, studio &amp; preferences</div></div>
               </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    /* ── Composer Inline Agents Sheet (6 SOUL.md Specialists) ── */
+    _renderAgentsSheet() {
+      const groups = {};
+      D.BOTS.forEach(b => { (groups[b.group] = groups[b.group] || []).push(b); });
+      return `
+        <div class="g-agents-sheet-overlay" data-action="close-agents-sheet">
+          <div class="g-agents-sheet" data-stop-prop="1">
+            <div class="g-agents-sheet-handle"></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:0 4px">
+              <div>
+                <div style="font-size:15px;font-weight:700">SOUL.md Agents (${D.BOTS.length})</div>
+                <div style="font-size:11.5px;color:var(--on-surface-variant)">Deploy an autonomous specialist or multi-agent council</div>
+              </div>
+              <button class="g-drawer-close-btn" data-action="close-agents-sheet">${I('close', 18)}</button>
+            </div>
+            <div class="g-bot-toolbar">
+              <button class="g-bot-action-btn primary" data-action="bot-toast" data-msg="SOUL.md Agent Creator opened (Mocked)">${I('add', 15)} New Agent</button>
+              <button class="g-bot-action-btn" data-action="open-conv" data-id="conv_council">${I('group', 15)} Multi-Agent</button>
+            </div>
+            <div class="g-agents-sheet-scroll">
+              ${Object.keys(groups).map(gName => `
+                <div class="g-drawer-section-lbl">${esc(gName)}</div>
+                ${groups[gName].map(b => `
+                  <button class="g-bot-card" data-action="open-bot" data-bot="${b.id}">
+                    <span class="g-boxless-icon-slot">${I(b.icon, 20, `var(${b.colorVar})`)}</span>
+                    <div style="min-width:0;flex:1">
+                      <div><span class="g-bot-name">${esc(b.name)}</span><span class="g-bot-handle">@${b.handle}</span></div>
+                      <div class="g-bot-role">${esc(b.title)}</div>
+                    </div>
+                  </button>
+                `).join('')}
+              `).join('')}
             </div>
           </div>
         </div>
@@ -1842,9 +1889,9 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
         ${this._renderMainTopHeaderBar('imagine')}
         <div class="g-scroll-body">
           <div class="g-imagine-seg">
-            <button class="g-imagine-seg-btn ${mode === 'video' ? 'active' : ''}" data-action="imagine-mode" data-imode="video">${I('movie', 16)} Video</button>
-            <button class="g-imagine-seg-btn ${mode === 'image' ? 'active' : ''}" data-action="imagine-mode" data-imode="image">${I('image', 16)} Image</button>
-            <button class="g-imagine-seg-btn ${mode === 'audio' ? 'active' : ''}" data-action="imagine-mode" data-imode="audio">${I('graphic_eq', 16)} Audio</button>
+            <button class="g-imagine-seg-btn ${mode === 'video' ? 'active' : ''}" data-action="imagine-mode" data-imode="video">${I('movie', 16, mode === 'video' ? 'var(--accent-coral)' : 'var(--on-surface-variant)')} Video</button>
+            <button class="g-imagine-seg-btn ${mode === 'image' ? 'active' : ''}" data-action="imagine-mode" data-imode="image">${I('image', 16, mode === 'image' ? 'var(--accent-amber)' : 'var(--on-surface-variant)')} Image</button>
+            <button class="g-imagine-seg-btn ${mode === 'audio' ? 'active' : ''}" data-action="imagine-mode" data-imode="audio">${I('graphic_eq', 16, mode === 'audio' ? 'var(--accent-cyan)' : 'var(--on-surface-variant)')} Audio</button>
           </div>
 
           <div style="position:relative">
@@ -2069,7 +2116,7 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
       const activeFile = s.filesList.find(f => f.name === s.filesActiveName);
       const sources = [
         { id: 'local', label: 'Local Workspace', icon: 'ic_nav_files' },
-        { id: 'ubuntu', label: 'Ubuntu 24.04', icon: 'ic_distro_ubuntu' },
+        { id: 'ubuntu', label: 'Alpine 3.21', icon: 'ic_alpine_linux' },
         { id: 'ssh', label: 'Prod VPS (SSH)', icon: 'ic_nav_ssh' }
       ];
 
@@ -2117,15 +2164,15 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
       return `
         <div class="g-term-wrap">
           <div class="g-term-topbar">
-            <button class="g-topbar-circle-btn" data-action="open-drawer" style="width:32px;height:32px;background:#161618;border-color:#26262a">${I('chevron_right', 19, 'var(--m-top-drawer)')}</button>
+            <button class="g-topbar-circle-btn" data-action="open-drawer" style="width:32px;height:32px;background:#161618;border-color:#26262a">${I('chevron_right', 19, 'var(--icon-chrome)')}</button>
             <span style="display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:12px;font-weight:600;flex:1">
-              ${I('ic_distro_ubuntu', 15, '#FF7A45')} tty1 · Ubuntu 24.04 (PRoot)
+              ${I('ic_alpine_linux', 15, 'var(--accent-emerald)')} tty1 · Alpine 3.21 (Offline)
             </span>
             <button class="g-extrakey" data-action="term-quick" data-cmd="neofetch">neofetch</button>
           </div>
           <div class="g-term-output" data-el="g-term-out">${esc(s.termLines.join('\n'))}</div>
           <form class="g-term-input-row" data-el="g-term-form">
-            <span style="color:#4ADE80;font-weight:700">root@goar:~$</span>
+            <span style="color:#10B981;font-weight:700">goar@alpine:~$</span>
             <input type="text" data-el="g-term-input" value="${esc(s.termInput)}" placeholder="Type command (ls, neofetch, help)..." autocomplete="off"/>
           </form>
           <div class="g-term-extrakeys">
@@ -2265,11 +2312,68 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
       `;
     }
 
-    /* ── Network Tools (NetworkAuditScreen.kt v2.1.0 — 4-Tab Recon & Defense Suite) ── */
+    /* ── App Screen / App Hub (AppHubScreen.kt @ 8b8e678) ── */
+    _renderAppHubScreen() {
+      const s = this.state;
+      const q = (s.appHubSearch || '').trim().toLowerCase();
+      const apps = s.appHubApps.filter(a => !q || a.title.toLowerCase().includes(q) || a.category.toLowerCase().includes(q));
+      const drawerGlyph = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h12M4 17h16"/></svg>';
+
+      return `
+        <div class="g-settings-header" style="justify-content:space-between;padding:8px 12px 6px">
+          <button class="g-topbar-circle-btn" data-action="open-drawer" style="width:36px;height:36px;color:var(--icon-chrome)">${drawerGlyph}</button>
+          <div style="display:flex;align-items:center;gap:7px">
+            <span style="font-size:15.5px;font-weight:600">App Screen</span>
+            <span style="font-size:11px;font-weight:600;padding:1px 8px;border-radius:999px;background:var(--surface-high);color:var(--on-surface-variant)">${apps.length}</span>
+          </div>
+          <button class="g-topbar-circle-btn" data-action="go-home" style="width:36px;height:36px;color:var(--icon-chrome)">${I('chevron_left', 20, 'var(--icon-chrome)')}</button>
+        </div>
+        <div class="g-scroll-body" style="padding:4px 14px 16px;gap:10px">
+          <div class="g-settings-search" style="border-radius:14px">
+            ${I('search', 16)}
+            <input type="text" data-el="g-apphub-search" value="${esc(s.appHubSearch)}" placeholder="Search apps, games, or tools..."/>
+          </div>
+          <div class="g-apphub-actions">
+            <button class="g-apphub-chip" data-action="switch-tab" data-tab="build" style="background:color-mix(in srgb,var(--accent-cobalt) 14%,transparent);border:1px solid color-mix(in srgb,var(--accent-cobalt) 35%,transparent);color:var(--accent-cobalt)">
+              ${I('ic_goar_build', 14, 'var(--accent-cobalt)')} Build
+            </button>
+            <button class="g-apphub-chip" data-action="apphub-import" style="background:color-mix(in srgb,var(--accent-emerald) 14%,transparent);border:1px solid color-mix(in srgb,var(--accent-emerald) 35%,transparent);color:var(--accent-emerald)">
+              ${I('upload', 14, 'var(--accent-emerald)')} Import
+            </button>
+            <button class="g-apphub-chip" data-action="drawer-nav" data-dest="terminal" style="background:color-mix(in srgb,var(--on-surface) 8%,transparent);border:1px solid var(--outline-variant);color:var(--on-surface)">
+              ${I('ic_nav_terminal', 14, 'var(--on-surface)')} Terminal
+            </button>
+          </div>
+          <div class="g-apphub-grid">
+            ${apps.map(a => `
+              <div class="g-apphub-tile">
+                <div class="g-apphub-squircle-wrap">
+                  <button class="g-apphub-squircle" data-action="apphub-launch" data-slug="${esc(a.slug)}" style="background:${a.bg};color:${a.fg};border:none;cursor:pointer" title="Launch ${esc(a.title)}">
+                    ${esc(a.glyph)}
+                  </button>
+                  <button class="g-apphub-palette-badge" data-action="apphub-cycle-icon" data-slug="${esc(a.slug)}" title="Icon Studio &amp; .ICO">
+                    ${I('palette', 11, 'var(--accent-coral)')}
+                  </button>
+                </div>
+                <span class="g-apphub-label">${esc(a.title)}</span>
+              </div>
+            `).join('')}
+            <button class="g-apphub-tile" data-action="switch-tab" data-tab="build">
+              <div class="g-apphub-squircle" style="background:var(--surface-high);border:1.5px dashed var(--outline);color:var(--on-surface-variant);box-shadow:none">
+                ${I('add', 26, 'var(--on-surface-variant)')}
+              </div>
+              <span class="g-apphub-label" style="color:var(--on-surface-variant)">New App</span>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    /* ── Network Tools (NetworkAuditScreen.kt @ 8b8e678 — Streamlined 3-Tab Recon & Traffic Suite) ── */
     _renderNetworkAuditScreen() {
       const s = this.state;
       const net = D.NETWORK_RECON;
-      const tab = s.networkTab;
+      const tab = (s.networkTab === 'lan' || s.networkTab === 'traffic') ? s.networkTab : 'lookup';
 
       let tabBody = '';
       if (tab === 'lookup') {
@@ -2278,7 +2382,7 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
             <div class="goar-split-card" style="padding:14px">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
                 <strong style="font-family:var(--font-mono);font-size:13px">${esc(net.target)}</strong>
-                <span style="font-size:10.5px;font-weight:700;color:var(--accent-emerald)">6 / 6 STAGES OK</span>
+                <span style="font-size:10.5px;font-weight:700;color:var(--accent-emerald)">GRADE ${esc(net.grade)} · 6/6 OK</span>
               </div>
               <div class="g-net-stage-pills" style="margin-bottom:12px">
                 ${net.stages.map(st => `<span class="g-net-stage-pill">✓ ${st}</span>`).join('')}
@@ -2297,16 +2401,17 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
           <div class="g-settings-group-title">Local /24 Subnet Discovery (192.168.1.0/24)</div>
           <div class="goar-split-stack">
             ${net.lanHosts.map(h => `
-              <div class="goar-split-card g-settings-row" style="cursor:default">
+              <button class="goar-split-card g-settings-row" data-action="net-tab" data-ntab="lookup" title="Inspect in Target Lookup">
                 <div style="flex:1;min-width:0">
                   <div class="g-settings-row-title" style="font-family:var(--font-mono);font-size:12.5px">${esc(h.ip)} · ${esc(h.host)}</div>
-                  <div class="g-settings-row-desc">${esc(h.vendor)} · Open: ${esc(h.ports)}</div>
+                  <div class="g-settings-row-desc">${esc(h.vendor)} · ${h.ms}ms · Open: ${esc(h.ports)}</div>
                 </div>
-              </div>
+                ${I('chevron_right', 16, 'var(--on-surface-variant)')}
+              </button>
             `).join('')}
           </div>
         `;
-      } else if (tab === 'traffic') {
+      } else {
         tabBody = `
           <div class="g-settings-group-title">In-App Live HTTP &amp; API Proxy Inspector</div>
           <div class="goar-split-stack">
@@ -2319,35 +2424,24 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
             `).join('')}
           </div>
         `;
-      } else {
-        tabBody = `
-          <div class="g-settings-group-title">Shadow Trap · Honeyport Deception Daemon</div>
-          <div class="goar-split-stack">
-            ${net.traps.map(tr => `
-              <div class="goar-split-card g-settings-row" style="cursor:default">
-                <div style="flex:1">
-                  <div class="g-settings-row-title">Port ${tr.port} · ${esc(tr.service)}</div>
-                  <div class="g-settings-row-desc">Hits captured: ${tr.hits} · Local deception listener</div>
-                </div>
-                <span style="font-size:11px;font-weight:700;color:var(--accent-emerald)">${esc(tr.status)}</span>
-              </div>
-            `).join('')}
-          </div>
-        `;
       }
 
       return `
-        <div class="g-settings-header">
+        <div class="g-settings-header" style="justify-content:space-between">
           <button class="g-circ-back" data-action="go-home">${I('chevron_left', 22)}</button>
-          <div class="g-settings-large-title">Network Tools</div>
+          <div style="font-size:16px;font-weight:600">Network Tools</div>
+          <button class="g-circ-back" data-action="bot-toast" data-msg="Saved recon report to workspace/audit-reports">${I('description', 18)}</button>
         </div>
         <div class="g-net-tabs">
           <button class="g-net-tab ${tab === 'lookup' ? 'active' : ''}" data-action="net-tab" data-ntab="lookup">Target Lookup</button>
           <button class="g-net-tab ${tab === 'lan' ? 'active' : ''}" data-action="net-tab" data-ntab="lan">LAN Scan</button>
           <button class="g-net-tab ${tab === 'traffic' ? 'active' : ''}" data-action="net-tab" data-ntab="traffic">Live Traffic</button>
-          <button class="g-net-tab ${tab === 'trap' ? 'active' : ''}" data-action="net-tab" data-ntab="trap">Shadow Trap</button>
         </div>
         <div class="g-scroll-body" style="padding-top:4px">${tabBody}</div>
+        <div class="g-net-ai-bar">
+          <span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">Ask Goar AI to analyze ${esc(net.target)} or harden configs…</span>
+          <button class="g-hero-mini-btn" style="padding:4px 10px;font-size:11px" data-action="open-conv" data-id="conv_arch">Analyze</button>
+        </div>
       `;
     }
 
@@ -2376,7 +2470,7 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
       `;
     }
 
-    /* ── Settings Screen (SettingsScreen.kt v2.1.0 — Consumer Quick Controls + Tier 1 & Tier 2) ── */
+    /* ── Settings Screen (SettingsScreen.kt @ 8b8e678 — Exact Boxless Icons + 3-Way Theme Pill) ── */
     _renderSettingsScreen() {
       const s = this.state;
       if (s.settingsSubpage === 'about') return this._renderSettingsAbout();
@@ -2384,6 +2478,7 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
       if (s.settingsSubpage === 'provider') return this._renderSettingsProviders();
       if (s.settingsSubpage === 'skills') return this._renderSettingsSkills();
       if (s.settingsSubpage === 'api_hub' || s.settingsSubpage === 'mcp') return this._renderSettingsApiHub();
+      if (s.settingsSubpage === 'sandbox') return this._renderSettingsSandbox();
       if (s.settingsSubpage === 'audit') return this._renderNetworkAuditScreen();
       if (s.settingsSubpage) return this._renderSettingsGenericSub(s.settingsSubpage);
 
@@ -2404,13 +2499,14 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
 
       const renderRow = (it) => `
         <button class="goar-split-card g-settings-row" data-action="settings-open" data-skey="${it.key}">
-          <span class="g-matte-badge-38" style="background:${isTinted ? hexToRgba(it.colorVar, 0.16) : 'color-mix(in srgb, var(--on-surface) 7%, transparent)'}">
-            ${I(it.icon, 19, isTinted ? `var(${it.colorVar})` : 'var(--icon-category)')}
+          <span class="g-boxless-icon-slot">
+            ${I(it.icon, 21, isTinted ? `var(${it.colorVar})` : 'var(--icon-category)')}
           </span>
           <div style="flex:1;min-width:0">
             <div class="g-settings-row-title">${esc(it.title)}</div>
             <div class="g-settings-row-desc">${esc(it.desc)}</div>
           </div>
+          ${I('chevron_right', 17, 'var(--on-surface-variant)')}
         </button>
       `;
 
@@ -2419,30 +2515,31 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
           <button class="g-circ-back" data-action="go-home">${I('chevron_left', 22)}</button>
           <div class="g-settings-large-title">Settings</div>
         </div>
-        <div class="g-scroll-body" style="padding-top:2px;gap:10px">
+        <div class="g-scroll-body" style="padding-top:2px;gap:12px">
           <div class="g-settings-search">
             ${I('search', 17)}
-            <input type="text" data-el="g-settings-search-input" value="${esc(s.settingsSearch)}" placeholder="Search settings, OAuth, network tools, models..."/>
+            <input type="text" data-el="g-settings-search-input" value="${esc(s.settingsSearch)}" placeholder="Search settings, OAuth, Alpine, models..."/>
             ${s.settingsSearch ? `<button class="g-attach-remove" data-action="settings-clear-search">${I('close', 16)}</button>` : ''}
           </div>
 
           ${!q ? `
             <div class="g-quick-controls-card">
               <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
-                <span style="font-size:13.5px;font-weight:600">Theme</span>
+                <span style="font-size:13.5px;font-weight:600">Appearance</span>
                 <div class="g-quick-theme-seg">
+                  <button class="g-quick-theme-btn" data-action="set-theme-auto">Auto</button>
                   <button class="g-quick-theme-btn ${theme === 'light' ? 'active' : ''}" data-action="set-theme" data-theme-val="light">Light</button>
                   <button class="g-quick-theme-btn ${theme === 'dark' ? 'active' : ''}" data-action="set-theme" data-theme-val="dark">Dark</button>
                 </div>
               </div>
-              <div style="height:1px;background:var(--outline-variant);opacity:.7"></div>
+              <div style="height:1px;background:var(--outline-variant);opacity:.65"></div>
               <div style="display:flex;align-items:center;gap:10px;cursor:pointer" data-action="settings-open" data-skey="provider">
-                ${I(model.icon, 20, 'var(--icon-primary)')}
+                <span class="g-boxless-icon-slot">${I(model.icon, 21, 'var(--icon-primary)')}</span>
                 <div style="flex:1;min-width:0">
-                  <div style="font-size:11px;color:var(--on-surface-variant)">Active AI Engine</div>
+                  <div style="font-size:11px;color:var(--on-surface-variant)">Model</div>
                   <div style="font-size:13.5px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(model.provider)} · ${esc(model.label)}</div>
                 </div>
-                <span style="font-size:11.5px;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--surface-high);border:1px solid var(--outline-variant)">Change</span>
+                <span style="font-size:11.5px;font-weight:600;padding:5px 11px;border-radius:999px;background:var(--surface-high);border:1px solid var(--outline-variant)">Change</span>
               </div>
             </div>
           ` : ''}
@@ -2456,16 +2553,44 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
 
           ${filteredAdvanced.length ? `
             <div>
-              <button class="goar-split-card g-settings-row" style="width:100%;border-radius:16px;margin-bottom:${showAdv ? '6px' : '0'}" data-action="settings-toggle-advanced">
+              <button class="goar-split-card g-settings-row" style="width:100%;border-radius:20px;margin-bottom:${showAdv ? '6px' : '0'}" data-action="settings-toggle-advanced">
+                <span class="g-boxless-icon-slot">${I('tune', 21, isTinted ? 'var(--accent-amber)' : 'var(--icon-category)')}</span>
                 <div style="flex:1">
-                  <div class="g-settings-row-title">Advanced &amp; Developer Studio (${filteredAdvanced.length})</div>
-                  <div class="g-settings-row-desc">Linux PRoot, SSH, OAuth MCP servers, Network Tools &amp; WebUI</div>
+                  <div class="g-settings-row-title">Advanced</div>
+                  <div class="g-settings-row-desc">MCP, SSH, proxy, skills &amp; diagnostics</div>
                 </div>
                 ${I(showAdv ? 'chevron_up' : 'chevron_down', 18, 'var(--on-surface-variant)')}
               </button>
               ${showAdv ? `<div class="goar-split-stack">${filteredAdvanced.map(renderRow).join('')}</div>` : ''}
             </div>
           ` : ''}
+        </div>
+      `;
+    }
+
+    _renderSettingsSandbox() {
+      return `
+        <div class="g-settings-header">
+          <button class="g-circ-back" data-action="settings-back">${I('chevron_left', 22)}</button>
+          <div class="g-settings-large-title">Sandbox Manager</div>
+        </div>
+        <div class="g-scroll-body">
+          <div class="g-quick-controls-card" style="border-color:color-mix(in srgb, var(--accent-emerald) 45%, transparent)">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span style="width:40px;height:40px;border-radius:50%;background:color-mix(in srgb,var(--accent-emerald) 16%,transparent);display:inline-flex;align-items:center;justify-content:center">${I('ic_alpine_linux', 21, 'var(--accent-emerald)')}</span>
+              <div style="flex:1">
+                <div style="font-size:14.5px;font-weight:700">Alpine Linux 3.21</div>
+                <div style="font-size:11.5px;color:var(--accent-emerald);font-weight:600">Ready · Offline PRoot Environment</div>
+              </div>
+            </div>
+            <div style="font-size:12px;color:var(--on-surface-variant);line-height:1.5">
+              Verified offline minirootfs bundled inside the APK (<strong>3.7 MB</strong> · BusyBox + musl libc · SHA-256 checked). Zero remote binary downloads — 100% Google Play compliant.
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="g-hero-mini-btn" style="flex:1;justify-content:center" data-action="drawer-nav" data-dest="terminal">${I('ic_nav_terminal', 13)} Open Terminal</button>
+              <button class="g-hero-mini-btn" style="flex:1;justify-content:center" data-action="drawer-nav" data-dest="files">${I('ic_nav_files', 13)} Open Files</button>
+            </div>
+          </div>
         </div>
       `;
     }
@@ -2794,6 +2919,16 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
           if (el) { el.focus(); el.setSelectionRange(pos, pos); }
         });
       }
+      const aSearch = root.querySelector('[data-el="g-apphub-search"]');
+      if (aSearch) {
+        aSearch.addEventListener('input', () => {
+          const pos = aSearch.selectionStart;
+          this.state.appHubSearch = aSearch.value;
+          this.render();
+          const el = this.mountEl.querySelector('[data-el="g-apphub-search"]');
+          if (el) { el.focus(); el.setSelectionRange(pos, pos); }
+        });
+      }
 
       // Browser URL input
       const bUrl = root.querySelector('[data-el="g-browser-url"]');
@@ -2950,6 +3085,7 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
           }
           case 'open-conv':
             this.state.drawerOpen = false;
+            this.state.agentsSheetOpen = false;
             this.state.screen = 'ask';
             this.state.activeConvId = btn.dataset.id;
             this.render();
@@ -2978,6 +3114,7 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
               }
               this.state.activeConvId = cid;
               this.state.drawerOpen = false;
+              this.state.agentsSheetOpen = false;
               this.state.screen = 'ask';
               this.render();
             }
@@ -3287,13 +3424,63 @@ button{width:100%;background:#E8E2D6;color:#000;border:none;border-radius:12px;p
             break;
           }
 
-          // Settings & v2.1.0 Actions
-          case 'composer-agents':
-            this.closePopovers();
-            this.state.drawerOpen = true;
-            this.state.drawerTab = 'bots';
+          // Settings & v2.1.0 (@ 8b8e678) Actions
+          case 'welcome-pill':
+            this.state.draft = btn.dataset.prompt || '';
+            this.render();
+            if (!this._videoRunning) {
+              const ta = this.mountEl.querySelector('.g-composer-textarea');
+              if (ta) { ta.focus(); ta.setSelectionRange(ta.value.length, ta.value.length); }
+            }
+            break;
+          case 'drawer-toggle-tools':
+            this.state.drawerToolsExpanded = !this.state.drawerToolsExpanded;
             this.render();
             break;
+          case 'composer-agents':
+            this.closePopovers();
+            this.state.drawerOpen = false;
+            this.state.agentsSheetOpen = !this.state.agentsSheetOpen;
+            this.render();
+            break;
+          case 'close-agents-sheet':
+            if (e.target.closest('[data-stop-prop]') && !e.target.closest('button')) return;
+            this.state.agentsSheetOpen = false;
+            this.render();
+            break;
+          case 'apphub-launch':
+            this.state.screen = 'build';
+            this.state.builderPane = 'preview';
+            this._ensureBuilderTemplate(btn.dataset.slug);
+            this.render();
+            break;
+          case 'apphub-cycle-icon': {
+            const grads = [
+              'linear-gradient(135deg,#2563EB,#06B6D4)',
+              'linear-gradient(135deg,#10B981,#0891B2)',
+              'linear-gradient(135deg,#F59E0B,#EF4444)',
+              'linear-gradient(135deg,#7C3AED,#EC4899)',
+              'linear-gradient(135deg,#18181B,#3F3F46)'
+            ];
+            const app = this.state.appHubApps.find(x => x.slug === btn.dataset.slug);
+            if (app) {
+              const idx = grads.indexOf(app.bg);
+              app.bg = grads[(idx + 1) % grads.length];
+              this.showSnackbar(`Updated squircle icon & generated favicon.ico for '${app.title}'`);
+            }
+            break;
+          }
+          case 'apphub-import':
+            this.showSnackbar('Import any .html or .zip web app → custom squircle & .ICO');
+            break;
+          case 'set-theme-auto': {
+            const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const nextT = sysDark ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', nextT);
+            if (this.onThemeSync) this.onThemeSync(nextT);
+            this.showSnackbar('Theme set to Follow Device (Auto)');
+            break;
+          }
           case 'net-tab':
             this.state.networkTab = btn.dataset.ntab;
             this.render();
@@ -3534,7 +3721,7 @@ Try typing \`/\` for Vibe commands, \`@\` to consult \`@architect\` or \`@aegis\
       const cmd = raw.trim();
       this.state.termInput = '';
       if (!cmd) return;
-      this.state.termLines.push(`root@goar:~$ ${cmd}`);
+      this.state.termLines.push(`goar@alpine:~$ ${cmd}`);
       if (cmd === 'clear') {
         this.state.termLines = [];
       } else if (cmd === 'help') {
@@ -3542,23 +3729,23 @@ Try typing \`/\` for Vibe commands, \`@\` to consult \`@architect\` or \`@aegis\
       } else if (cmd === 'ls') {
         this.state.termLines.push('SOUL.md   edge-proxy.ts   cohort_retention.py   projects/   skills/');
       } else if (cmd === 'uname -a') {
-        this.state.termLines.push('Linux goar-ubuntu 6.6.30-android15-proot #1 SMP PREEMPT aarch64 GNU/Linux');
+        this.state.termLines.push('Linux goar-alpine 6.6.30-android15-proot #1 SMP aarch64 musl Linux');
       } else if (cmd === 'whoami') {
-        this.state.termLines.push('root (PRoot user-space sandbox · zero root required)');
+        this.state.termLines.push('goar (Alpine 3.21 offline PRoot · SHA-256 verified · zero root)');
       } else if (cmd === 'git status') {
         this.state.termLines.push('On branch main\nnothing to commit, working tree clean');
       } else if (cmd === 'ps') {
-        this.state.termLines.push('  PID TTY      CMD\n    1 pts/0    /bin/bash\n   42 pts/0    llama-server --ctx 32768\n   89 pts/0    node local-dev-server.js');
+        this.state.termLines.push('  PID TTY      CMD\n    1 pts/0    /bin/sh (BusyBox)\n   42 pts/0    libgoar_llama.so --ctx 32768\n   89 pts/0    local-dev-server :8080');
       } else if (cmd === 'date') {
         this.state.termLines.push(new Date().toUTCString());
       } else if (cmd === 'neofetch') {
-        this.state.termLines.push('   .-""""-.    root@goar-ubuntu');
+        this.state.termLines.push('   .-""""-.    goar@alpine-3.21');
         this.state.termLines.push('  /  GOAR  \\   ----------------');
-        this.state.termLines.push(' |  STUDIO  |  OS: Ubuntu 24.04 LTS (PRoot)');
-        this.state.termLines.push('  \\  v2.1  /   Kernel: Android JNI Sandbox');
-        this.state.termLines.push('   `-____-`    LLM: llama.cpp + whisper.cpp');
+        this.state.termLines.push(' |  STUDIO  |  OS: Alpine Linux 3.21 (Offline)');
+        this.state.termLines.push('  \\  v2.1  /   Rootfs: 3.7 MB SHA-256 Verified');
+        this.state.termLines.push('   `-____-`    Native: llama.cpp + whisper.cpp');
       } else {
-        this.state.termLines.push(`bash: ${cmd}: simulated sandbox (type "help")`);
+        this.state.termLines.push(`sh: ${cmd}: simulated sandbox (type "help")`);
       }
       this.render();
       if (!this._videoRunning) {

@@ -30,12 +30,12 @@
   max-width: 100%;
   border-radius: 46px;
   padding: 9px;
-  background: linear-gradient(155deg, #2e2d29 0%, #141413 46%, #262521 100%);
+  background: linear-gradient(155deg, #272730 0%, #0E0E12 46%, #1E1E25 100%);
   box-shadow:
-    0 40px 100px -24px rgba(0, 0, 0, 0.88),
-    0 0 0 1px rgba(232, 226, 214, 0.14),
-    inset 0 1px 1px rgba(255, 255, 255, 0.18),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.72);
+    0 40px 100px -24px rgba(0, 0, 0, 0.90),
+    0 0 0 1px rgba(244, 244, 246, 0.14),
+    inset 0 1px 1px rgba(255, 255, 255, 0.16),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.76);
   flex-shrink: 0;
   user-select: none;
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
@@ -315,30 +315,222 @@
   border: 2px solid color-mix(in srgb, var(--on-surface) 22%, transparent);
 }
 
-/* ── Network Tools 4-Tab Reconnaissance & Defense Suite (NetworkAuditScreen.kt v2.1.0) ── */
+/* ── Network Tools 3-Tab Suite (NetworkAuditScreen.kt @ 8b8e678) ── */
 .g-net-tabs {
   display: flex;
-  gap: 4px;
-  padding: 0 12px 8px;
+  gap: 7px;
+  padding: 2px 14px 8px;
   overflow-x: auto;
   scrollbar-width: none;
 }
 .g-net-tabs::-webkit-scrollbar { display: none; }
 .g-net-tab {
-  padding: 6px 11px;
+  padding: 7px 13px;
   border-radius: 999px;
-  border: 1px solid var(--outline-variant);
-  background: var(--surface-container);
+  border: 1px solid color-mix(in srgb, var(--outline-variant) 75%, transparent);
+  background: var(--surface-low);
   color: var(--on-surface-variant);
   font-size: 11.5px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   white-space: nowrap;
 }
 .g-net-tab.active {
-  background: var(--primary);
-  color: var(--on-primary);
-  border-color: var(--primary);
+  background: var(--on-surface);
+  color: var(--surface);
+  border-color: var(--on-surface);
+  font-weight: 600;
+}
+.g-net-ai-bar {
+  margin: 6px 10px 8px;
+  padding: 6px 8px 6px 13px;
+  border-radius: 999px;
+  background: var(--surface-container);
+  border: 1px solid var(--outline-variant);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  color: var(--on-surface-variant);
+}
+
+/* ── App Screen / App Hub (AppHubScreen.kt @ 8b8e678) ── */
+.g-apphub-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  margin-bottom: 12px;
+}
+.g-apphub-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 9px 6px;
+  border-radius: 12px;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.g-apphub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px 10px;
+}
+.g-apphub-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+  color: var(--on-surface);
+}
+.g-apphub-squircle-wrap {
+  position: relative;
+  width: 68px;
+  height: 68px;
+}
+.g-apphub-squircle {
+  width: 68px;
+  height: 68px;
+  border-radius: 28%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.45);
+}
+.g-apphub-palette-badge {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--outline-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.g-apphub-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 13px;
+  color: var(--on-surface);
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* ── ChatWelcome.kt Radial Aura + 3 Monochrome Starter Pills ── */
+.g-welcome-aura {
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--welcome-aura) 0%, transparent 72%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.g-welcome-pills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  flex-wrap: nowrap;
+}
+.g-welcome-pill {
+  height: 34px;
+  padding: 0 13px;
+  border-radius: 999px;
+  background: var(--surface-container);
+  border: 1px solid var(--outline-variant);
+  color: var(--on-surface-variant);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 140ms ease, color 140ms ease, border-color 140ms ease;
+}
+.g-welcome-pill:hover {
+  background: var(--surface-high);
+  color: var(--on-surface);
+}
+
+/* ── Composer Agents Bottom Sheet (ComposerActionRow.kt -> Specialists Picker) ── */
+.g-agents-sheet-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 75;
+  background: var(--scrim);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  animation: gFadeScaleIn 160ms ease;
+}
+.g-agents-sheet {
+  max-height: 76%;
+  border-radius: 24px 24px 0 0;
+  background: var(--surface);
+  border-top: 1px solid var(--outline-variant);
+  padding: 12px 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.g-agents-sheet-handle {
+  width: 36px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--outline-variant);
+  margin: 0 auto 2px;
+}
+.g-agents-sheet-scroll {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ── Boxless Settings & Drawer Icon Slot (SettingsScreen.kt + ChatDrawerContent.kt v2.1.0) ── */
+.g-boxless-icon-slot {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.g-drawer-section-toggle {
+  width: 100%;
+  height: 32px;
+  padding: 0 8px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--on-surface-variant);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.g-drawer-section-toggle:hover {
+  background: color-mix(in srgb, var(--on-surface) 5%, transparent);
 }
 .g-net-stage-pills {
   display: flex;
