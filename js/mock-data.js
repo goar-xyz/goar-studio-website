@@ -147,47 +147,59 @@ MIT / Apache 2.0 compatible open-source components are used across Jetpack Compo
     { command: '/skill', args: '<name> [prompt]', desc: 'Attach an installed skill playbook to this turn', icon: 'ic_goar_sparkle', light: '#0E7490', dark: '#38D0E8', template: '/skill ' },
     { command: '/new-skill', args: '<name> | <rules>', desc: 'Create & save a new portable SKILL.md playbook', icon: 'add', light: '#15803D', dark: '#4ADE80', template: '/new-skill ' },
     { command: '/subagent', args: '[role:] <task>', desc: 'Deploy an isolated background subagent for a task', icon: 'account_tree', light: '#D9480F', dark: '#FF854D', template: '/subagent ' },
-    { command: '/plan', args: '<goal>', desc: 'Vibe Plan Mode: architect step-by-step before acting', icon: 'map', light: '#5F3DC4', dark: '#A388FF', template: '/plan ' },
-    { command: '/mode', args: '<ask|smart|auto>', desc: 'Switch Vibe agent execution autonomy mode', icon: 'tune', light: '#C2255C', dark: '#FF6B9D', template: '/mode ' },
-    { command: '/build', args: '<app idea>', desc: 'Build a front-end app & install it to App Screen', icon: 'apps', light: '#C99700', dark: '#FFD43B', template: '/build ' },
-    { command: '/compact', args: '', desc: 'Summarize context now to reclaim token budget', icon: 'compress', light: '#1864AB', dark: '#5AA8FF', instant: true, template: '/compact' },
-    { command: '/clear', args: '', desc: 'Start a fresh conversation immediately', icon: 'clean', light: '#B02A37', dark: '#E84A5F', instant: true, template: '/clear' },
-    { command: '/help', args: '', desc: 'Show all Vibe slash commands & examples', icon: 'help', light: '#862E9C', dark: '#DA77F2', instant: true, template: '/help' }
+    { command: '/plan', args: '<goal>', desc: 'Plan step-by-step before making changes', icon: 'map', light: '#5F3DC4', dark: '#A388FF', template: '/plan ' },
+    { command: '/mode', args: '<ask|smart|auto>', desc: 'Switch execution mode', icon: 'tune', light: '#C2255C', dark: '#FF6B9D', template: '/mode ' },
+    { command: '/build', args: '<app idea>', desc: 'Build a self-healing web app or 3D game', icon: 'apps', light: '#C99700', dark: '#FFD43B', template: '/build ' },
+    { command: '/drop', args: '<product | $price>', desc: 'Autonomous Drop: Store + Stripe + 1:1/9:16 Ads + 7-Day Socials', icon: 'ic_goar_sparkle', light: '#E65100', dark: '#FF9800', template: '/drop ' },
+    { command: '/compact', args: '', desc: 'Summarize context to free token space', icon: 'compress', light: '#1864AB', dark: '#5AA8FF', instant: true, template: '/compact' },
+    { command: '/clear', args: '', desc: 'Start a new conversation', icon: 'clean', light: '#B02A37', dark: '#E84A5F', instant: true, template: '/clear' },
+    { command: '/help', args: '', desc: 'Show all commands', icon: 'help', light: '#862E9C', dark: '#DA77F2', instant: true, template: '/help' }
   ];
 
   const SKILLS = [
     { file: 'execution-substrate.md', cat: 'Core Architecture', desc: 'Deterministic engineering substrate & verification loop' },
-    { file: 'subagents-and-memory.md', cat: 'Core Architecture', desc: 'Background subagents, @bot consultation & persistent memory' },
-    { file: 'fullstack-web-app-builder.md', cat: 'Web & Game Studio', desc: 'Zero-build web apps, reactive GenUI & GoarSDK bridge' },
-    { file: 'webgl-3d-game-engine-architect.md', cat: 'Web & Game Studio', desc: 'HTML5 Canvas 2D physics & Three.js 3D WebGL worlds' },
-    { file: 'devops-linux-workbench.md', cat: 'Systems & Security', desc: 'PRoot Linux sandbox, systemd & SSH fleet automation' },
-    { file: 'security-owasp-pentest.md', cat: 'Systems & Security', desc: 'OWASP security audits, TLS checks & network inspection' },
-    { file: 'api-and-mcp-integration.md', cat: 'Systems & Security', desc: 'OpenAPI specs, Streamable HTTP & SSE MCP servers' },
+    { file: 'subagents-and-memory.md', cat: 'Core Architecture', desc: 'Background subagents, @bot delegation & persistent memory' },
+    { file: 'skill-creator.md', cat: 'Core Architecture', desc: 'Progressive-disclosure SKILL.md authoring (/skill-creator)' },
+    { file: 'nvidia-nim-blueprint-architect.md', cat: 'NVIDIA AI Engineering', desc: 'NVIDIA NIM microservices & FLUX / NV-EmbedQA blueprints' },
+    { file: 'nvidia-cuda-tensorrt-llm.md', cat: 'NVIDIA AI Engineering', desc: 'CUDA/Triton GPU kernels & TensorRT-LLM FP8/AWQ tuning' },
+    { file: 'nvidia-nemo-guardrails-rag.md', cat: 'NVIDIA AI Engineering', desc: 'NeMo Guardrails Colang 2.0 & hybrid RAG safety rails' },
+    { file: 'fullstack-web-app-builder.md', cat: 'Web & Game Studio', desc: 'Zero-build self-healing web apps & Google Drive sync' },
+    { file: 'webgl-3d-game-engine-architect.md', cat: 'Web & Game Studio', desc: 'Three.js 3D WebGL, Phaser 3 2D & Playgama Bridge SDK' },
+    { file: 'devops-linux-workbench.md', cat: 'Systems & Security', desc: 'PRoot Linux sandbox, atomic JNI transfers & SSH fleets' },
+    { file: 'security-owasp-pentest.md', cat: 'Systems & Security', desc: 'Unified network recon, LAN scan, TLS & Shadow Trap' },
+    { file: 'api-and-mcp-integration.md', cat: 'Systems & Security', desc: 'OAuth 2.1 PKCE MCP servers, OpenAPI & Postman SDK' },
     { file: 'deep-research-osint.md', cat: 'Intelligence & Browser', desc: 'Multi-source primary web verification & briefings' },
-    { file: 'autonomous-browser-operator.md', cat: 'Intelligence & Browser', desc: 'Shared WebView DOM scripting & extraction' },
-    { file: 'quant-finance-and-commerce.md', cat: 'Finance & Commerce', desc: 'Python quant modeling, Stripe/PayPal/Shopify workflows' },
+    { file: 'autonomous-browser-operator.md', cat: 'Intelligence & Browser', desc: 'SmartCookie WebView DOM automation & Manus Glass PiP' },
+    { file: 'quant-finance-and-commerce.md', cat: 'Finance & Commerce', desc: 'Python quant modeling, Stripe/PayPal/Shopify & /drop ops' },
     { file: 'document-office-studio.md', cat: 'Creative & Office', desc: 'Publication-grade Word DOCX redlines, PDF & CSV' },
-    { file: 'creative-media-studio.md', cat: 'Creative & Office', desc: 'Veo video, FLUX imagery & ElevenLabs v3 audio' }
+    { file: 'creative-media-studio.md', cat: 'Creative & Office', desc: 'On-device & BYOK Veo video, FLUX imagery & Eleven v3 audio' }
+  ];
+
+  const PALETTE_STYLES = [
+    { key: 'MONOCHROME', title: 'Pure Monochrome', subtitle: 'Crisp obsidian & alabaster', swatchDark: '#F4F4F6', swatchLight: '#0B0B0E' },
+    { key: 'CHAMPAGNE', title: 'Warm Terracotta', subtitle: 'Editorial warm accent', swatchDark: '#E59A69', swatchLight: '#C26D3A' },
+    { key: 'COBALT', title: 'Precision Cobalt', subtitle: 'Crisp sapphire accent', swatchDark: '#60A5FA', swatchLight: '#2563EB' },
+    { key: 'TINTED', title: 'Tinted Categories', subtitle: 'Semantic category tints', swatchDark: '#34D399', swatchLight: '#059669' }
   ];
 
   const PLAYGROUND_MODELS = {
     video: [
-      { id: 'Pollinations:veo', name: 'Veo 3.1 Fast', provider: 'Google / Pollinations', badge: 'Veo' },
+      { id: 'OnDevice:goar-motion', name: 'Goar On-Device Motion', provider: 'On-Device Engine', badge: 'Local' },
+      { id: 'Pollinations:veo', name: 'Veo 3.1 Fast', provider: 'Google / BYOK', badge: 'Veo' },
       { id: 'Pollinations:kling', name: 'Kling 1.6 Pro', provider: 'Kuaishou', badge: 'Pro' },
       { id: 'Pollinations:luma', name: 'Luma Ray 2', provider: 'Luma AI', badge: 'Ray 2' },
-      { id: 'Pollinations:wan-fast', name: 'Wan 2.2 Fast', provider: 'Alibaba', badge: 'Fast' },
       { id: 'Pollinations:seedance-pro', name: 'Seedance Pro', provider: 'ByteDance', badge: 'Pro' }
     ],
     image: [
-      { id: 'Pollinations:flux', name: 'FLUX.1 Schnell', provider: 'Pollinations', badge: 'Free' },
-      { id: 'Pollinations:flux-realism', name: 'FLUX Photorealism', provider: 'Pollinations', badge: 'Free' },
-      { id: 'Pollinations:kontext', name: 'FLUX Kontext (Edit)', provider: 'Pollinations', badge: 'Edit' },
+      { id: 'OnDevice:goar-canvas', name: 'Goar On-Device Creative', provider: 'On-Device Engine', badge: 'Local' },
+      { id: 'Pollinations:flux', name: 'FLUX.1 Schnell', provider: 'Pollinations / NIM', badge: 'Fast' },
+      { id: 'Pollinations:kontext', name: 'FLUX Kontext (Edit)', provider: 'Edit Model', badge: 'Edit' },
       { id: 'OpenAI:gpt-image-1', name: 'GPT Image 1', provider: 'OpenAI', badge: 'BYOK' },
       { id: 'Google:imagen-3.0-generate-002', name: 'Imagen 3', provider: 'Google', badge: 'BYOK' },
-      { id: 'Stability:stable-image-core', name: 'Stable Image Core', provider: 'Stability AI', badge: 'BYOK' }
+      { id: 'NVIDIA:flux-dev-nim', name: 'NVIDIA NIM FLUX.1-dev', provider: 'NVIDIA NIM', badge: 'NIM' }
     ],
     audio: [
-      { id: 'Pollinations:openai-audio', name: 'OpenAI Audio (Demo)', provider: 'Pollinations', badge: 'Free' },
+      { id: 'OnDevice:goar-tts', name: 'Goar On-Device Speech', provider: 'Local Neural TTS', badge: 'Local' },
       { id: 'OpenAI:gpt-4o-mini-tts', name: 'GPT-4o Mini TTS', provider: 'OpenAI', badge: 'BYOK' },
       { id: 'ElevenLabs:eleven_v3', name: 'Eleven v3', provider: 'ElevenLabs', badge: 'v3' },
       { id: 'ElevenLabs:sound-generation', name: 'ElevenLabs Sound Effects', provider: 'ElevenLabs', badge: 'SFX' }
@@ -540,81 +552,82 @@ Goar Studio binds **llama.cpp** and **whisper.cpp** natively via JNI (\`arm64-v8
     }
   ];
 
-  /* ── Complete 8-Group / 26-Category Settings Catalog (SettingsScreen.kt + GoarMatteIconColors.kt) ── */
+  /* ── Tiered Settings Catalog (SettingsScreen.kt v2.1.0: Tier 1 Everyday + Tier 2 Collapsible Advanced) ── */
   const SETTINGS_GROUPS = [
     {
-      title: 'AI Services',
+      title: 'Everyday AI',
       items: [
-        { key: 'provider', title: 'Providers & API Keys', desc: 'Configure cloud endpoints, API keys, and local hosts', icon: 'ic_set_cloud', colorVar: '--m-set-provider' },
-        { key: 'models', title: 'Models', desc: 'Sync provider catalogs, set defaults, and add custom IDs', icon: 'ic_set_boxes', colorVar: '--m-set-models' }
+        { key: 'provider', title: 'Providers & API Keys', desc: 'Cloud endpoints, API keys, and local hosts', icon: 'ic_set_cloud', colorVar: '--m-set-provider' },
+        { key: 'models', title: 'Models', desc: 'Sync catalogs, set defaults, and add custom IDs', icon: 'ic_set_boxes', colorVar: '--m-set-models' },
+        { key: 'imagegen', title: 'Media Generation', desc: 'On-device & BYOK Veo video, FLUX & Imagen 3', icon: 'gsgs_actions_aiimage', colorVar: '--m-set-imagegen' },
+        { key: 'transcription', title: 'Voice & Speech', desc: 'Local whisper.cpp STT and neural voice output', icon: 'ic_set_mic', colorVar: '--m-set-transcription' }
       ]
     },
     {
-      title: 'Behavior & Context',
+      title: 'Personalization',
       items: [
-        { key: 'prompts', title: 'System Prompts', desc: 'Reusable system personas and custom templates', icon: 'ic_set_file', colorVar: '--m-set-prompts' },
-        { key: 'generation', title: 'Model Parameters', desc: 'Temperature, top-p, max tokens, and reasoning defaults', icon: 'ic_set_sliders', colorVar: '--m-set-generation' },
-        { key: 'context', title: 'Context & Compaction', desc: 'Context window budget, compaction, and token telemetry', icon: 'ic_set_book', colorVar: '--m-set-context' },
-        { key: 'titlegen', title: 'Title Generation', desc: 'Automatic chat titling model and prompt rules', icon: 'ic_set_sparkles', colorVar: '--m-set-titlegen' }
+        { key: 'appearance', title: 'Appearance', desc: 'Theme, 4 Color & Accent Styles, and fonts', icon: 'ic_set_palette', colorVar: '--m-set-appearance' },
+        { key: 'skills', title: 'Skills & Tools', desc: '16 playbooks (NVIDIA NIM/CUDA/NeMo + /skill-creator)', icon: 'ic_set_skills', colorVar: '--m-set-skills' },
+        { key: 'prompts', title: 'System Prompts', desc: 'Reusable personas and custom templates', icon: 'ic_set_file', colorVar: '--m-set-prompts' },
+        { key: 'memory', title: 'Memory', desc: 'Saved facts, active context, and agent recall', icon: 'ic_set_database', colorVar: '--m-set-memory' },
+        { key: 'websearch', title: 'Web Search', desc: 'Tavily, Brave, Serper, Kagi, or SearXNG', icon: 'ic_nav_browser', colorVar: '--m-set-websearch' }
       ]
     },
     {
-      title: 'Media & Voice',
+      title: 'Privacy & General',
       items: [
-        { key: 'transcription', title: 'Voice, Speech & Audio', desc: 'Whisper STT, ElevenLabs & OpenAI voice output, and audio prompts', icon: 'ic_set_mic', colorVar: '--m-set-transcription' },
-        { key: 'imagegen', title: 'Media Generation (Image & Video)', desc: 'Image models, video generation (Veo/Pollinations), and resolution', icon: 'gsgs_actions_aiimage', colorVar: '--m-set-imagegen' }
-      ]
-    },
-    {
-      title: 'Integrations & APIs',
-      items: [
-        { key: 'mcp', title: 'MCP Servers', desc: 'Connect remote Model Context Protocol tool servers', icon: 'gsgs_actions_connector', colorVar: '--m-set-mcp' },
-        { key: 'api_hub', title: 'API & Bot Hub', desc: 'OpenAPI specs, GitHub, Telegram, and Twilio SMS', icon: 'gsgs_actions_publish_data', colorVar: '--m-set-apihub' },
-        { key: 'email', title: 'Email & Campaigns', desc: 'IMAP inbox, SMTP sender, and mailing lists', icon: 'ic_set_email', colorVar: '--m-set-email' },
-        { key: 'payments', title: 'Payments & Cards', desc: 'Saved encrypted card profiles and currency defaults', icon: 'gsgs_actions_card', colorVar: '--m-set-payments' }
-      ]
-    },
-    {
-      title: 'Tools & Execution',
-      items: [
-        { key: 'websearch', title: 'Web Search', desc: 'Configure Tavily, Brave, Serper, Kagi, or SearXNG', icon: 'ic_nav_browser', colorVar: '--m-set-websearch' },
-        { key: 'search', title: 'Conversation Search', desc: 'Keyword & semantic RAG conversation search', icon: 'ic_set_search', colorVar: '--m-set-search' },
-        { key: 'shell', title: 'Shell & SSH', desc: 'Configure remote SSH hosts and local terminal execution', icon: 'ic_nav_terminal', colorVar: '--m-set-shell' },
-        { key: 'security', title: 'Security & App Lock', desc: 'App lock PIN, biometrics, and keychain protection', icon: 'ic_set_lock', colorVar: '--m-set-security' },
-        { key: 'automation', title: 'Automation & Digests', desc: 'Schedules, exact alarms, and Watchtower alerts', icon: 'ic_set_timer', colorVar: '--m-set-automation' }
-      ]
-    },
-    {
-      title: 'Network & Security',
-      items: [
-        { key: 'audit', title: 'Network Audit', desc: 'Inspect live HTTP requests, WebView traffic, and DNS/TLS audits', icon: 'gsgs_actions_shield_check', colorVar: '--m-set-audit' },
-        { key: 'proxy', title: 'Proxy', desc: 'HTTP/SOCKS proxy routing and bypass rules', icon: 'ic_set_server', colorVar: '--m-set-proxy' },
-        { key: 'webui', title: 'WebUI & Phone SDK', desc: 'Companion browser server (LAN/localhost) and zero-permission Android phone tools', icon: 'devices', colorVar: '--m-set-webui' }
-      ]
-    },
-    {
-      title: 'Memory & Data',
-      items: [
-        { key: 'memory', title: 'Memory', desc: 'Saved facts, active context, and assistant access', icon: 'ic_set_database', colorVar: '--m-set-memory' },
-        { key: 'skills', title: 'Skills & Tools', desc: 'Agent markdown playbooks, /skill commands, MCP servers, and live tool toggles', icon: 'ic_set_skills', colorVar: '--m-set-skills' },
-        { key: 'datacontrol', title: 'Data & Backups', desc: 'Export, restore, ChatGPT/Claude import, and auto-delete', icon: 'ic_set_archive', colorVar: '--m-set-datacontrol' }
-      ]
-    },
-    {
-      title: 'Appearance & Info',
-      items: [
-        { key: 'appearance', title: 'Appearance', desc: 'Theme, fonts, markdown rendering, and animations', icon: 'ic_set_palette', colorVar: '--m-set-appearance' },
+        { key: 'api_hub', title: 'API Hub & OAuth 2.1', desc: '1-tap Google, Notion, Linear, Vercel, Cloudflare & Stripe sign-in', icon: 'gsgs_actions_publish_data', colorVar: '--m-set-apihub' },
+        { key: 'security', title: 'Security & App Lock', desc: 'App Integrity Shield, PIN, biometrics & Keystore', icon: 'ic_set_lock', colorVar: '--m-set-security' },
+        { key: 'datacontrol', title: 'Data & Backups', desc: 'Encrypted ZIP export, ChatGPT/Claude import & wipe', icon: 'ic_set_archive', colorVar: '--m-set-datacontrol' },
         { key: 'language', title: 'Language', desc: 'Select app display language', icon: 'ic_set_languages', colorVar: '--m-set-language' },
-        { key: 'about', title: 'About & Legal', desc: 'App version, user guide, support, and licenses', icon: 'ic_set_shield', colorVar: '--m-set-about' }
+        { key: 'about', title: 'About & Legal', desc: 'Version 2.1.0 (Build 31), guide, support & licenses', icon: 'ic_set_info', colorVar: '--m-set-about' }
       ]
     }
   ];
 
-  /* ── Ecosystem Showcase Lists for Website ── */
+  const SETTINGS_ADVANCED_ITEMS = [
+    { key: 'sandbox', title: 'Linux Sandbox (PRoot)', desc: '15 rootless distros, storage metrics & package manager', icon: 'ic_distro_ubuntu', colorVar: '--m-set-sandbox' },
+    { key: 'shell', title: 'Shell & SSH', desc: 'Remote SSH hosts, atomic JNI transfers & VT100 shell', icon: 'ic_nav_terminal', colorVar: '--m-set-shell' },
+    { key: 'mcp', title: 'MCP Servers (OAuth 2.1)', desc: '20+ Streamable HTTP & SSE servers with PKCE sign-in', icon: 'gsgs_actions_connector', colorVar: '--m-set-mcp' },
+    { key: 'generation', title: 'Model Parameters', desc: 'Temperature, top-p, max tokens, and reasoning defaults', icon: 'ic_set_sliders', colorVar: '--m-set-generation' },
+    { key: 'context', title: 'Context & Compaction', desc: 'Context window budget, compaction & token telemetry', icon: 'ic_set_book', colorVar: '--m-set-context' },
+    { key: 'titlegen', title: 'Title Generation', desc: 'Automatic chat titling model and prompt rules', icon: 'ic_set_sparkles', colorVar: '--m-set-titlegen' },
+    { key: 'search', title: 'Conversation Search', desc: 'Keyword & semantic RAG conversation search', icon: 'ic_set_search', colorVar: '--m-set-search' },
+    { key: 'automation', title: 'Automation & Digests', desc: 'Schedules, exact alarms, and Watchtower alerts', icon: 'ic_set_timer', colorVar: '--m-set-automation' },
+    { key: 'email', title: 'Email & Campaigns', desc: 'IMAP inbox, SMTP sender, and mailing lists', icon: 'ic_set_email', colorVar: '--m-set-email' },
+    { key: 'payments', title: 'Payments & Cards', desc: 'Encrypted card vault and Stripe/PayPal ops', icon: 'gsgs_actions_card', colorVar: '--m-set-payments' },
+    { key: 'audit', title: 'Network Tools', desc: 'Target Lookup recon, LAN Scan, Live Traffic & Shadow Trap', icon: 'gsgs_actions_shield_check', colorVar: '--m-set-audit' },
+    { key: 'proxy', title: 'Proxy', desc: 'HTTP/SOCKS proxy routing and bypass rules', icon: 'ic_set_server', colorVar: '--m-set-proxy' },
+    { key: 'webui', title: 'WebUI & Phone SDK', desc: 'Companion browser server and Android phone tools', icon: 'devices', colorVar: '--m-set-webui' }
+  ];
+
+  const NETWORK_RECON = {
+    target: 'goarxyz.com',
+    stages: ['DNS', 'TLS', 'HTTP', 'Passive', 'ASN/RDAP', 'Ports/CVE'],
+    summary: [
+      { k: 'A / AAAA', v: '104.21.48.92 · Cloudflare Edge (AS13335)' },
+      { k: 'TLS 1.3', v: 'Valid · ECDSA P-256 · HSTS max-age=31536000' },
+      { k: 'DMARC / SPF', v: 'v=DMARC1; p=reject · Strict alignment' },
+      { k: 'Open Ports', v: '80 (HTTP→HTTPS), 443 (TLS 1.3 · HTTP/3)' },
+      { k: 'Shodan CVEs', v: '0 critical CVEs detected' }
+    ],
+    lanHosts: [
+      { ip: '192.168.1.1', host: 'gateway.lan', vendor: 'Ubiquiti UniFi', ports: '53, 80, 443' },
+      { ip: '192.168.1.14', host: 'ollama-rig.local', vendor: 'NVIDIA RTX Node', ports: '22, 11434' },
+      { ip: '192.168.1.42', host: 'goar-pixel9', vendor: 'Local Android Host', ports: '8080 (WebUI)' }
+    ],
+    traps: [
+      { port: 2222, service: 'Fake OpenSSH 9.6 Honeyport', hits: 0, status: 'Armed' },
+      { port: 8443, service: 'Decoy Admin Login Banner', hits: 0, status: 'Armed' }
+    ]
+  };
+
+  /* ── Ecosystem Showcase Lists for Website (v2.1.0) ── */
   const PROVIDERS_SHOWCASE = [
     { name: 'Anthropic Claude', icon: 'provider_anthropic' },
     { name: 'OpenAI', icon: 'provider_openai' },
     { name: 'Google Gemini', icon: 'provider_gemini' },
+    { name: 'NVIDIA NIM', icon: 'provider_nvidia' },
     { name: 'DeepSeek', icon: 'provider_deepseek' },
     { name: 'xAI Grok', icon: 'provider_xai' },
     { name: 'Mistral AI', icon: 'provider_mistral' },
@@ -626,8 +639,6 @@ Goar Studio binds **llama.cpp** and **whisper.cpp** natively via JNI (\`arm64-v8
     { name: 'Together AI', icon: 'provider_together' },
     { name: 'Fireworks AI', icon: 'provider_fireworks' },
     { name: 'Perplexity', icon: 'provider_perplexity' },
-    { name: 'NVIDIA NIM', icon: 'provider_nvidia' },
-    { name: 'Hugging Face', icon: 'provider_huggingface' },
     { name: 'Cohere', icon: 'provider_cohere' },
     { name: 'Venice AI', icon: 'provider_venice' },
     { name: 'Pollinations', icon: 'provider_pollinations' },
@@ -653,22 +664,24 @@ Goar Studio binds **llama.cpp** and **whisper.cpp** natively via JNI (\`arm64-v8
   ];
 
   const MCP_SHOWCASE = [
-    { name: 'GitHub', icon: 'ic_mcp_github' },
-    { name: 'Google Drive', icon: 'ic_mcp_gdrive' },
-    { name: 'Gmail', icon: 'ic_mcp_gmail' },
+    { name: 'GitHub MCP · OAuth 2.1', icon: 'ic_mcp_github' },
+    { name: 'Notion MCP · OAuth 2.1', icon: 'ic_mcp_notion' },
+    { name: 'Linear MCP · OAuth 2.1', icon: 'ic_mcp_linear' },
+    { name: 'Vercel MCP · OAuth 2.1', icon: 'ic_brand_vercel' },
+    { name: 'Supabase MCP · OAuth 2.1', icon: 'ic_brand_supabase' },
+    { name: 'Cloudflare MCP · OAuth 2.1', icon: 'ic_brand_cloudflare' },
+    { name: 'Stripe MCP · OAuth 2.1', icon: 'provider_stripe' },
+    { name: 'Figma Dev MCP · OAuth 2.1', icon: 'ic_brand_figma' },
+    { name: 'Sentry MCP · OAuth 2.1', icon: 'ic_mcp_sentry' },
+    { name: 'Postman Official MCP', icon: 'ic_brand_postman' },
+    { name: 'HubSpot CRM MCP', icon: 'ic_brand_hubspot' },
+    { name: 'Google Drive & Gmail', icon: 'ic_mcp_gdrive' },
     { name: 'Google Calendar', icon: 'ic_mcp_gcalendar' },
+    { name: 'Shopify Storefront MCP', icon: 'ic_mcp_shopify' },
+    { name: 'PayPal Official MCP', icon: 'provider_paypal' },
     { name: 'Slack', icon: 'ic_mcp_slack' },
-    { name: 'Notion', icon: 'ic_mcp_notion' },
-    { name: 'Linear', icon: 'ic_mcp_linear' },
-    { name: 'PostgreSQL', icon: 'ic_mcp_postgres' },
-    { name: 'Docker', icon: 'ic_mcp_docker' },
-    { name: 'Cloudflare', icon: 'ic_mcp_cloudflare' },
-    { name: 'Shopify', icon: 'ic_mcp_shopify' },
-    { name: 'Sentry', icon: 'ic_mcp_sentry' },
-    { name: 'Airtable', icon: 'ic_mcp_airtable' },
-    { name: 'Stripe', icon: 'provider_stripe' },
-    { name: 'Twilio SMS', icon: 'provider_twilio' },
-    { name: 'Telegram', icon: 'provider_telegram' }
+    { name: 'PostgreSQL / SQLite', icon: 'ic_mcp_postgres' },
+    { name: 'Docker', icon: 'ic_mcp_docker' }
   ];
 
   const WORKSPACE_FILES = [
@@ -698,7 +711,7 @@ Goar Studio binds **llama.cpp** and **whisper.cpp** natively via JNI (\`arm64-v8
       folder: 'assets/bundled_skills/',
       size: '1.6 KB',
       icon: 'gsgs_files_js',
-      content: `{\n  "version": "3.0.0",\n  "bundled_skills": 12,\n  "runtime": "local-first",\n  "engine": "Goar Studio 2.0.0"\n}`
+      content: `{\n  "version": "3.1.0",\n  "bundled_skills": 16,\n  "runtime": "local-first",\n  "engine": "Goar Studio 2.1.0"\n}`
     }
   ];
 
@@ -722,10 +735,13 @@ Goar Studio binds **llama.cpp** and **whisper.cpp** natively via JNI (\`arm64-v8
     BOTS,
     SLASH_COMMANDS,
     SKILLS,
+    PALETTE_STYLES,
     PLAYGROUND_MODELS,
     BUILDER_TEMPLATES,
     CONVERSATIONS,
     SETTINGS_GROUPS,
+    SETTINGS_ADVANCED_ITEMS,
+    NETWORK_RECON,
     PROVIDERS_SHOWCASE,
     DISTROS_SHOWCASE,
     MCP_SHOWCASE,

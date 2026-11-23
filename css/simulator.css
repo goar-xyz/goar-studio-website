@@ -152,21 +152,22 @@
   overflow: hidden;
 }
 
-/* ── MainTopHeaderBar.kt (Exact 40dp circular buttons, Ask | Imagine | Build tabs) ── */
+/* ── MainTopHeaderBar.kt v2.1.0 (Boxless chrome icons + MainTopTabSegmentedPill) ── */
 .g-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 14px;
-  min-height: 56px;
+  padding: 6px 10px;
+  min-height: 54px;
   flex-shrink: 0;
   position: relative;
   z-index: 10;
+  background: linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 78%, transparent) 78%, transparent 100%);
 }
 
 .g-topbar-circle-btn {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: var(--topbar-btn-bg);
   border: 1px solid var(--topbar-btn-border);
@@ -175,63 +176,224 @@
   justify-content: center;
   cursor: pointer;
   padding: 0;
-  transition: transform 120ms ease, background-color 160ms ease;
+  transition: transform 120ms ease, background-color 140ms ease;
   flex-shrink: 0;
 }
 .g-topbar-circle-btn:active {
-  transform: scale(0.93);
+  transform: scale(0.92);
 }
 .g-topbar-circle-btn:hover {
-  filter: brightness(1.08);
+  background: color-mix(in srgb, var(--on-surface) 8%, transparent);
 }
 
+/* MainTopTabSegmentedPill (height 38dp, rounded-full, surfaceContainer 72%, 3dp inner padding) */
 .g-topbar-tabs {
-  flex: 1;
-  height: 44px;
+  width: 224px;
+  max-width: 100%;
+  height: 38px;
+  border-radius: 999px;
+  background: var(--topbar-pill-bg);
+  border: 1px solid color-mix(in srgb, var(--outline-variant) 65%, transparent);
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 0 4px;
+  gap: 2px;
+  padding: 3px;
 }
 
 .g-topbar-tab {
-  background: none;
+  flex: 1;
+  background: transparent;
   border: none;
+  border-radius: 999px;
   padding: 0 8px;
   height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  gap: 3px;
-  opacity: 0.72;
-  transition: opacity 200ms ease;
+  transition: background-color 160ms ease, color 160ms ease;
 }
 .g-topbar-tab.active {
-  opacity: 1;
+  background: var(--topbar-pill-active-bg);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
 }
 .g-topbar-tab-label {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
-  letter-spacing: -0.2px;
+  letter-spacing: -0.1px;
   color: var(--topbar-inactive-text);
-  transition: color 200ms ease;
+  white-space: nowrap;
 }
 .g-topbar-tab.active .g-topbar-tab-label {
   font-weight: 600;
   color: var(--topbar-active-text);
 }
 .g-topbar-tab-bar {
-  width: 20px;
-  height: 2.5px;
-  border-radius: 1.25px;
-  background: transparent;
-  transition: background-color 200ms ease, transform 200ms ease;
+  display: none;
 }
-.g-topbar-tab.active[data-tab="ask"] .g-topbar-tab-bar { background: var(--m-top-ask); }
-.g-topbar-tab.active[data-tab="imagine"] .g-topbar-tab-bar { background: var(--m-top-imagine); }
-.g-topbar-tab.active[data-tab="build"] .g-topbar-tab-bar { background: var(--m-top-build); }
+
+/* ── Composer Inline Agents Pill Button (ComposerActionRow.kt v2.1.0) ── */
+.g-composer-agents-btn {
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--on-surface);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.g-composer-agents-btn.active {
+  background: color-mix(in srgb, var(--primary) 16%, transparent);
+  color: var(--primary);
+  padding: 0 9px;
+}
+
+/* ── ConsumerQuickControlsCard (SettingsScreen.kt v2.1.0) ── */
+.g-quick-controls-card {
+  border-radius: 22px;
+  background: var(--surface-container);
+  border: 1px solid var(--outline-variant);
+  padding: 14px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.g-quick-theme-seg {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 2px;
+  border-radius: 999px;
+  background: var(--surface-high);
+  border: 1px solid color-mix(in srgb, var(--outline-variant) 75%, transparent);
+}
+.g-quick-theme-btn {
+  height: 100%;
+  padding: 0 10px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--on-surface-variant);
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.g-quick-theme-btn.active {
+  background: var(--on-surface);
+  color: var(--surface);
+}
+.g-palette-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+.g-palette-card {
+  padding: 12px;
+  border-radius: 16px;
+  background: var(--surface-container);
+  border: 1.5px solid var(--outline-variant);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.g-palette-card.active {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 10%, var(--surface-container));
+}
+.g-palette-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, var(--on-surface) 22%, transparent);
+}
+
+/* ── Network Tools 4-Tab Reconnaissance & Defense Suite (NetworkAuditScreen.kt v2.1.0) ── */
+.g-net-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 12px 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.g-net-tabs::-webkit-scrollbar { display: none; }
+.g-net-tab {
+  padding: 6px 11px;
+  border-radius: 999px;
+  border: 1px solid var(--outline-variant);
+  background: var(--surface-container);
+  color: var(--on-surface-variant);
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.g-net-tab.active {
+  background: var(--primary);
+  color: var(--on-primary);
+  border-color: var(--primary);
+}
+.g-net-stage-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.g-net-stage-pill {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent-emerald) 15%, transparent);
+  color: var(--accent-emerald);
+  border: 1px solid color-mix(in srgb, var(--accent-emerald) 30%, transparent);
+}
+
+/* ── Manus Glass Live Agent PiP Window (ManusGlassPipOverlay.kt v2.1.0) ── */
+.g-pip-window {
+  position: absolute;
+  top: 56px;
+  right: 10px;
+  width: 214px;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--surface-high) 94%, transparent);
+  border: 1px solid var(--outline);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.52);
+  backdrop-filter: blur(18px);
+  z-index: 40;
+  overflow: hidden;
+  animation: gPopUp 200ms ease;
+}
+.g-pip-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--outline-variant);
+  font-size: 11px;
+  font-weight: 600;
+}
+.g-pip-body {
+  padding: 10px;
+  font-size: 11px;
+  color: var(--on-surface-variant);
+  line-height: 1.45;
+}
+.g-pip-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  background: var(--surface-container);
+  border-top: 1px solid var(--outline-variant);
+}
 
 /* ── ChatWelcome.kt Centerpiece ── */
 .g-chat-welcome {

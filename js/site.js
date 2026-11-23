@@ -1,11 +1,11 @@
 /* ============================================================================
- * GOAR STUDIO WEBSITE CONTROLLER
+ * GOAR STUDIO v2.1.0 WEBSITE CONTROLLER
  * Orchestrates:
- *   - Ink Dark / Paper Light theme sync across ALL mounted 1-to-1 phone instances
+ *   - Obsidian Dark / Crisp Alabaster Light theme sync across ALL phone instances
  *   - Framer-style scroll reveals (IntersectionObserver + immediate fold check)
- *   - 5 viewport-aware Animated Clip Scenario Phones + synchronized Step Storyboards
- *   - Well-Known Companies Brand Strip & 5-Star Showcase Cards
- *   - Tabbed Open Ecosystem Drawer + 14-Screen Hands-On Interactive Sandbox
+ *   - 5 viewport-aware Interactive Video Reels + synchronized Chapter Scrubbers
+ *   - Well-Known Companies Brand Strip (OAuth 2.1 / Frontier Labs) & 5-Star Cards
+ *   - Tabbed Open Ecosystem + 16-Screen Hands-On Interactive Sandbox
  *   - Verbatim Legal & Compliance Hub
  * ============================================================================ */
 
@@ -15,67 +15,79 @@
       id: 'welcome',
       label: 'Ask · Home',
       dot: 'var(--m-top-ask)',
-      caption: '<strong>Empty Centerpiece &amp; Agora Composer:</strong> Pure Monochrome Ink &amp; Bone surface with the authentic Goar mark, 4-control left pill (<code>+</code>, Model Picker, Context Ring, Quick Settings <code>⋮</code>), and 6-bar voice waveform button.'
+      caption: '<strong>Architectural Monochrome v2.1.0:</strong> Boxless top drawer &amp; edit icons, sleek <code>[ Ask | Imagine | Build ]</code> segmented capsule pill, inline <strong>Agents</strong> toggle, Model Picker, Context Ring, and 6-bar voice button.'
     },
     {
       id: 'chat-thinking',
       label: 'Thinking & Tools',
       dot: 'var(--m-cmp-model)',
-      caption: '<strong>Collapsible Reasoning &amp; Tool Timeline:</strong> Watch multi-step thinking blocks, live tool badges (<code>workspace_read</code>, <code>shell_exec</code>), syntax code blocks, and one-tap context compaction.'
+      caption: '<strong>Collapsible Reasoning &amp; Tool Timeline:</strong> Audit multi-step reasoning blocks, executed local tools (<code>workspace_read</code>, <code>shell_exec</code>), syntax code blocks, and one-tap context compaction.'
     },
     {
       id: 'slash',
-      label: 'Slash Commands /',
+      label: '10 Slash Commands',
       dot: 'var(--m-cmp-sparkle)',
-      caption: '<strong>Vibe Command Palette:</strong> Type <code>/</code> for 9 Matte Bold Pop commands (<code>/skill</code>, <code>/subagent</code>, <code>/plan</code>, <code>/mode</code>, <code>/build</code>, <code>/compact</code>) or <code>@</code> to consult specialized agents.'
+      caption: '<strong>Vibe Command Palette (v2.1.0):</strong> Type <code>/</code> for 10 commands including <code>/drop</code> (Autonomous Commerce Drop), <code>/skill</code>, <code>/subagent</code>, <code>/plan</code>, <code>/build</code>, and <code>/compact</code>.'
     },
     {
       id: 'voice',
       label: 'Live Voice Orb',
       dot: 'var(--m-cmp-mic)',
-      caption: '<strong>Static-Until-Talking Fluid Blob:</strong> Hold the round voice button for 2 seconds in the app (or click the orb now) to cycle silent pearl sphere → listening ripples → thinking drift → speaking waves.'
+      caption: '<strong>Static-Until-Talking Fluid Blob:</strong> Hold the round 6-bar voice button for 1.4s (or tap the orb now) to cycle silent pearl → emerald Listening → plum Thinking → azure Speaking.'
     },
     {
       id: 'imagine',
       label: 'Imagine Studio',
       dot: 'var(--m-top-imagine)',
-      caption: '<strong>Multi-Provider Media Holster:</strong> Switch Video / Image / Audio across Veo 3.1, Kling, Luma, FLUX.1, Imagen 3, and Eleven v3 with aspect ratio, resolution, sound, and reference-frame controls.'
+      caption: '<strong>On-Device &amp; BYOK Media Studio:</strong> Switch Video / Image / Audio across Goar On-Device Creative Engine, Veo 3.1, Kling, FLUX.1, NVIDIA NIM, Imagen 3, and Eleven v3.'
     },
     {
       id: 'build',
-      label: 'Build Live Apps',
+      label: 'Build & 3D Games',
       dot: 'var(--m-top-build)',
-      caption: '<strong>Zero-Build Web App Studio:</strong> Toggle <code>Preview | Code</code> on live HTML5/Canvas templates (Fourier drawing, Gravity sim, Matrix rain, Solar system) or type any prompt to build a new app live.'
+      caption: '<strong>Self-Healing Web &amp; Game Studio:</strong> Toggle <code>Preview | Code</code> on live HTML5/Canvas &amp; Three.js templates, validate automatically, or publish via Google Drive Website Sync.'
     },
     {
       id: 'agents',
-      label: 'Agents & Drawer',
+      label: '6 SOUL.md Agents',
       dot: 'var(--m-drw-newchat)',
-      caption: '<strong>6 Autonomous SOUL.md Agents:</strong> Slide open the drawer to switch between Chats and Agents (<code>@goar</code>, <code>@architect</code>, <code>@aegis</code>, <code>@quant</code>, <code>@atlas</code>, <code>@muse</code>) or launch Multi-Agent councils.'
+      caption: '<strong>Autonomous Specialist Roster:</strong> Tap the inline Agents button or slide open the drawer for <code>@goar</code>, <code>@architect</code>, <code>@aegis</code>, <code>@quant</code>, <code>@atlas</code>, and <code>@muse</code>.'
+    },
+    {
+      id: 'network',
+      label: 'Network Tools',
+      dot: 'var(--m-drw-network)',
+      caption: '<strong>NEW v2.1.0 · 4-Tab Recon &amp; Defense Suite:</strong> Unified Target Lookup (DNS/TLS/HTTP/Passive/ASN/Shodan CVEs), /24 LAN Scan, Live HTTP Traffic Inspector, and Shadow Trap honeyport daemon.'
+    },
+    {
+      id: 'oauth',
+      label: 'OAuth 2.1 Hub',
+      dot: 'var(--m-set-apihub)',
+      caption: '<strong>NEW v2.1.0 · One-Tap OAuth 2.1 PKCE Sign-In:</strong> Connect Google Drive/Gmail/Calendar, GitHub, Notion, Linear, Cloudflare, Vercel, Supabase, Stripe &amp; Figma with zero manual API key copy-paste.'
     },
     {
       id: 'terminal',
       label: 'VT100 Terminal',
       dot: 'var(--m-drw-terminal)',
-      caption: '<strong>Pure #000000 Linux PRoot Terminal:</strong> Full-bleed VT100 shell across 15 Linux distros and SSH servers with touch extra-keys bar. Try typing <code>neofetch</code>, <code>ls</code>, or <code>uname -a</code>!'
+      caption: '<strong>Pure #000000 Linux PRoot Terminal:</strong> Full VT100 shell across 15 rootless distros + SSH + atomic JNI file transfer. Try typing <code>neofetch</code>, <code>ls</code>, or <code>uname -a</code>!'
     },
     {
       id: 'files',
       label: 'File Browser',
       dot: 'var(--m-drw-files)',
-      caption: '<strong>Multi-Source Workspace Explorer:</strong> Browse and edit files seamlessly across Local Workspace, Ubuntu PRoot Sandbox, and remote SSH servers.'
+      caption: '<strong>Multi-Source Workspace Explorer:</strong> Browse, inspect sandbox storage metrics, and edit files across Local Workspace, Ubuntu PRoot, and SSH hosts.'
     },
     {
       id: 'docs',
       label: 'Revise Docs',
       dot: 'var(--m-drw-docs)',
-      caption: '<strong>Word-Style Tracked Changes:</strong> Review green insertions &amp; red strikethrough redlines, Accept/Reject AI revisions inline, and export clean <code>.docx</code>, <code>.md</code>, or <code>.txt</code>.'
+      caption: '<strong>Word-Style Tracked Changes:</strong> Review green insertions &amp; red strikethrough redlines, Accept/Reject AI revisions inline, and export clean <code>.docx</code>, <code>.md</code>, or <code>.csv</code>.'
     },
     {
       id: 'browser',
       label: 'AI Browser',
       dot: 'var(--m-drw-browser)',
-      caption: '<strong>Shared User/AI WebView + DevTools:</strong> 8 search engines, live Network/Console inspector, Cloak fingerprint spoofing, and tracker blocking.'
+      caption: '<strong>SmartCookie WebView + DevTools:</strong> Shared user/agent browser with live Network/Console inspector, Cloak fingerprint spoofing, and Manus Glass PiP takeover.'
     },
     {
       id: 'tasks',
@@ -85,68 +97,68 @@
     },
     {
       id: 'settings',
-      label: 'Settings (26)',
+      label: 'Tiered Settings',
       dot: 'var(--m-drw-settings)',
-      caption: '<strong>26 Unique Matte Bold Pop Categories:</strong> Search every setting live, toggle Ink/Paper appearance, inspect 12 bundled skills, and manage encrypted backups.'
+      caption: '<strong>NEW v2.1.0 · Consumer Quick Controls + 4 Palettes:</strong> One-tap theme &amp; active model card, collapsible Advanced Studio, 16 skills (incl. NVIDIA NIM/CUDA/NeMo), and 4 Color &amp; Accent Styles.'
     },
     {
       id: 'about',
       label: 'About & Legal',
       dot: 'var(--m-set-about)',
-      caption: '<strong>Built-In Transparency:</strong> Inspect Version 2.0.0 (Build 30), support contacts, and tap Privacy Policy, Terms of Service, License, or Data Protection right inside the app.'
+      caption: '<strong>Built-In Transparency (v2.1.0 Build 31):</strong> Inspect version details, support contacts, and read verbatim Privacy Policy, Terms of Service, License, and Data Protection notices.'
     }
   ];
 
   const WELL_KNOWN_BRANDS = [
     { name: 'Anthropic', icon: 'provider_anthropic', accent: '#E8A87C', rating: '5.0' },
     { name: 'OpenAI', icon: 'provider_openai', accent: '#4ADE80', rating: '5.0' },
-    { name: 'Google Gemini', icon: 'provider_gemini', accent: '#5B9BFF', rating: '5.0' },
-    { name: 'GitHub', icon: 'ic_mcp_github', accent: '#E8E2D6', rating: '5.0' },
-    { name: 'Cloudflare', icon: 'ic_mcp_cloudflare', accent: '#FF7A45', rating: '5.0' },
+    { name: 'Google Gemini', icon: 'provider_gemini', accent: '#60A5FA', rating: '5.0' },
+    { name: 'NVIDIA NIM', icon: 'provider_nvidia', accent: '#76B900', rating: '5.0' },
+    { name: 'GitHub', icon: 'ic_mcp_github', accent: '#F4F4F6', rating: '5.0' },
+    { name: 'Cloudflare', icon: 'ic_brand_cloudflare', accent: '#FF7A45', rating: '5.0' },
+    { name: 'Vercel', icon: 'ic_brand_vercel', accent: '#F4F4F6', rating: '5.0' },
+    { name: 'Supabase', icon: 'ic_brand_supabase', accent: '#3ECF8E', rating: '5.0' },
     { name: 'Stripe', icon: 'provider_stripe', accent: '#8B7CF6', rating: '5.0' },
-    { name: 'NVIDIA', icon: 'provider_nvidia', accent: '#76B900', rating: '5.0' },
-    { name: 'Docker', icon: 'ic_mcp_docker', accent: '#38BDF8', rating: '5.0' },
-    { name: 'Mistral AI', icon: 'provider_mistral', accent: '#FFB830', rating: '5.0' },
+    { name: 'Figma', icon: 'ic_brand_figma', accent: '#F472B6', rating: '5.0' },
     { name: 'Linear', icon: 'ic_mcp_linear', accent: '#818CF8', rating: '5.0' },
-    { name: 'Shopify', icon: 'ic_mcp_shopify', accent: '#4ADE80', rating: '5.0' },
-    { name: 'Slack', icon: 'ic_mcp_slack', accent: '#FF5E9C', rating: '5.0' }
+    { name: 'Notion', icon: 'ic_mcp_notion', accent: '#F4F4F6', rating: '5.0' }
   ];
 
   const FIVE_STAR_HIGHLIGHTS = [
     {
-      brand: 'Anthropic Claude',
-      icon: 'provider_anthropic',
-      color: '#E8A87C',
+      brand: 'Anthropic + NVIDIA',
+      icon: 'provider_nvidia',
+      color: '#76B900',
       score: '5.0',
-      quote: '“Switching between <strong>Claude Sonnet 4.5</strong>, extended thinking budgets, and native MCP connectors directly from Android — with zero proxy server in the middle — feels like carrying a desktop engineering studio.”',
-      tag: 'Direct API · Zero Markup',
-      role: 'Staff Infrastructure Lead'
+      quote: '“Combining <strong>Claude Sonnet 4.5</strong> with v2.1.0’s bundled <strong>NVIDIA NIM, CUDA TensorRT-LLM &amp; NeMo Guardrails</strong> skills directly on Android — zero middleman proxy — feels like carrying a workstation.”',
+      tag: 'Direct API · NVIDIA AI Skills',
+      role: 'Staff ML Infrastructure Lead'
     },
     {
-      brand: 'GitHub + Docker',
+      brand: 'GitHub + Vercel',
       icon: 'ic_mcp_github',
-      color: '#5B9BFF',
+      color: '#60A5FA',
       score: '5.0',
-      quote: '“Reviewing pull requests via <strong>GitHub MCP</strong>, running scripts inside a real <strong>Ubuntu 24.04 PRoot</strong> shell, and inspecting builds without touching a laptop cut our incident response time in half.”',
-      tag: 'PRoot VT100 · SSH Ready',
+      quote: '“One-tap <strong>OAuth 2.1 PKCE sign-in</strong> connects GitHub, Vercel, and Supabase MCP servers in seconds — no hunting for tokens — right beside a real <strong>Ubuntu 24.04 PRoot</strong> shell.”',
+      tag: 'OAuth 2.1 PKCE · PRoot Linux',
       role: 'Principal Platform Engineer'
     },
     {
       brand: 'OpenAI + Gemini',
       icon: 'provider_openai',
-      color: '#4ADE80',
+      color: '#10B981',
       score: '5.0',
-      quote: '“One unified workspace where <strong>GPT-4.1</strong>, <strong>Gemini 2.5 Pro</strong>, <strong>Veo 3.1</strong>, and offline <strong>llama.cpp</strong> live side-by-side. We cancelled three separate monthly mobile subscriptions on day one.”',
-      tag: '20+ Frontier & Local Models',
+      quote: '“One architectural monochrome studio unifying <strong>GPT-4.1</strong>, <strong>Gemini 2.5 Pro</strong>, <strong>Veo 3.1</strong>, on-device Creative Engine, and offline <strong>llama.cpp</strong>. Replaced four separate apps on day one.”',
+      tag: '19+ Cloud & Local Models',
       role: 'Product Design Founder'
     },
     {
       brand: 'Cloudflare + Stripe',
-      icon: 'ic_mcp_cloudflare',
+      icon: 'ic_brand_cloudflare',
       color: '#FF7A45',
       score: '5.0',
-      quote: '“Our ops team connects <strong>Cloudflare</strong>, <strong>Stripe</strong>, and <strong>Linear</strong> through local Keystore-encrypted tokens and runs scheduled Watchtower digests with total data sovereignty.”',
-      tag: 'Android Keystore Encrypted',
+      quote: '“Between <strong>Cloudflare &amp; Stripe OAuth MCP</strong>, the autonomous <code>/drop</code> orchestrator, and the 4-tab <strong>Network Tools</strong> recon &amp; Shadow Trap suite, nothing else on Android comes close.”',
+      tag: 'Network Recon · Keystore Vault',
       role: 'CTO · SaaS Operations'
     }
   ];
@@ -166,7 +178,7 @@
       el.innerHTML = window.goarIcon(theme === 'dark' ? 'sun' : 'moon', 17);
     });
     document.querySelectorAll('[data-theme-toggle-label]').forEach(el => {
-      el.textContent = theme === 'dark' ? 'Paper Light' : 'Ink Dark';
+      el.textContent = theme === 'dark' ? 'Alabaster Light' : 'Obsidian Dark';
     });
   }
 
@@ -222,7 +234,7 @@
       allSims.forEach(instance => instance.render());
     }
 
-    /* ── 1. Mount 5 Choreographed Scenario Animated Clip Phones ── */
+    /* ── 1. Mount 5 Choreographed Scenario Interactive Video Phones ── */
     const clipMounts = document.querySelectorAll('[data-scenario-clip]');
     const visibilityTargets = new Map();
 
@@ -239,11 +251,10 @@
           const isActive = idx === info.index;
           btn.classList.remove('active', 'is-playing');
           if (isActive) {
-            // Force reflow so the bottom progress bar animation restarts cleanly
             void btn.offsetWidth;
             btn.classList.add('active');
             if (info.playing) {
-              btn.style.setProperty('--step-dur', ((info.step && info.step.duration) || 3800) + 'ms');
+              btn.style.setProperty('--step-dur', ((info.step && info.step.duration) || 4800) + 'ms');
               btn.classList.add('is-playing');
             }
           }
@@ -282,14 +293,12 @@
         allSims.push(sim);
         visibilityTargets.set(mount, sim);
 
-        // Bind Step Cards next to the phone
         stepBtns.forEach((btn, idx) => {
           btn.addEventListener('click', () => {
             sim.jumpClipStep(idx, true);
           });
         });
 
-        // Bind Pause / Replay button in the outside-the-bezel HUD bar
         if (hudActionBtn) {
           hudActionBtn.addEventListener('click', () => {
             if (sim._clipPlaying) {
@@ -302,7 +311,7 @@
       }
     });
 
-    /* ── 2. Mount Full Hands-On 14-Screen Interactive Sandbox Phone ── */
+    /* ── 2. Mount Full Hands-On 16-Screen Interactive Sandbox Phone ── */
     const sandboxMount = document.getElementById('goar-sim-mount');
     let sandboxSim = null;
 
@@ -317,7 +326,6 @@
       visibilityTargets.set(sandboxMount, sandboxSim);
     }
 
-    // Viewport Visibility Observer so offscreen phones sleep cleanly at 0% CPU
     if ('IntersectionObserver' in window && visibilityTargets.size) {
       const visObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -328,7 +336,6 @@
       visibilityTargets.forEach((_, el) => visObserver.observe(el));
     }
 
-    // Theme toggle syncs EVERY mounted phone bezel across the entire website
     window.goarInitTheme(() => {
       allSims.forEach(instance => instance.render());
     });
@@ -336,18 +343,28 @@
     /* ── 3. Populate Well-Known Companies + 5-Star Showcase ── */
     const brandGrid = document.getElementById('brand-logos-grid');
     if (brandGrid) {
-      brandGrid.innerHTML = WELL_KNOWN_BRANDS.map(b => `
-        <div class="brand-logo-tile">
-          <div class="brand-logo-top">
-            ${I(b.icon, 20, b.accent)}
-            <span>${b.name}</span>
-          </div>
-          <div class="brand-logo-stars">
-            <span class="s" aria-label="5 out of 5 stars">★★★★★</span>
-            <span>${b.rating}</span>
-          </div>
-        </div>
-      `).join('');
+      const isDark = () => document.documentElement.getAttribute('data-theme') !== 'light';
+      const renderBrands = () => {
+        brandGrid.innerHTML = WELL_KNOWN_BRANDS.map(b => {
+          const col = (b.accent === '#F4F4F6' && !isDark()) ? '#0B0B0E' : b.accent;
+          return `
+            <div class="brand-logo-tile">
+              <div class="brand-logo-top">
+                ${I(b.icon, 20, col)}
+                <span>${b.name}</span>
+              </div>
+              <div class="brand-logo-stars">
+                <span class="s" aria-label="5 out of 5 stars">★★★★★</span>
+                <span>${b.rating}</span>
+              </div>
+            </div>
+          `;
+        }).join('');
+      };
+      renderBrands();
+      document.querySelectorAll('[data-action="toggle-site-theme"]').forEach(btn => {
+        btn.addEventListener('click', () => setTimeout(renderBrands, 0));
+      });
     }
 
     const fiveStarEl = document.getElementById('five-star-cards');
@@ -372,7 +389,7 @@
       `).join('');
     }
 
-    /* ── 4. Populate Tabbed Ecosystem Strip (Providers / Distros / MCP) ── */
+    /* ── 4. Populate Tabbed Ecosystem Strip (Providers / Distros / OAuth MCP) ── */
     const ecoWrap = document.getElementById('eco-pills-wrap');
     const ecoTabBtns = document.querySelectorAll('[data-eco-tab]');
     function renderEcoTab(kind) {
@@ -380,15 +397,15 @@
       ecoTabBtns.forEach(b => b.classList.toggle('active', b.dataset.ecoTab === kind));
       if (kind === 'providers') {
         ecoWrap.innerHTML = D.PROVIDERS_SHOWCASE.map(p =>
-          `<span class="eco-pill">${I(p.icon, 16, 'var(--primary)')} ${p.name}</span>`
+          `<span class="eco-pill">${I(p.icon, 16, 'var(--on-bg)')} ${p.name}</span>`
         ).join('');
       } else if (kind === 'distros') {
         ecoWrap.innerHTML = D.DISTROS_SHOWCASE.map(d =>
-          `<span class="eco-pill">${I(d.icon, 16, 'var(--m-drw-terminal)')} ${d.name}</span>`
+          `<span class="eco-pill">${I(d.icon, 16, 'var(--accent-emerald)')} ${d.name}</span>`
         ).join('');
       } else {
         ecoWrap.innerHTML = D.MCP_SHOWCASE.map(m =>
-          `<span class="eco-pill">${I(m.icon, 16, 'var(--m-set-mcp)')} ${m.name}</span>`
+          `<span class="eco-pill">${I(m.icon, 16, 'var(--accent-cobalt)')} ${m.name}</span>`
         ).join('');
       }
     }
@@ -397,7 +414,7 @@
     });
     if (ecoWrap) renderEcoTab('providers');
 
-    /* ── 5. Populate Hands-On 14-Screen Sandbox Controls ── */
+    /* ── 5. Populate Hands-On 16-Screen Sandbox Controls ── */
     const tourChipsEl = document.getElementById('tour-chips');
     const tourCaptionEl = document.getElementById('tour-caption');
 
@@ -436,19 +453,19 @@
     const legalMeta = {
       privacy_policy: {
         href: 'privacy.html',
-        summary: `<h4>Zero Cloud Intermediaries</h4><p>Goar Studio runs as a local-first studio on your Android device. Your conversations, system prompts, agent memories, workspace projects, tasks, and API keys are stored strictly on-device via Android Room (SQLite), Jetpack DataStore, and Android Keystore-backed <code>EncryptedSharedPreferences</code>.</p><h4>Direct Provider Routing</h4><p>Outbound requests travel directly from your device only to the model providers, MCP servers, search backends, or SSH hosts you explicitly configure. Diagnostic logs stay on-device unless you explicitly export a bundle.</p>`
+        summary: `<h4>Zero Cloud Intermediaries</h4><p>Goar Studio runs as a local-first studio on your Android device (v2.1.0 Build 31). Your conversations, system prompts, agent memories, workspace projects, tasks, OAuth tokens, and API keys are stored strictly on-device via Android Room (SQLite), Jetpack DataStore, and Android Keystore-backed <code>EncryptedSharedPreferences</code>.</p><h4>Direct Provider &amp; OAuth 2.1 Routing</h4><p>Outbound requests travel directly from your device only to the model providers, OAuth 2.1 PKCE MCP servers, search backends, or SSH hosts you explicitly configure. Diagnostic logs stay local unless you explicitly export a bundle.</p>`
       },
       terms_of_service: {
         href: 'terms.html',
-        summary: `<h4>Local-First Software License &amp; Operator Responsibility</h4><p>Goar Studio is provided as-is as a local-first multi-model AI studio, web builder, browser, and workspace environment. Because you connect your own API keys, SSH hosts, MCP servers, and scheduled automations, you retain full ownership and responsibility for all credentials, external calls, automated tasks, and generated outputs.</p>`
+        summary: `<h4>Local-First Software License &amp; Operator Responsibility</h4><p>Goar Studio is provided as-is as a local-first multi-model AI studio, web/game builder, browser, network toolkit, and workspace environment. Because you connect your own API keys, OAuth 2.1 tokens, SSH hosts, MCP servers, and scheduled automations, you retain full ownership and responsibility for all credentials, external calls, and generated outputs.</p>`
       },
       privacy_act: {
         href: 'data-protection.html',
-        summary: `<h4>4-Layer Local Privacy Architecture</h4><p>From <strong>Settings → Data &amp; Backups</strong>, you hold total custody over your data: export encrypted-optional ZIP archives, import ChatGPT or Claude conversation histories, configure scheduled local folder backups, set retention auto-delete windows, or wipe stored databases and Keystore keys immediately.</p>`
+        summary: `<h4>4-Layer Local Privacy Architecture &amp; App Integrity Shield</h4><p>Protected by Android Keystore encryption and App Integrity Shield. From <strong>Settings → Data &amp; Backups</strong>, export encrypted-optional ZIP archives, import ChatGPT or Claude conversation histories, configure local backups, or wipe stored databases and keys immediately.</p>`
       },
       license: {
         href: 'licenses.html',
-        summary: `<h4>Open-Source Ecosystem Transparency</h4><p>Goar Studio builds on MIT and Apache 2.0 compatible libraries including Jetpack Compose, Material 3, OkHttp, Room, Media3, Coil, Sora Editor, JLaTeXMath, JSch, Apache Commons Compress, llama.cpp, and whisper.cpp.</p>`
+        summary: `<h4>Open-Source Ecosystem Transparency</h4><p>Goar Studio builds on MIT and Apache 2.0 compatible libraries including Jetpack Compose, Material 3, OkHttp, Room, Media3, Coil, Sora Editor, Three.js, JLaTeXMath, JSch, Apache Commons Compress, llama.cpp, and whisper.cpp.</p>`
       }
     };
 

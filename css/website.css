@@ -1,6 +1,6 @@
 /* ============================================================================
- * GOAR STUDIO OFFICIAL WEBSITE — FRAMER-GRADE EDITORIAL DESIGN SYSTEM
- * True Ink (#000000) & Bone (#E8E2D6) / Warm Paper (#EFE9DF) & Ink
+ * GOAR STUDIO OFFICIAL WEBSITE — FRAMER-GRADE EDITORIAL DESIGN SYSTEM (v2.1.0)
+ * Architectural Obsidian (#060608) & Bone (#F4F4F6) / Crisp Alabaster (#FAFAFB) & Ink (#0B0B0E)
  * Luminous ambient depth · Ultra-tight Outfit typography · Airy editorial rhythm
  * ============================================================================ */
 
@@ -314,13 +314,13 @@ body {
   margin: 0 0 28px;
 }
 .hero-slogan-accent {
-  background: linear-gradient(108deg, #FFFFFF 12%, #9EC5FF 56%, #5B9BFF 100%);
+  background: linear-gradient(108deg, #FFFFFF 14%, #D4D4DC 58%, #93C5FD 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 [data-theme="light"] .hero-slogan-accent {
-  background: linear-gradient(108deg, #000000 12%, #1D4ED8 100%);
+  background: linear-gradient(108deg, #0B0B0E 14%, #2563EB 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1063,7 +1063,7 @@ body {
   color: var(--on-bg);
 }
 
-/* ── Full Hands-On 14-Screen Interactive Sandbox (Phone Left | Deck Right) ── */
+/* ── Full Hands-On 16-Screen Interactive Sandbox (Phone Left | Deck Right) ── */
 .sandbox-grid {
   display: grid;
   grid-template-columns: 394px minmax(0, 1fr);

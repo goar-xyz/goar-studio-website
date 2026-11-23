@@ -33,10 +33,10 @@
 
   <main class="legal-page-main">
     <div class="legal-page-header">
-      <div class="section-kicker">Technical Architecture · Data Sovereignty</div>
+      <div class="section-kicker">Technical Architecture · Goar Studio v2.1.0 (Build 31)</div>
       <h1>Data Protection &amp; Local Privacy</h1>
       <p style="margin:0;color:var(--on-surface-variant);font-size:14.5px">
-        How Goar Studio stores, encrypts, routes, backs up, and deletes your data on Android.
+        How Goar Studio v2.1.0 stores, encrypts, authenticates, routes, backs up, and deletes your data on Android.
       </p>
     </div>
 
@@ -62,12 +62,12 @@ From Settings → Data Control, you can export encrypted-optional backups (ZIP),
           <p style="margin:6px 0 0">App-private Android Room SQLite database with local WAL persistence for chats, branches, tool outputs, tasks, and semantic RAG embeddings.</p>
         </div>
         <div class="goar-split-card" style="padding:18px 20px">
-          <strong style="color:var(--on-surface)">Secrets &amp; SSH Pinning</strong>
-          <p style="margin:6px 0 0">API keys, payment card profiles, and SSH keys reside in Android Keystore-encrypted preferences. Remote SSH servers require explicit host-key fingerprint verification and per-command approval unless explicitly trusted.</p>
+          <strong style="color:var(--on-surface)">Secrets, OAuth 2.1 PKCE &amp; SSH Pinning</strong>
+          <p style="margin:6px 0 0">API keys, OAuth 2.1 PKCE access/refresh tokens (routed directly via <code>goar://oauth/callback</code> or loopback with no middleman server), payment card profiles, and SSH keys reside in Android Keystore-encrypted preferences. Remote SSH servers require explicit host-key fingerprint verification and per-command approval unless explicitly trusted.</p>
         </div>
         <div class="goar-split-card" style="padding:18px 20px">
-          <strong style="color:var(--on-surface)">Browser Shielding</strong>
-          <p style="margin:6px 0 0">The integrated Browser ships with bundled domain blocklists (<code>hosts.txt</code> and <code>malware.txt</code>), full cookie clearing/export, live network inspection, and Cloak stealth controls.</p>
+          <strong style="color:var(--on-surface)">Browser Shielding &amp; App Integrity</strong>
+          <p style="margin:6px 0 0">The integrated Browser ships with bundled domain blocklists (<code>hosts.txt</code> and <code>malware.txt</code>), full cookie clearing/export, live traffic inspection, Shadow Trap defense, and Cloak stealth controls — alongside local <code>AppIntegrityShield</code> runtime verification.</p>
         </div>
         <div class="goar-split-card" style="padding:18px 20px">
           <strong style="color:var(--on-surface)">Portability &amp; Right to Erasure</strong>
